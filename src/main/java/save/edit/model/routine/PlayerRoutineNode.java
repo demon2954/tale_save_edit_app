@@ -1,16 +1,16 @@
 package save.edit.model.routine;
 
 /**
- * ¹¦·¨
+ * åŠŸæ³•èŠ‚ç‚¹
  * @author zone
  *
  */
 public class PlayerRoutineNode {
-	private int m_iRoutineID;//¹¦·¨id
-	private String m_strRoutineName;//¹¦·¨Ãû
-	private int m_iWearAmsType;//¹¦·¨ÀàĞÍ
-	private int m_iAccumulationExp;//¹¦·¨¾­Ñé
-	private int m_iLV;//¹¦·¨µÈ¼¶
+	private int m_iRoutineID;//åŠŸæ³•id
+	private String m_strRoutineName;//åŠŸæ³•å
+	private int m_iWearAmsType;//åŠŸæ³•ç±»å‹
+	private int m_iAccumulationExp;//åŠŸæ³•ç»éªŒ
+	private int m_iLV;//åŠŸæ³•ç­‰çº§
 	
 	public int getM_iRoutineID() {
 		return m_iRoutineID;

@@ -1,7 +1,7 @@
 package save.edit.model.routine;
 
 /**
- * �ڹ�
+ * 技艺书内功
  * @author zone
  *
  */

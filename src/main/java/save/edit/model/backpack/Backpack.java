@@ -1,7 +1,7 @@
 package save.edit.model.backpack;
 
 public class Backpack {
-	private int m_iAmount;// 物品数量
+	private int m_iAmount;// 鐗╁搧鏁伴噺
 	private ItemDataNode _ItemDataNode;
 	
 	public int getM_iAmount() {

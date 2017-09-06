@@ -1,7 +1,7 @@
 package save.edit.model.martial;
 
 /**
- * 技艺书内容
+ * 鎶�鑹轰功
  * @author zone
  *
  */

@@ -16,11 +16,11 @@ import save.edit.model.store.StoreDataNode;
 import save.edit.util.UnicodeUtils;
 
 public class SaveModel {
-	private String m_strVersion;// °æ±¾
-	private String m_strPlayerName;// Ãû
-	private String m_strPlayerLastName;// ĞÕ
-	private String m_PlayerIconID;// Í·Ïñid
-	private long m_iMoney;// ½ğÇ®
+	private String m_strVersion;// ç‰ˆæœ¬
+	private String m_strPlayerName;// å
+	private String m_strPlayerLastName;// å§“
+	private String m_PlayerIconID;// å¤´åƒ
+	private long m_iMoney;// é‡‘é’±
 	private String m_strModelName;
 	private int m_fTalkRange;
 	private float m_fStopRange;
@@ -46,8 +46,8 @@ public class SaveModel {
 	private int m_iPhysical;
 	private int m_iMood;
 	private int m_iPlotRound;
-	private int m_iAttack;// ¹¥»÷Á¦
-	private int m_iDefense;// ·ÀÓùÁ¦
+	private int m_iAttack;// æ”»å‡»åŠ›
+	private int m_iDefense;// é˜²å¾¡åŠ›
 	private int m_iCritical;
 	private int m_iDodge;
 	private int m_iConter;

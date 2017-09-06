@@ -1,7 +1,7 @@
 package save.edit.model.backpack;
 
 /**
- * npcÏ²»¶µÄÁÐ±í
+ * npcå–œæ¬¢çš„ä¸œè¥¿
  * @author zone
  *
  */
