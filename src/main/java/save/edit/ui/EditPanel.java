@@ -8,7 +8,7 @@ public class EditPanel extends JPanel {
 		this.setBounds(100, 100, 640, 480);
 		this.setVisible(true);
 		
-		JButton btn = new JButton("¼ÓÔØ");
+		JButton btn = new JButton("ç¡®å®š");
 		btn.setBounds(1, 0, 122, 111);
 		this.add(btn);
 	}
