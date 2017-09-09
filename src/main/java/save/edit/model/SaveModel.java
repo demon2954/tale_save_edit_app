@@ -25,9 +25,9 @@ public class SaveModel {
 	private int m_fTalkRange;
 	private float m_fStopRange;
 	private float m_fWalkRange;
-	private int m_fNowX;
-	private int m_fNowY;
-	private int m_fNowZ;
+	private float m_fNowX;
+	private float m_fNowY;
+	private float m_fNowZ;
 	private int m_iNowTime;
 	private int m_fDir;
 	private int m_fNowTime;
@@ -167,22 +167,22 @@ public class SaveModel {
 	public void setM_fWalkRange(float m_fWalkRange) {
 		this.m_fWalkRange = m_fWalkRange;
 	}
-	public int getM_fNowX() {
+	public float getM_fNowX() {
 		return m_fNowX;
 	}
-	public void setM_fNowX(int m_fNowX) {
+	public void setM_fNowX(float m_fNowX) {
 		this.m_fNowX = m_fNowX;
 	}
-	public int getM_fNowY() {
+	public float getM_fNowY() {
 		return m_fNowY;
 	}
-	public void setM_fNowY(int m_fNowY) {
+	public void setM_fNowY(float m_fNowY) {
 		this.m_fNowY = m_fNowY;
 	}
-	public int getM_fNowZ() {
+	public float getM_fNowZ() {
 		return m_fNowZ;
 	}
-	public void setM_fNowZ(int m_fNowZ) {
+	public void setM_fNowZ(float m_fNowZ) {
 		this.m_fNowZ = m_fNowZ;
 	}
 	public int getM_iNowTime() {

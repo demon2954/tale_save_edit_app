@@ -4,12 +4,14 @@ import java.io.IOException;
 
 import save.edit.model.SaveModel;
 import save.edit.read.LoadSaveData;
+import save.edit.ui.EditFrame;
 import save.edit.write.WriteSaveData;
 
 public class Main {
+	
 	public static void main(String[] args) {
 		try {
-			loadWirte();
+			EditFrame frame = new EditFrame();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
