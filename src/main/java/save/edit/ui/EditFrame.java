@@ -1,6 +1,7 @@
 package save.edit.ui;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -26,6 +27,9 @@ public class EditFrame extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double height = screenSize.getHeight();
 		double width = screenSize.getWidth();
+		Image iconImage = getToolkit().getImage(getClass().getResource("/img/logo/icon.jpg"));
+		this.setIconImage(iconImage);
+		
 		int x = ((int) width - LocationConstant.FRAME_SIZE_HEIGHT) / 2;
 		int y = ((int) height - LocationConstant.FRAME_SIZE_WIDTH) / 2;
 		this.setBounds(x, y, LocationConstant.FRAME_SIZE_WIDTH, LocationConstant.FRAME_SIZE_HEIGHT);

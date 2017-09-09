@@ -16,4 +16,4 @@ public class LoadSaveData {
 		SaveModel save = gson.fromJson(jsonData, SaveModel.class);
 		return save;
 	}
-}
+}	

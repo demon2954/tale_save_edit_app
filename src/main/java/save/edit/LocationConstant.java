@@ -222,4 +222,10 @@ public class LocationConstant {
 	public final static int SAVE_BTN_Y = 227;
 	public final static int SAVE_BTN_W = 156;
 	public final static int SAVE_BTN_H = 30;
+	//-----------------------------------
+	
+	public final static int SIGN_LABEL_X = 450;
+	public final static int SIGN_LABEL_Y = 420;
+	public final static int SIGN_LABEL_W = 190;
+	public final static int SIGN_LABEL_H = 30;
 }

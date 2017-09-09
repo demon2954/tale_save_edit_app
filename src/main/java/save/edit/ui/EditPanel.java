@@ -13,11 +13,11 @@ import save.edit.listener.LoadListener;
 
 public class EditPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	
+
 	private JTextField fileChooserBar = new JTextField();// 文件路径文本框
 	private JButton fileChooseBtn = new JButton("选择");// 选择文件按钮
 	private JButton fileLoadBtn = new JButton("载入");// 加载文件按钮
-	
+
 	private JLabel hpLabel = new JLabel("HP");// HP标签
 	private JTextField hpTextField = new JTextField();// HP文本
 	private JLabel mpLabel = new JLabel("MP");// MP标签
@@ -42,11 +42,13 @@ public class EditPanel extends JPanel {
 	private JButton xinfaBtn = new JButton("心法");// 心法
 	private JButton friendBtn = new JButton("好友");// 友好度
 	private JButton saveBtn = new JButton("保存");// 保存
-	
+
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
 	private JButton anqiBtn = new JButton("暗器");// 暗器
 	private JButton duanbingBtn = new JButton("短柄");// 短柄
 	private JButton qingongBtn = new JButton("琴功");// 琴功
+
+	private JLabel signLable = new JLabel();// 签名
 
 	public EditPanel() {
 		setThisPanel();// 设置这个面板
@@ -65,10 +67,19 @@ public class EditPanel extends JPanel {
 		setMoneyTextField();// 设置金钱文本
 		setHpMpAttDefMaxBtn();// 修改hp mp 按钮
 		setMoneyMaxBtn();// 修改金钱按钮
-		setProperties();//设置属性列表
-		setEditButton();//设置按钮
-		
-//		setFileChoose();
+		setProperties();// 设置属性列表
+		setEditButton();// 设置按钮
+		setSignLable();// 设置签名
+
+		// setFileChoose();
+	}
+
+	private void setSignLable() {
+		signLable.setForeground(Color.red);
+		signLable.setText("Create by Zone. Version 1.0.0");
+		signLable.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W,
+				LocationConstant.SIGN_LABEL_H);
+		this.add(signLable);
 	}
 
 	private void setHpMpAttDefMaxBtn() {
@@ -151,7 +162,8 @@ public class EditPanel extends JPanel {
 	private void setFileLoadBtn() {
 		fileLoadBtn.setBounds(LocationConstant.FILE_LOAD_BTN_X, LocationConstant.FILE_LOAD_BTN_Y,
 				LocationConstant.FILE_LOAD_BTN_SIZE_WIDTH, LocationConstant.FILE_LOAD_BTN_SIZE_HEIGHT);
-		fileLoadBtn.addActionListener(new LoadListener(fileChooserBar, hpTextField, mpTextField, attackTextField, defendTextField, moneyTextField));
+		fileLoadBtn.addActionListener(new LoadListener(fileChooserBar, hpTextField, mpTextField, attackTextField,
+				defendTextField, moneyTextField, propertyTextFields));
 		this.add(fileLoadBtn);
 	}
 
@@ -209,7 +221,7 @@ public class EditPanel extends JPanel {
 			}
 		}
 	}
-	
+
 	private void setEditButton() {
 		jianfaBtn.setBounds(LocationConstant.JIANFA_BTN_X, LocationConstant.JIANFA_BTN_Y, LocationConstant.JIANFA_BTN_W,
 				LocationConstant.JIANFA_BTN_H);
