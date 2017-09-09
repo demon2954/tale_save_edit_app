@@ -9,9 +9,10 @@ import javax.swing.JTextField;
 import save.edit.LocationConstant;
 
 public class FileChooser extends JFileChooser {
+	private static final long serialVersionUID = 1L;
 
 	public FileChooser(JTextField fileChooserBar) {
-		this.setBounds(LocationConstant.FILE_CHOOSER_SIZE_X, LocationConstant.FILE_CHOOSER_SIZE_Y,
+		this.setBounds(LocationConstant.FILE_CHOOSER_X, LocationConstant.FILE_CHOOSER_Y,
 				LocationConstant.FILE_CHOOSER_SIZE_WIDTH, LocationConstant.FILE_CHOOSER_SIZE_HEIGHT);
 		this.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 		this.setCurrentDirectory(new File("d:/"));

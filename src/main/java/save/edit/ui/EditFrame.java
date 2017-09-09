@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import save.edit.LocationConstant;
 
 public class EditFrame extends JFrame {
+	private static final long serialVersionUID = 1L;
 
 	public EditFrame() {
 		super("侠客风云传存档修改器");
@@ -31,9 +32,5 @@ public class EditFrame extends JFrame {
 		this.setVisible(true);
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setLayout(null);
-	}
-
-	public static void main(String[] args) {
-		new EditFrame();
 	}
 }
