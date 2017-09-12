@@ -145,7 +145,7 @@ public class LocationConstant {
 	public final static int PROPERTIES_INDEX_ANQI = 19;
 	public final static int PROPERTIES_INDEX_LIANDAN = 20;
 	public final static int PROPERTIES_INDEX_CAIYAO = 21;
-	public final static int PROPERTIES_INDEX_CADAO = 22;
+	public final static int PROPERTIES_INDEX_CHADAO = 22;
 	public final static int PROPERTIES_INDEX_CHUYI = 23;
 	public final static int PROPERTIES_INDEX_JIANDING = 24;
 	public final static int PROPERTIES_INDEX_YUELI = 25;

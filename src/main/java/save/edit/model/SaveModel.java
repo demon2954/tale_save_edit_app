@@ -30,7 +30,7 @@ public class SaveModel {
 	private float m_fNowZ;
 	private int m_iNowTime;
 	private int m_fDir;
-	private int m_fNowTime;
+	private float m_fNowTime;
 	private String m_strSceneName;
 	private int m_iFre;
 	private int m_iTalent1ID;
@@ -197,10 +197,10 @@ public class SaveModel {
 	public void setM_fDir(int m_fDir) {
 		this.m_fDir = m_fDir;
 	}
-	public int getM_fNowTime() {
+	public float getM_fNowTime() {
 		return m_fNowTime;
 	}
-	public void setM_fNowTime(int m_fNowTime) {
+	public void setM_fNowTime(float m_fNowTime) {
 		this.m_fNowTime = m_fNowTime;
 	}
 	public String getM_strSceneName() {

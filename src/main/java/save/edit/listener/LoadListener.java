@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 
 import save.edit.Global;
 import save.edit.LocationConstant;
+import save.edit.data.PropertyValueEnum;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.read.LoadSaveData;
@@ -41,6 +42,14 @@ public class LoadListener implements ActionListener {
 			defendTextField.setText(defend);
 			moneyTextField.setText(money);
 
+			for (PropertyValueEnum one : PropertyValueEnum.values()) {
+				int propertyIdx = one.getPropertyIndex();
+				int iType = one.getM_iType();
+				int iIdx = one.getM_iIndex();
+				
+				String value = save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).getM_iValue() + "";
+				propertyTextFields[propertyIdx].setText(value);
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
