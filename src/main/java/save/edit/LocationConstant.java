@@ -228,4 +228,12 @@ public class LocationConstant {
 	public final static int SIGN_LABEL_Y = 420;
 	public final static int SIGN_LABEL_W = 190;
 	public final static int SIGN_LABEL_H = 30;
+	
+	
+	//----------------------功法面板
+	public final static int BACK_BTN_X = 0;
+	public final static int BACK_BTN_Y = 0;
+	public final static int BACK_BTN_W = 190;
+	public final static int BACK_BTN_H = 30;
+	
 }

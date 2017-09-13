@@ -14,13 +14,19 @@ public class EditFrame extends JFrame {
 	public EditFrame() {
 		super("侠客风云传存档修改器");
 		setThisFrame();
-		setPanel();
+		setEditPanel();
+		setGongFaPanel();
 		this.setResizable(false);
 	}
 
-	private void setPanel() {
-		EditPanel panel = new EditPanel();
-		this.add(panel);
+	private void setGongFaPanel() {
+		GongFaPanel gongFaPanel = PanelManager.getGongFaPanel();
+		this.add(gongFaPanel);
+	}
+
+	private void setEditPanel() {
+		EditPanel editPanel = PanelManager.getEditPanel();
+		this.add(editPanel);
 	}
 
 	private void setThisFrame() {

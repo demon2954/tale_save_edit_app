@@ -11,6 +11,7 @@ import save.edit.LocationConstant;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.LoadListener;
 import save.edit.listener.SaveListener;
+import save.edit.listener.ToGongFaListener;
 
 public class EditPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -226,6 +227,7 @@ public class EditPanel extends JPanel {
 	private void setEditButton() {
 		jianfaBtn.setBounds(LocationConstant.JIANFA_BTN_X, LocationConstant.JIANFA_BTN_Y, LocationConstant.JIANFA_BTN_W,
 				LocationConstant.JIANFA_BTN_H);
+		jianfaBtn.addActionListener(new ToGongFaListener());
 		this.add(jianfaBtn);
 		daofaBtn.setBounds(LocationConstant.DAOFA_BTN_X, LocationConstant.DAOFA_BTN_Y, LocationConstant.DAOFA_BTN_W,
 				LocationConstant.DAOFA_BTN_H);
