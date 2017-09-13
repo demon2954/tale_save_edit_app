@@ -58,7 +58,10 @@ public enum PropertyValueEnum {
 	public int getM_iIndex() {
 		return m_iIndex;
 	}
-
+	/**
+	 * 编辑框的下标
+	 * @return
+	 */
 	public int getPropertyIndex() {
 		return propertyIndex;
 	}

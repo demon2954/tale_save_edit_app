@@ -1,0 +1,77 @@
+package save.edit.listener;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+
+import javax.swing.JTextField;
+
+import save.edit.Global;
+import save.edit.data.PropertyValueEnum;
+import save.edit.model.SaveModel;
+import save.edit.model.constant.GroupsNodeEnum;
+import save.edit.write.WriteSaveData;
+
+public class SaveListener implements ActionListener {
+	private JTextField hpTextField;// HP文本
+	private JTextField mpTextField;// MP文本
+	private JTextField attackTextField;// 攻击力文本
+	private JTextField defendTextField;// 防御力文本
+	private JTextField moneyTextField;// 金钱文本
+	private JTextField[] propertyTextFields;// 属性文本数组
+
+	public void actionPerformed(ActionEvent event) {
+		int hp = Integer.parseInt(hpTextField.getText());
+		int mp = Integer.parseInt(mpTextField.getText());
+		int attack = Integer.parseInt(attackTextField.getText());
+		int defend = Integer.parseInt(defendTextField.getText());
+		int money = Integer.parseInt(moneyTextField.getText());
+		Integer[] propertyValues = new Integer[propertyTextFields.length];
+		for (int i = 0; i < propertyTextFields.length; i++) {
+			propertyValues[i] = Integer.parseInt(propertyTextFields[i].getText());
+		}
+		
+		SaveModel save = Global.getSave();
+		save.setM_iAttack(attack);
+		save.setM_iDefendConter(defend);
+		save.setM_iMoney(money);
+		
+		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iValue(hp);
+		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iMax(hp);
+		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iValue(mp);
+		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(mp);
+		
+		
+		for (PropertyValueEnum one : PropertyValueEnum.values()) {
+			int iType = one.getM_iType();
+			int iIdx = one.getM_iIndex();
+			int propertyIdx = one.getPropertyIndex();
+
+			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx)
+					.setM_iValue(Integer.parseInt(propertyTextFields[propertyIdx].getText()));
+
+			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx)
+					.setM_iMax(Integer.parseInt(propertyTextFields[propertyIdx].getText()));
+		}
+		
+		WriteSaveData write = new WriteSaveData();
+		try {
+			write.write(save);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println();
+	}
+
+	public SaveListener(JTextField hpTextField, JTextField mpTextField, JTextField attackTextField,
+			JTextField defendTextField, JTextField moneyTextField, JTextField[] propertyTextFields) {
+		super();
+		this.hpTextField = hpTextField;
+		this.mpTextField = mpTextField;
+		this.attackTextField = attackTextField;
+		this.defendTextField = defendTextField;
+		this.moneyTextField = moneyTextField;
+		this.propertyTextFields = propertyTextFields;
+	}
+
+}

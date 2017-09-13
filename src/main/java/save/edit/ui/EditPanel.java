@@ -10,6 +10,7 @@ import javax.swing.JTextField;
 import save.edit.LocationConstant;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.LoadListener;
+import save.edit.listener.SaveListener;
 
 public class EditPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -246,6 +247,8 @@ public class EditPanel extends JPanel {
 		this.add(friendBtn);
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W,
 				LocationConstant.SAVE_BTN_H);
+		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField,
+				moneyTextField, propertyTextFields));
 		this.add(saveBtn);
 
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W,
