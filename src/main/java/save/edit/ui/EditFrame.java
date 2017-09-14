@@ -6,7 +6,7 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
-import save.edit.LocationConstant;
+import save.edit.constant.LocationConstant;
 
 public class EditFrame extends JFrame {
 	private static final long serialVersionUID = 1L;

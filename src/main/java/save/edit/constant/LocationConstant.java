@@ -1,4 +1,4 @@
-package save.edit;
+package save.edit.constant;
 
 /**
  * 组建位置常量
@@ -231,9 +231,12 @@ public class LocationConstant {
 	
 	
 	//----------------------功法面板
-	public final static int BACK_BTN_X = 0;
+	public final static int BACK_BTN_X = 580;
 	public final static int BACK_BTN_Y = 0;
-	public final static int BACK_BTN_W = 190;
+	public final static int BACK_BTN_W = 60;
 	public final static int BACK_BTN_H = 30;
+	
+	public final static int CHECK_BOX_W = 120;
+	public final static int CHECK_BOX_H = 30;
 	
 }

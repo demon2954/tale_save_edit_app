@@ -1,6 +1,6 @@
 package save.edit.data;
 
-import save.edit.LocationConstant;
+import save.edit.constant.LocationConstant;
 
 public enum PropertyValueEnum {
 	WUXUE(0, 1, LocationConstant.PROPERTIES_INDEX_WUXUE, 500), //

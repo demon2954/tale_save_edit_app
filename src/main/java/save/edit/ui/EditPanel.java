@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import save.edit.LocationConstant;
+import save.edit.constant.LocationConstant;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.LoadListener;
 import save.edit.listener.SaveListener;
@@ -227,22 +227,27 @@ public class EditPanel extends JPanel {
 	private void setEditButton() {
 		jianfaBtn.setBounds(LocationConstant.JIANFA_BTN_X, LocationConstant.JIANFA_BTN_Y, LocationConstant.JIANFA_BTN_W,
 				LocationConstant.JIANFA_BTN_H);
-		jianfaBtn.addActionListener(new ToGongFaListener());
+		jianfaBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_JIANFA));
 		this.add(jianfaBtn);
 		daofaBtn.setBounds(LocationConstant.DAOFA_BTN_X, LocationConstant.DAOFA_BTN_Y, LocationConstant.DAOFA_BTN_W,
 				LocationConstant.DAOFA_BTN_H);
+		daofaBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_DAOFA));
 		this.add(daofaBtn);
 		quanzhangBtn.setBounds(LocationConstant.QUANZHANG_BTN_X, LocationConstant.QUANZHANG_BTN_Y,
 				LocationConstant.QUANZHANG_BTN_W, LocationConstant.QUANZHANG_BTN_H);
+		quanzhangBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_QUANZHANG));
 		this.add(quanzhangBtn);
 		zhifaBtn.setBounds(LocationConstant.ZHIFA_BTN_X, LocationConstant.ZHIFA_BTN_Y, LocationConstant.ZHIFA_BTN_W,
 				LocationConstant.ZHIFA_BTN_H);
+		zhifaBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_ZHIFA));
 		this.add(zhifaBtn);
 		tuifaBtn.setBounds(LocationConstant.TUIFA_BTN_X, LocationConstant.TUIFA_BTN_Y, LocationConstant.TUIFA_BTN_W,
 				LocationConstant.TUIFA_BTN_H);
+		tuifaBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_TUIFA));
 		this.add(tuifaBtn);
 		xinfaBtn.setBounds(LocationConstant.XINFA_BTN_X, LocationConstant.XINFA_BTN_Y, LocationConstant.XINFA_BTN_W,
 				LocationConstant.XINFA_BTN_H);
+		xinfaBtn.addActionListener(new ToGongFaListener(CheckBoxManager.CB_XINFA));
 		this.add(xinfaBtn);
 		friendBtn.setBounds(LocationConstant.FRIEND_BTN_X, LocationConstant.FRIEND_BTN_Y, LocationConstant.FRIEND_BTN_W,
 				LocationConstant.FRIEND_BTN_H);

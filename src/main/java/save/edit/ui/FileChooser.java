@@ -6,7 +6,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import save.edit.LocationConstant;
+import save.edit.constant.LocationConstant;
 
 public class FileChooser extends JFileChooser {
 	private static final long serialVersionUID = 1L;
