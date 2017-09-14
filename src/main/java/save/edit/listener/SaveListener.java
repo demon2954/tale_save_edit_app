@@ -37,21 +37,36 @@ public class SaveListener implements ActionListener {
 		save.setM_iMoney(money);
 		
 		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iValue(hp);
-		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iMax(hp);
+		if (hp > 9999) {
+			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iMax(hp);
+		} else {
+			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iMax(9999);
+		}
+		
 		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iValue(mp);
-		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(mp);
+
+		if (mp > 9999) {
+			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(mp);
+		} else {
+			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(9999);
+		}
 		
 		
 		for (PropertyValueEnum one : PropertyValueEnum.values()) {
 			int iType = one.getM_iType();
 			int iIdx = one.getM_iIndex();
 			int propertyIdx = one.getPropertyIndex();
+			int iMax = one.getM_iMax();
+			
+			int value = Integer.parseInt(propertyTextFields[propertyIdx].getText());
 
-			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx)
-					.setM_iValue(Integer.parseInt(propertyTextFields[propertyIdx].getText()));
+			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iValue(value);
 
-			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx)
-					.setM_iMax(Integer.parseInt(propertyTextFields[propertyIdx].getText()));
+			if (value > iMax) {
+				save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iMax(value);
+			} else {
+				save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iMax(iMax);
+			}
 		}
 		
 		WriteSaveData write = new WriteSaveData();
