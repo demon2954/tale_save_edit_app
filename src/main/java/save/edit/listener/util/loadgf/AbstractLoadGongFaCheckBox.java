@@ -1,4 +1,4 @@
-package save.edit.listener.util;
+package save.edit.listener.util.loadgf;
 
 import save.edit.model.martial.MartialID;
 

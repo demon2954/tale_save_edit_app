@@ -3,13 +3,22 @@ package save.edit.listener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 import save.edit.Global;
+import save.edit.data.GongFaNode;
 import save.edit.data.PropertyValueEnum;
+import save.edit.listener.util.savegf.AbstractSaveGongFaCheckBox;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
+import save.edit.model.martial.MartialID;
+import save.edit.model.routine.PlayerNeigongNode;
+import save.edit.model.routine.PlayerRoutineNode;
+import save.edit.ui.CheckBoxManager;
 import save.edit.write.WriteSaveData;
 
 public class SaveListener implements ActionListener {
@@ -68,6 +77,8 @@ public class SaveListener implements ActionListener {
 				save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iMax(iMax);
 			}
 		}
+
+		saveGongFa(save);
 		
 		WriteSaveData write = new WriteSaveData();
 		try {
@@ -76,6 +87,39 @@ public class SaveListener implements ActionListener {
 			e.printStackTrace();
 		}
 		System.out.println();
+	}
+
+	private void saveGongFa(SaveModel save) {
+		List<PlayerRoutineNode> routineNodeList = new ArrayList<PlayerRoutineNode>();// 功法列表
+		List<PlayerNeigongNode> neigongNodeList = new ArrayList<PlayerNeigongNode>();// 内功列表
+		List<MartialID> martialIDList = save.getM_MartialIDList();// 技艺书列表
+		
+		AbstractSaveGongFaCheckBox saveDaofaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.daofaType);
+		saveDaofaCB.saveGongFa(routineNodeList);
+		saveDaofaCB.saveMartialID(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveJianfaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.jianfaType);
+		saveJianfaCB.saveGongFa(routineNodeList);
+		saveJianfaCB.saveMartialID(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveTuifaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.tuifaType);
+		saveTuifaCB.saveGongFa(routineNodeList);
+		saveTuifaCB.saveMartialID(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveQuanzhangCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.quanzhangType);
+		saveQuanzhangCB.saveGongFa(routineNodeList);
+		saveQuanzhangCB.saveMartialID(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveZhifaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.zhifaType);
+		saveZhifaCB.saveGongFa(routineNodeList);
+		saveZhifaCB.saveMartialID(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveXinfaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.neigongType);
+		saveXinfaCB.saveNeiGong(neigongNodeList);
+		saveXinfaCB.saveMartialID(martialIDList);
+		
+		save.setM_PlayerRoutineNodeList(routineNodeList);
+		save.setM_PlayerNeigongNodeList(neigongNodeList);
 	}
 
 	public SaveListener(JTextField hpTextField, JTextField mpTextField, JTextField attackTextField,

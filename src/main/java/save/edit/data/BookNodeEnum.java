@@ -6,7 +6,7 @@ package save.edit.data;
  * @author zone
  *
  */
-public enum BookNode {
+public enum BookNodeEnum {
 	逍遥心法(18, 20001, 18, "逍遥心法", "逍遥心法乃是逍遥谷武学的根基，共有十重。每次修练皆可提升[FF7700]气血与内力[-]。另外，如果在战斗中运行此功体，则可以[FF7700]恢复少量气血与内力[-]。",
 			"NeigongImage02", "60001"), //
 	东方宝典(18, 20003, 18, "东方宝典", "上乘的内功心法宝典，修练后内力大增。在战斗中运行这个功体，可以大幅[FF7700]提高气血与内力的恢复效果[-]，并使[FF7700]周遭两格内同伴的命中率提高[-]。",
@@ -92,7 +92,7 @@ public enum BookNode {
 	private String m_strBookImage;
 	private String m_sValueLink;
 	
-	private BookNode(int m_iType, int m_iID, int m_iAbilityType, String m_strAbilityID, String m_strBookMsg,
+	private BookNodeEnum(int m_iType, int m_iID, int m_iAbilityType, String m_strAbilityID, String m_strBookMsg,
 			String m_strBookImage, String m_sValueLink) {
 		this.m_iType = m_iType;
 		this.m_iID = m_iID;

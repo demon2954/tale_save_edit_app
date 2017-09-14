@@ -5,7 +5,7 @@ package save.edit.data;
  * @author zone
  *
  */
-public enum NeiGongNode {
+public enum NeiGongNodeEnum {
 	逍遥心法(60001, "逍遥心法", "NeigongImage22", "NeigongImage02"), //
 	东方宝典(60003, "东方宝典", "NeigongImage24", "NeigongImage04"), //
 	天龙八部功(60005, "天龙八部功", "NeigongImage26", "NeigongImage06"), //
@@ -21,7 +21,7 @@ public enum NeiGongNode {
 	private String m_strStatusImage;
 	private String m_strSelectImage;
 
-	private NeiGongNode(int m_iNeigongID, String m_strNeigongName, String m_strStatusImage, String m_strSelectImage) {
+	private NeiGongNodeEnum(int m_iNeigongID, String m_strNeigongName, String m_strStatusImage, String m_strSelectImage) {
 		this.m_iNeigongID = m_iNeigongID;
 		this.m_strNeigongName = m_strNeigongName;
 		this.m_strStatusImage = m_strStatusImage;

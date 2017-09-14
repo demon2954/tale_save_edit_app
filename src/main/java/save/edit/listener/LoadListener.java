@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 import save.edit.Global;
 import save.edit.constant.LocationConstant;
 import save.edit.data.PropertyValueEnum;
-import save.edit.listener.util.AbstractLoadGongFaCheckBox;
+import save.edit.listener.util.loadgf.AbstractLoadGongFaCheckBox;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.model.martial.MartialID;
