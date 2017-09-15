@@ -50,7 +50,7 @@ public enum PropertyValueEnum {
 		this.m_iType = m_iType;
 		this.m_iIndex = m_iIndex;
 		this.propertyIndex = propertyIndex;
-		this.m_iMax = propertyIndex;
+		this.m_iMax = m_iMax;
 	}
 
 	public int getM_iType() {

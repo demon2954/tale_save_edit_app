@@ -22,14 +22,15 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveNeiGong(List<PlayerNeigongNode> neigongNodeList) {
-		JCheckBox[] zhiFaCheckBoxs = CheckBoxManager.getZhiFaCheckBoxs();
+		JCheckBox[] xinFaCheckBoxs = CheckBoxManager.getXinFaCheckBoxs();
 		
-		for (int i = 0; i < zhiFaCheckBoxs.length; i++) {
-			JCheckBox one = zhiFaCheckBoxs[i];
+		for (int i = 0; i < xinFaCheckBoxs.length; i++) {
+			JCheckBox one = xinFaCheckBoxs[i];
 			if (one.isSelected()) {
-				PlayerNeigongNode neigongNode = new PlayerNeigongNode();
+				PlayerNeigongNode neigongNode = null;
 				switch (i) {
 				case CheckBoxManager.逍遥心法_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -40,6 +41,7 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.东方宝典_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -48,9 +50,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.东方宝典.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.东方宝典.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.天龙八部功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -59,9 +61,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.天龙八部功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.天龙八部功.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.金雁功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -70,9 +72,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.金雁功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.金雁功.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.虎啸功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -81,9 +83,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.虎啸功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.虎啸功.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.五毒赤焰功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -92,9 +94,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.五毒赤焰功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.五毒赤焰功.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.禅宗莲华功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -103,9 +105,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.禅宗莲华功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.禅宗莲华功.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
-					neigongNodeList.add(neigongNode);
 					break;
 				case CheckBoxManager.小无相功_idx:
+					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
 					neigongNode.setM_iExp(1);
 					neigongNode.setM_iLV(10);
@@ -113,7 +115,6 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strNeigongName(NeiGongNodeEnum.小无相功.getM_strNeigongName());
 					neigongNode.setM_strSelectImage(NeiGongNodeEnum.小无相功.getM_strSelectImage());
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.小无相功.getM_strStatusImage());
-					neigongNodeList.add(neigongNode);
 					neigongNodeList.add(neigongNode);
 					break;
 				default:
@@ -125,28 +126,27 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveMartialID(List<MartialID> martialIDList) {
-		MartialID daofaMartialID = null;
+		MartialID tuifaMartialID = null;
 		if (null != martialIDList && martialIDList.size() > 0) {
 			for (MartialID one : martialIDList) {
 				if (one.getM_iType() == neigongType) {
-					daofaMartialID = one;
+					tuifaMartialID = one;
 					break;
 				}
 			}
 		}
 		List<BookNode> m_BookNodeList = new ArrayList<BookNode>();
-		if (daofaMartialID == null) {
-			daofaMartialID = new MartialID();
-			daofaMartialID.setM_IDList(new ArrayList<ID>());
-			daofaMartialID.setM_iType(neigongType);
-			daofaMartialID.setM_BookNodeList(m_BookNodeList);
-			martialIDList.add(daofaMartialID);
+		if (tuifaMartialID == null) {
+			tuifaMartialID = new MartialID();
+			tuifaMartialID.setM_IDList(new ArrayList<ID>());
+			tuifaMartialID.setM_iType(neigongType);
+			tuifaMartialID.setM_BookNodeList(m_BookNodeList);
 		}
 
-		JCheckBox[] daoFaCheckBoxs = CheckBoxManager.getDaoFaCheckBoxs();
+		JCheckBox[] xinFaCheckBoxs = CheckBoxManager.getXinFaCheckBoxs();
 		BookNode bookNode = null;
-		for (int i = 0; i < daoFaCheckBoxs.length; i++) {
-			JCheckBox one = daoFaCheckBoxs[i];
+		for (int i = 0; i < xinFaCheckBoxs.length; i++) {
+			JCheckBox one = xinFaCheckBoxs[i];
 			if (one.isSelected()) {
 				switch (i) {
 				case CheckBoxManager.逍遥心法_idx:
@@ -241,6 +241,9 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					break;
 				}
 			}
+		}
+		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+			martialIDList.add(tuifaMartialID);
 		}
 	}
 }

@@ -79,7 +79,6 @@ public class SaveDaoFaCB extends AbstractSaveGongFaCheckBox {
 			daofaMartialID.setM_IDList(new ArrayList<ID>());
 			daofaMartialID.setM_iType(daofaType);
 			daofaMartialID.setM_BookNodeList(m_BookNodeList);
-			martialIDList.add(daofaMartialID);
 		}
 
 		JCheckBox[] daoFaCheckBoxs = CheckBoxManager.getDaoFaCheckBoxs();
@@ -125,6 +124,9 @@ public class SaveDaoFaCB extends AbstractSaveGongFaCheckBox {
 					break;
 				}
 			}
+		}
+		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+			martialIDList.add(daofaMartialID);
 		}
 	}
 }

@@ -6,11 +6,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JCheckBox;
 import javax.swing.JTextField;
 
 import save.edit.Global;
-import save.edit.data.GongFaNode;
 import save.edit.data.PropertyValueEnum;
 import save.edit.listener.util.savegf.AbstractSaveGongFaCheckBox;
 import save.edit.model.SaveModel;
@@ -18,7 +16,6 @@ import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.model.martial.MartialID;
 import save.edit.model.routine.PlayerNeigongNode;
 import save.edit.model.routine.PlayerRoutineNode;
-import save.edit.ui.CheckBoxManager;
 import save.edit.write.WriteSaveData;
 
 public class SaveListener implements ActionListener {
@@ -42,7 +39,7 @@ public class SaveListener implements ActionListener {
 		
 		SaveModel save = Global.getSave();
 		save.setM_iAttack(attack);
-		save.setM_iDefendConter(defend);
+		save.setM_iDefense(defend);
 		save.setM_iMoney(money);
 		
 		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.HP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.HP.getIndex()).setM_iValue(hp);
@@ -117,9 +114,13 @@ public class SaveListener implements ActionListener {
 		AbstractSaveGongFaCheckBox saveXinfaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.neigongType);
 		saveXinfaCB.saveNeiGong(neigongNodeList);
 		saveXinfaCB.saveMartialID(martialIDList);
-		
-		save.setM_PlayerRoutineNodeList(routineNodeList);
-		save.setM_PlayerNeigongNodeList(neigongNodeList);
+
+		if (routineNodeList.size() > 0) {
+			save.setM_PlayerRoutineNodeList(routineNodeList);
+		}
+		if (neigongNodeList.size() > 0) {
+			save.setM_PlayerNeigongNodeList(neigongNodeList);
+		}
 	}
 
 	public SaveListener(JTextField hpTextField, JTextField mpTextField, JTextField attackTextField,

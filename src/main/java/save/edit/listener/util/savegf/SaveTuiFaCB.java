@@ -64,22 +64,21 @@ public class SaveTuiFaCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveMartialID(List<MartialID> martialIDList) {
-		MartialID daofaMartialID = null;
+		MartialID tuifaMartialID = null;
 		if (null != martialIDList && martialIDList.size() > 0) {
 			for (MartialID one : martialIDList) {
 				if (one.getM_iType() == tuifaType) {
-					daofaMartialID = one;
+					tuifaMartialID = one;
 					break;
 				}
 			}
 		}
 		List<BookNode> m_BookNodeList = new ArrayList<BookNode>();
-		if (daofaMartialID == null) {
-			daofaMartialID = new MartialID();
-			daofaMartialID.setM_IDList(new ArrayList<ID>());
-			daofaMartialID.setM_iType(tuifaType);
-			daofaMartialID.setM_BookNodeList(m_BookNodeList);
-			martialIDList.add(daofaMartialID);
+		if (tuifaMartialID == null) {
+			tuifaMartialID = new MartialID();
+			tuifaMartialID.setM_IDList(new ArrayList<ID>());
+			tuifaMartialID.setM_iType(tuifaType);
+			tuifaMartialID.setM_BookNodeList(m_BookNodeList);
 		}
 
 		JCheckBox[] tuiFaCheckBoxs = CheckBoxManager.getTuiFaCheckBoxs();
@@ -125,6 +124,9 @@ public class SaveTuiFaCB extends AbstractSaveGongFaCheckBox {
 					break;
 				}
 			}
+		}
+		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+			martialIDList.add(tuifaMartialID);
 		}
 	}
 }
