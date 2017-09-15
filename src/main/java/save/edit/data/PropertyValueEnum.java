@@ -39,6 +39,7 @@ public enum PropertyValueEnum {
 	DIAOYU(3, 2, LocationConstant.PROPERTIES_INDEX_DIAOYU, 100), //
 	DALIE(3, 1, LocationConstant.PROPERTIES_INDEX_DALIE, 100), //
 	JIUYI(4, 6, LocationConstant.PROPERTIES_INDEX_JIUYI, 100), //
+	QIYI(4, 1, LocationConstant.PROPERTIES_INDEX_QIYI, 100), //
 	;
 
 	private int m_iType;

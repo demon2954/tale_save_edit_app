@@ -9,7 +9,7 @@ public class LocationConstant {
 	/**	窗口宽 */
 	public final static int FRAME_SIZE_WIDTH = 640;
 	/**	窗口高 */
-	public final static int FRAME_SIZE_HEIGHT = 480;
+	public final static int FRAME_SIZE_HEIGHT = 510;
 	
 	/** 选择文件位置x */
 	public final static int FILE_CHOOSER_X = 1;
@@ -111,7 +111,7 @@ public class LocationConstant {
 	// --------------------------------------------------
 	public final static String[] PROPERTIES_NAME = { "武学", "实战", "悟性", "道德", "名声", "轻功", "硬功", "软功", "耳功", "眼功", "拳掌",
 			"心法", "刀法", "指法", "棍法", "琴法", "剑法", "腿法", "短柄", "暗器", "炼丹", "采药", "茶道", "厨艺", "鉴定", "乐理", "书法", "毒术", "挖矿",
-			"花卉", "医术", "打铁", "绘画", "钓鱼", "打猎", "酒艺" };
+			"花卉", "医术", "打铁", "绘画", "钓鱼", "打猎", "酒艺", "棋艺" };
 	
 	public final static int PROPERTIES_COUNT = PROPERTIES_NAME.length;
 	public final static int PROPERTIES_LABEL_START_X = 3;//
@@ -159,6 +159,7 @@ public class LocationConstant {
 	public final static int PROPERTIES_INDEX_DIAOYU = 33;
 	public final static int PROPERTIES_INDEX_DALIE = 34;
 	public final static int PROPERTIES_INDEX_JIUYI = 35;
+	public final static int PROPERTIES_INDEX_QIYI = 36;
 
 	
 	// --------------------------------------------------
@@ -222,10 +223,30 @@ public class LocationConstant {
 	public final static int SAVE_BTN_Y = 227;
 	public final static int SAVE_BTN_W = 156;
 	public final static int SAVE_BTN_H = 30;
+	
+	public final static int XING_LABEL_X = 320;
+	public final static int XING_LABEL_Y = 260;
+	public final static int XING_LABEL_W = 30;
+	public final static int XING_LABEL_H = 30;
+	
+	public final static int XING_TEXT_X = 340;
+	public final static int XING_TEXT_Y = 260;
+	public final static int XING_TEXT_W = 53;
+	public final static int XING_TEXT_H = 30;
+	
+	public final static int MING_LABEL_X = 400;
+	public final static int MING_LABEL_Y = 260;
+	public final static int MING_LABEL_W = 30;
+	public final static int MING_LABEL_H = 30;
+	
+	public final static int MING_TEXT_X = 418;
+	public final static int MING_TEXT_Y = 260;
+	public final static int MING_TEXT_W = 53;
+	public final static int MING_TEXT_H = 30;
 	//-----------------------------------
 	
 	public final static int SIGN_LABEL_X = 450;
-	public final static int SIGN_LABEL_Y = 420;
+	public final static int SIGN_LABEL_Y = 430;
 	public final static int SIGN_LABEL_W = 190;
 	public final static int SIGN_LABEL_H = 30;
 	
@@ -236,7 +257,12 @@ public class LocationConstant {
 	public final static int BACK_BTN_W = 60;
 	public final static int BACK_BTN_H = 30;
 	
-	public final static int CHECK_BOX_W = 120;
+	public final static int ALL_BTN_X = 580;
+	public final static int ALL_BTN_Y = 40;
+	public final static int ALL_BTN_W = 60;
+	public final static int ALL_BTN_H = 30;
+	
+	public final static int CHECK_BOX_W = 110;
 	public final static int CHECK_BOX_H = 30;
 	
 }

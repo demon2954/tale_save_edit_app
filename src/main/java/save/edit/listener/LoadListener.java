@@ -8,22 +8,24 @@ import java.util.List;
 import javax.swing.JTextField;
 
 import save.edit.Global;
-import save.edit.constant.LocationConstant;
 import save.edit.data.PropertyValueEnum;
 import save.edit.listener.util.loadgf.AbstractLoadGongFaCheckBox;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.model.martial.MartialID;
 import save.edit.read.LoadSaveData;
+import save.edit.util.UnicodeUtils;
 
 public class LoadListener implements ActionListener {
-	private JTextField fileChooserBar = new JTextField();// 文件路径文本框
-	private JTextField hpTextField = new JTextField();// HP文本
-	private JTextField mpTextField = new JTextField();// MP文本
-	private JTextField attackTextField = new JTextField();// 攻击力文本
-	private JTextField defendTextField = new JTextField();// 防御力文本
-	private JTextField moneyTextField = new JTextField();// 金钱文本
-	private JTextField[] propertyTextFields = new JTextField[LocationConstant.PROPERTIES_COUNT];
+	private JTextField fileChooserBar;
+	private JTextField hpTextField;
+	private JTextField mpTextField;
+	private JTextField attackTextField;
+	private JTextField defendTextField;
+	private JTextField moneyTextField;
+	private JTextField[] propertyTextFields;
+	private JTextField xingText;
+	private JTextField mingText;
 
 	public void actionPerformed(ActionEvent arg0) {
 		String filePath = fileChooserBar.getText();
@@ -98,12 +100,22 @@ public class LoadListener implements ActionListener {
 		
 		AbstractLoadGongFaCheckBox loadDaoFaCB = AbstractLoadGongFaCheckBox.produce(daofaType);
 		loadDaoFaCB.dealMartialId(martialDaofa);
+
+		if (save.getM_strPlayerLastName().contains("\\u")) {
+			xingText.setText(UnicodeUtils.unicode2String(save.getM_strPlayerLastName()));
+		} else {
+			xingText.setText(save.getM_strPlayerLastName());
+		}
+		if (save.getM_strPlayerName().contains("\\u")) {
+			mingText.setText(UnicodeUtils.unicode2String(save.getM_strPlayerName()));
+		} else {
+			mingText.setText(save.getM_strPlayerName());
+		}
 	}
-	
 
 	public LoadListener(JTextField fileChooserBar, JTextField hpTextField, JTextField mpTextField,
 			JTextField attackTextField, JTextField defendTextField, JTextField moneyTextField,
-			JTextField[] propertyTextFields) {
+			JTextField[] propertyTextFields, JTextField xingText, JTextField mingText) {
 		super();
 		this.fileChooserBar = fileChooserBar;
 		this.hpTextField = hpTextField;
@@ -112,6 +124,7 @@ public class LoadListener implements ActionListener {
 		this.defendTextField = defendTextField;
 		this.moneyTextField = moneyTextField;
 		this.propertyTextFields = propertyTextFields;
+		this.xingText = xingText;
+		this.mingText = mingText;
 	}
-
 }

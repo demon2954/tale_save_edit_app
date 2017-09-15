@@ -1,6 +1,9 @@
 package save.edit.ui;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.FeatureDescriptor;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -9,7 +12,10 @@ import javax.swing.JTextField;
 
 import save.edit.constant.LocationConstant;
 import save.edit.listener.ChooseFileListener;
+import save.edit.listener.FriendFullListener;
 import save.edit.listener.LoadListener;
+import save.edit.listener.MaxListener;
+import save.edit.listener.MoneyListener;
 import save.edit.listener.SaveListener;
 import save.edit.listener.ToGongFaListener;
 
@@ -30,7 +36,7 @@ public class EditPanel extends JPanel {
 	private JTextField defendTextField = new JTextField();// 防御力文本
 	private JLabel moneyLabel = new JLabel("金钱");// 金钱标签
 	private JTextField moneyTextField = new JTextField();// 金钱文本
-	private JButton hpMpAttDefMaxBtn = new JButton("无敌");// 修改hp mp att def 按钮
+	private JButton maxBtn = new JButton("无敌");// 修改hp mp att def 按钮
 	private JButton moneyMaxBtn = new JButton("富翁");// 修改金钱按钮
 
 	private JLabel[] propertyLabels = new JLabel[LocationConstant.PROPERTIES_COUNT];
@@ -42,7 +48,7 @@ public class EditPanel extends JPanel {
 	private JButton zhifaBtn = new JButton("指法");// 指法
 	private JButton tuifaBtn = new JButton("腿法");// 腿法
 	private JButton xinfaBtn = new JButton("心法");// 心法
-	private JButton friendBtn = new JButton("好友");// 友好度
+	private JButton friendBtn = new JButton("魅力四射");// 友好度
 	private JButton saveBtn = new JButton("保存");// 保存
 
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
@@ -51,6 +57,11 @@ public class EditPanel extends JPanel {
 	private JButton qingongBtn = new JButton("琴功");// 琴功
 
 	private JLabel signLable = new JLabel();// 签名
+
+	private JLabel xingLibel = new JLabel("姓");
+	private JTextField xingText= new JTextField();
+	private JLabel mingLibel = new JLabel("名");
+	private JTextField mingText= new JTextField();
 
 	public EditPanel() {
 		setThisPanel();// 设置这个面板
@@ -71,9 +82,27 @@ public class EditPanel extends JPanel {
 		setMoneyMaxBtn();// 修改金钱按钮
 		setProperties();// 设置属性列表
 		setEditButton();// 设置按钮
+		setName();
 		setSignLable();// 设置签名
 
 		// setFileChoose();
+	}
+
+	private void setName() {
+		xingLibel.setForeground(Color.WHITE);
+		xingLibel.setBounds(LocationConstant.XING_LABEL_X, LocationConstant.XING_LABEL_Y, LocationConstant.XING_LABEL_W,
+				LocationConstant.XING_LABEL_H);
+		xingText.setBounds(LocationConstant.XING_TEXT_X, LocationConstant.XING_TEXT_Y, LocationConstant.XING_TEXT_W,
+				LocationConstant.XING_TEXT_H);
+		mingLibel.setForeground(Color.WHITE);
+		mingLibel.setBounds(LocationConstant.MING_LABEL_X, LocationConstant.MING_LABEL_Y, LocationConstant.MING_LABEL_W,
+				LocationConstant.MING_LABEL_H);
+		mingText.setBounds(LocationConstant.MING_TEXT_X, LocationConstant.MING_TEXT_Y, LocationConstant.MING_TEXT_W,
+				LocationConstant.MING_TEXT_H);
+		this.add(xingLibel);
+		this.add(xingText);
+		this.add(mingLibel);
+		this.add(mingText);
 	}
 
 	private void setSignLable() {
@@ -85,14 +114,16 @@ public class EditPanel extends JPanel {
 	}
 
 	private void setHpMpAttDefMaxBtn() {
-		hpMpAttDefMaxBtn.setBounds(LocationConstant.HP_MP_ATT_DEF_MAX_BTN_X, LocationConstant.HP_MP_ATT_DEF_MAX_BTN_Y,
+		maxBtn.setBounds(LocationConstant.HP_MP_ATT_DEF_MAX_BTN_X, LocationConstant.HP_MP_ATT_DEF_MAX_BTN_Y,
 				LocationConstant.HP_MP_ATT_DEF_MAX_BTN_WIDTH, LocationConstant.HP_MP_ATT_DEF_MAX_BTN_HEIGHT);
-		this.add(hpMpAttDefMaxBtn);
+		maxBtn.addActionListener(new MaxListener(propertyTextFields, hpTextField, mpTextField, attackTextField, defendTextField));
+		this.add(maxBtn);
 	}
 
 	private void setMoneyMaxBtn() {
 		moneyMaxBtn.setBounds(LocationConstant.MONEY_MAX_BTN_X, LocationConstant.MONEY_MAX_BTN_Y,
 				LocationConstant.MONEY_MAX_BTN_WIDTH, LocationConstant.MONEY_MAX_BTN_HEIGHT);
+		moneyMaxBtn.addActionListener(new MoneyListener(moneyTextField));
 		this.add(moneyMaxBtn);
 	}
 
@@ -165,7 +196,7 @@ public class EditPanel extends JPanel {
 		fileLoadBtn.setBounds(LocationConstant.FILE_LOAD_BTN_X, LocationConstant.FILE_LOAD_BTN_Y,
 				LocationConstant.FILE_LOAD_BTN_SIZE_WIDTH, LocationConstant.FILE_LOAD_BTN_SIZE_HEIGHT);
 		fileLoadBtn.addActionListener(new LoadListener(fileChooserBar, hpTextField, mpTextField, attackTextField,
-				defendTextField, moneyTextField, propertyTextFields));
+				defendTextField, moneyTextField, propertyTextFields, xingText, mingText));
 		this.add(fileLoadBtn);
 	}
 
@@ -194,7 +225,8 @@ public class EditPanel extends JPanel {
 	}
 
 	private void setProperties() {
-		int columnSize = LocationConstant.PROPERTIES_COUNT / 3;
+		int columnSize = LocationConstant.PROPERTIES_COUNT % 3 == 0 ? LocationConstant.PROPERTIES_COUNT / 3
+				: LocationConstant.PROPERTIES_COUNT / 3 + 1;
 		int propertyIdx = 0;
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < columnSize; j++) {
@@ -251,11 +283,12 @@ public class EditPanel extends JPanel {
 		this.add(xinfaBtn);
 		friendBtn.setBounds(LocationConstant.FRIEND_BTN_X, LocationConstant.FRIEND_BTN_Y, LocationConstant.FRIEND_BTN_W,
 				LocationConstant.FRIEND_BTN_H);
+		friendBtn.addActionListener(new FriendFullListener());
 		this.add(friendBtn);
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W,
 				LocationConstant.SAVE_BTN_H);
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField,
-				moneyTextField, propertyTextFields));
+				moneyTextField, propertyTextFields, xingText, mingText));
 		this.add(saveBtn);
 
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W,

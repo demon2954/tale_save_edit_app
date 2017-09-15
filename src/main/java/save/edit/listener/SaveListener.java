@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import save.edit.Global;
@@ -25,6 +26,9 @@ public class SaveListener implements ActionListener {
 	private JTextField defendTextField;// 防御力文本
 	private JTextField moneyTextField;// 金钱文本
 	private JTextField[] propertyTextFields;// 属性文本数组
+
+	private JTextField xingText;
+	private JTextField mingText;
 
 	public void actionPerformed(ActionEvent event) {
 		int hp = Integer.parseInt(hpTextField.getText());
@@ -50,14 +54,12 @@ public class SaveListener implements ActionListener {
 		}
 		
 		save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iValue(mp);
-
 		if (mp > 9999) {
 			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(mp);
 		} else {
 			save.getM_PropertyGroupsNodeList().get(GroupsNodeEnum.MP.getType()).getM_GroupsNodwList().get(GroupsNodeEnum.MP.getIndex()).setM_iMax(9999);
 		}
-		
-		
+
 		for (PropertyValueEnum one : PropertyValueEnum.values()) {
 			int iType = one.getM_iType();
 			int iIdx = one.getM_iIndex();
@@ -67,12 +69,12 @@ public class SaveListener implements ActionListener {
 			int value = Integer.parseInt(propertyTextFields[propertyIdx].getText());
 
 			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iValue(value);
-
 			if (value > iMax) {
 				save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iMax(value);
 			} else {
 				save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iMax(iMax);
 			}
+			save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).setM_iExp(160000);
 		}
 
 		saveGongFa(save);
@@ -83,7 +85,6 @@ public class SaveListener implements ActionListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println();
 	}
 
 	private void saveGongFa(SaveModel save) {
@@ -121,10 +122,14 @@ public class SaveListener implements ActionListener {
 		if (neigongNodeList.size() > 0) {
 			save.setM_PlayerNeigongNodeList(neigongNodeList);
 		}
+		
+		save.setM_strPlayerName(mingText.getText());
+		save.setM_strPlayerLastName(xingText.getText());
 	}
 
 	public SaveListener(JTextField hpTextField, JTextField mpTextField, JTextField attackTextField,
-			JTextField defendTextField, JTextField moneyTextField, JTextField[] propertyTextFields) {
+			JTextField defendTextField, JTextField moneyTextField, JTextField[] propertyTextFields, JTextField xingText,
+			JTextField mingText) {
 		super();
 		this.hpTextField = hpTextField;
 		this.mpTextField = mpTextField;
@@ -132,6 +137,8 @@ public class SaveListener implements ActionListener {
 		this.defendTextField = defendTextField;
 		this.moneyTextField = moneyTextField;
 		this.propertyTextFields = propertyTextFields;
+		this.xingText = xingText;
+		this.mingText = mingText;
 	}
 
 }

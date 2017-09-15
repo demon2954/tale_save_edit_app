@@ -3,6 +3,7 @@ package save.edit.ui;
 import javax.swing.JCheckBox;
 
 public class CheckBoxManager {
+	public static int CB_TYPE = 0;
 	public final static int CB_JIANFA = 1, CB_DAOFA = 2, CB_XINFA = 3, CB_QUANZHANG = 4, CB_ZHIFA = 5, CB_TUIFA = 6;
 	
 	private static String[] jianFa = { "逍遥剑法", "诸子剑法", "独孤九剑", "太王四神剑" };
@@ -107,6 +108,9 @@ public class CheckBoxManager {
 		}
 	}
 	
+	/**
+	 * @param type
+	 */
 	public static void setOneVisible(int type) {
 		switch (type) {
 		case CB_JIANFA:
@@ -142,5 +146,12 @@ public class CheckBoxManager {
 		default:
 			break;
 		}
+	}
+
+	public static int getCB_TYPE() {
+		return CB_TYPE;
+	}
+	public static void setCB_TYPE(int cB_TYPE) {
+		CB_TYPE = cB_TYPE;
 	}
 }

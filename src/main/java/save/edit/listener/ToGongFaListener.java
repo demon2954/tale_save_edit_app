@@ -19,6 +19,7 @@ public class ToGongFaListener implements ActionListener {
 		
 		CheckBoxManager.setAllUnVisible();
 		CheckBoxManager.setOneVisible(checkBoxType);
+		CheckBoxManager.setCB_TYPE(checkBoxType);
 	}
 
 	public ToGongFaListener(int checkBoxType) {

@@ -8,14 +8,18 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import save.edit.constant.LocationConstant;
+import save.edit.listener.AllCBListener;
 import save.edit.listener.BackListener;
 
 public class GongFaPanel extends JPanel {
+	public static int gongfaType = 0;
 	JButton backBtn = new JButton("返回");
+	JButton allBtn = new JButton("全选");
 
 	public GongFaPanel() {
 		setThisPanel();
 		setBackBtn();
+		setAllBtn();
 		setCheckBox();
 	}
 
@@ -131,10 +135,15 @@ public class GongFaPanel extends JPanel {
 	}
 
 	private void setBackBtn() {
-		backBtn.setBounds(LocationConstant.BACK_BTN_X, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W,
-				LocationConstant.BACK_BTN_H);
+		backBtn.setBounds(LocationConstant.BACK_BTN_X, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W, LocationConstant.BACK_BTN_H);
 		backBtn.addActionListener(new BackListener());
 		this.add(backBtn);
+	}
+
+	private void setAllBtn() {
+		allBtn.setBounds(LocationConstant.ALL_BTN_X, LocationConstant.ALL_BTN_Y, LocationConstant.ALL_BTN_W, LocationConstant.ALL_BTN_H);
+		allBtn.addActionListener(new AllCBListener());
+		this.add(allBtn);
 	}
 
 	private void setThisPanel() {
