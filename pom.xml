@@ -3,7 +3,16 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tale</groupId>
 	<artifactId>save.edit</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.1</version>
+	
+	<properties>  
+        <maven.compiler.source>1.8</maven.compiler.source>  
+        <maven.compiler.target>1.8</maven.compiler.target>  
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>  
+        <project.build.sourceEncoding>utf-8</project.build.sourceEncoding>  
+    </properties>  
+	
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
@@ -16,4 +25,24 @@
 			<version>2.5</version>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.5.5</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>save.edit.Main</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
