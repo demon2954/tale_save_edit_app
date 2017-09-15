@@ -245,8 +245,8 @@ public class LocationConstant {
 	public final static int MING_TEXT_H = 30;
 	//-----------------------------------
 	
-	public final static int SIGN_LABEL_X = 450;
-	public final static int SIGN_LABEL_Y = 430;
+	public final static int SIGN_LABEL_X = 455;
+	public final static int SIGN_LABEL_Y = 450;
 	public final static int SIGN_LABEL_W = 190;
 	public final static int SIGN_LABEL_H = 30;
 	

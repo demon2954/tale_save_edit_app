@@ -107,7 +107,7 @@ public class EditPanel extends JPanel {
 
 	private void setSignLable() {
 		signLable.setForeground(Color.red);
-		signLable.setText("Create by Zone. Version 1.0.0");
+		signLable.setText("Create by Zone. Version 1.0.1");
 		signLable.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W,
 				LocationConstant.SIGN_LABEL_H);
 		this.add(signLable);

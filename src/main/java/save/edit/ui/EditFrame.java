@@ -33,7 +33,15 @@ public class EditFrame extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double height = screenSize.getHeight();
 		double width = screenSize.getWidth();
-		Image iconImage = getToolkit().getImage(getClass().getResource("/img/logo/icon.jpg"));
+		
+		getClass().getResource("/resources/img/logo/icon.jpg");
+		
+		Image iconImage = null;
+		try {
+			iconImage = getToolkit().getImage(getClass().getResource("/resources/img/logo/icon.jpg"));
+		} catch (Exception e) {
+			iconImage = getToolkit().getImage(getClass().getResource("/img/logo/icon.jpg"));
+		}
 		this.setIconImage(iconImage);
 		
 		int x = ((int) width - LocationConstant.FRAME_SIZE_HEIGHT) / 2;
