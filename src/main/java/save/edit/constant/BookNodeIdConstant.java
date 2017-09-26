@@ -3,6 +3,7 @@ package save.edit.constant;
 public class BookNodeIdConstant {
 	public final static int 逍遥心法 = 20001;
 	public final static int 东方宝典 = 20003;
+	public final static int 残花宝鉴 = 20004;
 	public final static int 天龙八部功 = 20005;
 	public final static int 金雁功 = 20006;
 	public final static int 虎啸功 = 20007;

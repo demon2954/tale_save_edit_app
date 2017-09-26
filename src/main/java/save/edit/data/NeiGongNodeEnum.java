@@ -8,6 +8,7 @@ package save.edit.data;
 public enum NeiGongNodeEnum {
 	逍遥心法(60001, "逍遥心法", "NeigongImage22", "NeigongImage02"), //
 	东方宝典(60003, "东方宝典", "NeigongImage24", "NeigongImage04"), //
+	残花宝鉴(60004, "残花宝鉴", "NeigongImage25", "NeigongImage05"), //
 	天龙八部功(60005, "天龙八部功", "NeigongImage26", "NeigongImage06"), //
 	金雁功(60006, "金雁功", "NeigongImage27", "NeigongImage07"), //
 	虎啸功(60007, "虎啸功", "NeigongImage28", "NeigongImage08"), //

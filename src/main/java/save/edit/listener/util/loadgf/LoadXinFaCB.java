@@ -21,6 +21,9 @@ public class LoadXinFaCB extends AbstractLoadGongFaCheckBox {
 					case BookNodeIdConstant.东方宝典:
 						CheckBoxManager.getXinFaCheckBoxs()[CheckBoxManager.东方宝典_idx].setSelected(true);
 						break;
+					case BookNodeIdConstant.残花宝鉴:
+						CheckBoxManager.getXinFaCheckBoxs()[CheckBoxManager.残花宝鉴_idx].setSelected(true);
+						break;
 					case BookNodeIdConstant.天龙八部功:
 						CheckBoxManager.getXinFaCheckBoxs()[CheckBoxManager.天龙八部功_idx].setSelected(true);
 						break;

@@ -51,6 +51,17 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					neigongNode.setM_strStatusImage(NeiGongNodeEnum.东方宝典.getM_strStatusImage());
 					neigongNodeList.add(neigongNode);
 					break;
+				case CheckBoxManager.残花宝鉴_idx:
+					neigongNode = new PlayerNeigongNode();
+					neigongNode.setM_iAccumulationExp(100000);
+					neigongNode.setM_iExp(1);
+					neigongNode.setM_iLV(10);
+					neigongNode.setM_iNeigongID(NeiGongNodeEnum.残花宝鉴.getM_iNeigongID());
+					neigongNode.setM_strNeigongName(NeiGongNodeEnum.残花宝鉴.getM_strNeigongName());
+					neigongNode.setM_strSelectImage(NeiGongNodeEnum.残花宝鉴.getM_strSelectImage());
+					neigongNode.setM_strStatusImage(NeiGongNodeEnum.残花宝鉴.getM_strStatusImage());
+					neigongNodeList.add(neigongNode);
+					break;
 				case CheckBoxManager.天龙八部功_idx:
 					neigongNode = new PlayerNeigongNode();
 					neigongNode.setM_iAccumulationExp(100000);
@@ -169,6 +180,17 @@ public class SaveXinFaCB extends AbstractSaveGongFaCheckBox {
 					bookNode.setM_strBookImage(BookNodeEnum.东方宝典.getM_strBookImage());
 					bookNode.setM_strBookMsg(BookNodeEnum.东方宝典.getM_strBookMsg());
 					bookNode.setM_sValueLink(BookNodeEnum.东方宝典.getM_sValueLink());
+					m_BookNodeList.add(bookNode);
+					break;
+				case CheckBoxManager.残花宝鉴_idx:
+					bookNode = new BookNode();
+					bookNode.setM_iAbilityType(BookNodeEnum.残花宝鉴.getM_iAbilityType());
+					bookNode.setM_iID(BookNodeEnum.残花宝鉴.getM_iID());
+					bookNode.setM_iSkillful(0);
+					bookNode.setM_strAbilityID(BookNodeEnum.残花宝鉴.getM_strAbilityID());
+					bookNode.setM_strBookImage(BookNodeEnum.残花宝鉴.getM_strBookImage());
+					bookNode.setM_strBookMsg(BookNodeEnum.残花宝鉴.getM_strBookMsg());
+					bookNode.setM_sValueLink(BookNodeEnum.残花宝鉴.getM_sValueLink());
 					m_BookNodeList.add(bookNode);
 					break;
 				case CheckBoxManager.天龙八部功_idx:
