@@ -127,6 +127,15 @@ public class SaveTuiFaCB extends AbstractSaveGongFaCheckBox {
 		}
 		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
 			tuifaMartialID.setM_BookNodeList(m_BookNodeList);
+			int tuifaType = tuifaMartialID.getM_iType();
+
+			for (int i = 0; i < martialIDList.size(); i++) {
+				MartialID one = martialIDList.get(i);
+				if (one.getM_iType() == tuifaType) {
+					martialIDList.remove(i);
+				}
+			}
+
 			martialIDList.add(tuifaMartialID);
 		}
 	}

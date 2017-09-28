@@ -167,6 +167,15 @@ public class SaveZhiFaCB extends AbstractSaveGongFaCheckBox {
 		}
 		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
 			zhifaMartialID.setM_BookNodeList(m_BookNodeList);
+			int zhifaType = zhifaMartialID.getM_iType();
+
+			for (int i = 0; i < martialIDList.size(); i++) {
+				MartialID one = martialIDList.get(i);
+				if (one.getM_iType() == zhifaType) {
+					martialIDList.remove(i);
+				}
+			}
+
 			martialIDList.add(zhifaMartialID);
 		}
 	}

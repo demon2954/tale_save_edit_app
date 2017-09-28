@@ -127,6 +127,15 @@ public class SaveDaoFaCB extends AbstractSaveGongFaCheckBox {
 		}
 		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
 			daofaMartialID.setM_BookNodeList(m_BookNodeList);
+			int daofaType = daofaMartialID.getM_iType();
+
+			for (int i = 0; i < martialIDList.size(); i++) {
+				MartialID one = martialIDList.get(i);
+				if (one.getM_iType() == daofaType) {
+					martialIDList.remove(i);
+				}
+			}
+
 			martialIDList.add(daofaMartialID);
 		}
 	}

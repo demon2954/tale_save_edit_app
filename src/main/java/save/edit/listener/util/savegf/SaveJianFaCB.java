@@ -147,6 +147,15 @@ public class SaveJianFaCB extends AbstractSaveGongFaCheckBox {
 		}
 		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
 			jianfaMartialID.setM_BookNodeList(m_BookNodeList);
+			int jianfaType = jianfaMartialID.getM_iType();
+
+			for (int i = 0; i < martialIDList.size(); i++) {
+				MartialID one = martialIDList.get(i);
+				if (one.getM_iType() == jianfaType) {
+					martialIDList.remove(i);
+				}
+			}
+
 			martialIDList.add(jianfaMartialID);
 		}
 	}
