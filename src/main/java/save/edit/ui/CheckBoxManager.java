@@ -16,7 +16,7 @@ public class CheckBoxManager {
 	public final static int 逍遥剑法_idx = 0, 诸子剑法_idx = 1, 独孤九剑_idx = 2, 太王四神剑_idx = 3, jianFaEndIdx = 4;
 	public final static int 逍遥刀法_idx = 0, 无极刀法_idx = 1, 胡家刀法_idx = 2, daoFaEndIdx = 3;
 	public final static int 逍遥心法_idx = 0, 东方宝典_idx = 1, 天龙八部功_idx = 2, 金雁功_idx = 3, 虎啸功_idx = 4, 五毒赤焰功_idx = 5, 禅宗莲华功_idx = 6, 小无相功_idx = 7, 残花宝鉴_idx = 8, xinFaEndIdx = 9;
-	public final static int 逍遥拳法_idx = 0, 野球拳_idx = 1, 天山六阳掌_idx = 2, 醉拳_idx = 3, 摧魂腐心掌_idx = 4, 拜月七诀_idx = 5, 如来九印_idx = 6, 降龙十八掌_idx = 7, quanZhangEndIdx = 8;
+	public final static int 逍遥拳法_idx = 0, 野球拳_idx = 1, 天山六阳掌_idx = 2, 醉拳_idx = 3, 摧魂腐心掌_idx = 4, 拜月七诀_idx = 5, 降龙十八掌_idx = 6, 如来九印_idx = 7, quanZhangEndIdx = 8;
 	public final static int 一阳指_idx = 0, 九阴龙爪功_idx = 1, 飞瀑连环指_idx = 2, 六脉神剑_idx = 3, 逍遥指_idx = 4, zhiFaEndIdx = 5;
 	public final static int 佛山无影脚_idx = 0, 逍遥迷踪腿_idx = 1, 十二路镇魂腿_idx = 2, tuiFaEndIdx = 3;
 

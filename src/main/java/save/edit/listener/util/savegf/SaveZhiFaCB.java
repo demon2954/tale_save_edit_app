@@ -166,6 +166,7 @@ public class SaveZhiFaCB extends AbstractSaveGongFaCheckBox {
 			}
 		}
 		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+			zhifaMartialID.setM_BookNodeList(m_BookNodeList);
 			martialIDList.add(zhifaMartialID);
 		}
 	}
