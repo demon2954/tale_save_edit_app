@@ -33,6 +33,9 @@ public class LoadQuanZhangCB extends AbstractLoadGongFaCheckBox {
 					case BookNodeIdConstant.拜月七诀:
 						CheckBoxManager.getQuanZhangCheckBoxs()[CheckBoxManager.拜月七诀_idx].setSelected(true);
 						break;
+					case BookNodeIdConstant.降龙十八掌:
+						CheckBoxManager.getQuanZhangCheckBoxs()[CheckBoxManager.降龙十八掌_idx].setSelected(true);
+						break;
 					case BookNodeIdConstant.如来九印:
 						CheckBoxManager.getQuanZhangCheckBoxs()[CheckBoxManager.如来九印_idx].setSelected(true);
 						break;

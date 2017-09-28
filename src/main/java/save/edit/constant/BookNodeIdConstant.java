@@ -16,6 +16,7 @@ public class BookNodeIdConstant {
 	public final static int 醉拳 = 20104;
 	public final static int 摧魂腐心掌 = 20105;
 	public final static int 拜月七诀 = 20106;
+	public final static int 降龙十八掌 = 20107;
 	public final static int 如来九印 = 20108;
 	public final static int 一阳指 = 20201;
 	public final static int 九阴龙爪功 = 20202;

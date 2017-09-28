@@ -43,13 +43,22 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 					routineNodeList.add(yeqiu);
 					break;
 				case CheckBoxManager.天山六阳掌_idx:
-					PlayerRoutineNode hujia = new PlayerRoutineNode();
-					hujia.setM_iAccumulationExp(100000);
-					hujia.setM_iLV(10);
-					hujia.setM_iRoutineID(GongFaNode.天山六阳掌.getM_iRoutineID());
-					hujia.setM_iWearAmsType(GongFaNode.天山六阳掌.getM_iWearAmsType());
-					hujia.setM_strRoutineName(GongFaNode.天山六阳掌.getM_strRoutineName());
-					routineNodeList.add(hujia);
+					PlayerRoutineNode tianshan = new PlayerRoutineNode();
+					tianshan.setM_iAccumulationExp(100000);
+					tianshan.setM_iLV(10);
+					tianshan.setM_iRoutineID(GongFaNode.天山六阳掌.getM_iRoutineID());
+					tianshan.setM_iWearAmsType(GongFaNode.天山六阳掌.getM_iWearAmsType());
+					tianshan.setM_strRoutineName(GongFaNode.天山六阳掌.getM_strRoutineName());
+					routineNodeList.add(tianshan);
+					break;
+				case CheckBoxManager.降龙十八掌_idx:
+					PlayerRoutineNode xianglong = new PlayerRoutineNode();
+					xianglong.setM_iAccumulationExp(100000);
+					xianglong.setM_iLV(10);
+					xianglong.setM_iRoutineID(GongFaNode.降龙十八掌.getM_iRoutineID());
+					xianglong.setM_iWearAmsType(GongFaNode.降龙十八掌.getM_iWearAmsType());
+					xianglong.setM_strRoutineName(GongFaNode.降龙十八掌.getM_strRoutineName());
+					routineNodeList.add(xianglong);
 					break;
 				case CheckBoxManager.醉拳_idx:
 					PlayerRoutineNode zuiquan = new PlayerRoutineNode();
@@ -154,6 +163,17 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 					bookNode.setM_strBookImage(BookNodeEnum.天山六阳掌.getM_strBookImage());
 					bookNode.setM_strBookMsg(BookNodeEnum.天山六阳掌.getM_strBookMsg());
 					bookNode.setM_sValueLink(BookNodeEnum.天山六阳掌.getM_sValueLink());
+					m_BookNodeList.add(bookNode);
+					break;
+				case CheckBoxManager.降龙十八掌_idx:
+					bookNode = new BookNode();
+					bookNode.setM_iAbilityType(BookNodeEnum.降龙十八掌.getM_iAbilityType());
+					bookNode.setM_iID(BookNodeEnum.降龙十八掌.getM_iID());
+					bookNode.setM_iSkillful(0);
+					bookNode.setM_strAbilityID(BookNodeEnum.降龙十八掌.getM_strAbilityID());
+					bookNode.setM_strBookImage(BookNodeEnum.降龙十八掌.getM_strBookImage());
+					bookNode.setM_strBookMsg(BookNodeEnum.降龙十八掌.getM_strBookMsg());
+					bookNode.setM_sValueLink(BookNodeEnum.降龙十八掌.getM_sValueLink());
 					m_BookNodeList.add(bookNode);
 					break;
 				case CheckBoxManager.醉拳_idx:
