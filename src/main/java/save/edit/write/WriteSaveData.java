@@ -11,10 +11,10 @@ import save.edit.model.SaveModel;
 import save.edit.util.UnicodeUtils;
 
 public class WriteSaveData {
-	public void write(SaveModel save) throws IOException {
+	public void write(SaveModel save, String sourceFilePath) throws IOException {
 		Gson gson = new Gson();
 		String newSaveData = gson.toJson(save);
 		newSaveData = UnicodeUtils.toUnicode(newSaveData);
-		FileUtils.write(new File("d:/Save1.Save"), newSaveData, "UTF-8");
+		FileUtils.write(new File(sourceFilePath), newSaveData, "UTF-8");
 	}
 }

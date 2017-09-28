@@ -20,6 +20,7 @@ import save.edit.model.routine.PlayerRoutineNode;
 import save.edit.write.WriteSaveData;
 
 public class SaveListener implements ActionListener {
+	private JTextField fileChooserBar;// 文件路径文本
 	private JTextField hpTextField;// HP文本
 	private JTextField mpTextField;// MP文本
 	private JTextField attackTextField;// 攻击力文本
@@ -81,7 +82,8 @@ public class SaveListener implements ActionListener {
 		
 		WriteSaveData write = new WriteSaveData();
 		try {
-			write.write(save);
+			String sourceFilePath = fileChooserBar.getText();
+			write.write(save, sourceFilePath);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -129,7 +131,7 @@ public class SaveListener implements ActionListener {
 
 	public SaveListener(JTextField hpTextField, JTextField mpTextField, JTextField attackTextField,
 			JTextField defendTextField, JTextField moneyTextField, JTextField[] propertyTextFields, JTextField xingText,
-			JTextField mingText) {
+			JTextField mingText, JTextField fileChooserBar) {
 		super();
 		this.hpTextField = hpTextField;
 		this.mpTextField = mpTextField;
@@ -139,6 +141,7 @@ public class SaveListener implements ActionListener {
 		this.propertyTextFields = propertyTextFields;
 		this.xingText = xingText;
 		this.mingText = mingText;
+		this.fileChooserBar = fileChooserBar;
 	}
 
 }

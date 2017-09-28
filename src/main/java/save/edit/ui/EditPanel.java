@@ -285,7 +285,7 @@ public class EditPanel extends JPanel {
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W,
 				LocationConstant.SAVE_BTN_H);
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField,
-				moneyTextField, propertyTextFields, xingText, mingText));
+				moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
 		this.add(saveBtn);
 
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W,
