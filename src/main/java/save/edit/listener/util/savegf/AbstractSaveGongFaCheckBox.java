@@ -2,26 +2,26 @@ package save.edit.listener.util.savegf;
 
 import java.util.List;
 
+import save.edit.constant.Constant;
 import save.edit.model.martial.MartialID;
 import save.edit.model.routine.PlayerNeigongNode;
 import save.edit.model.routine.PlayerRoutineNode;
 
 public abstract class AbstractSaveGongFaCheckBox {
-	public static final int neigongType = 18, quanzhangType = 19, zhifaType = 20, tuifaType = 21, jianfaType = 22, daofaType = 23;
 
 	public static AbstractSaveGongFaCheckBox procuce(int type) {
 		switch (type) {
-		case neigongType:
+		case Constant.SKILL_TYPE_XINFA:
 			return new SaveXinFaCB();
-		case quanzhangType:
+		case Constant.SKILL_TYPE_QUANZHANG:
 			return new SaveQuanZhangCB();
-		case zhifaType:
+		case Constant.SKILL_TYPE_ZHIFA:
 			return new SaveZhiFaCB();
-		case tuifaType:
+		case Constant.SKILL_TYPE_TUIFA:
 			return new SaveTuiFaCB();
-		case jianfaType:
+		case Constant.SKILL_TYPE_JIANFA:
 			return new SaveJianFaCB();
-		case daofaType:
+		case Constant.SKILL_TYPE_DAOFA:
 			return new SaveDaoFaCB();
 		default:
 			break;

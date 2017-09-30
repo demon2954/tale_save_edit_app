@@ -8,17 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
+import save.edit.constant.Constant;
+
 /**
  * @auth zone
  * @date 2017-09-29
  */
 public class SkillManager {
-	private static int SKILL_TYPE_XINFA = 1;
-	private static int SKILL_TYPE_QUANZHANG = 2;
-	private static int SKILL_TYPE_ZHIFA = 3;
-	private static int SKILL_TYPE_JIANFA = 4;
-	private static int SKILL_TYPE_DAOFA = 5;
-	private static int SKILL_TYPE_TUIFA = 6;
 	
 	private static Properties namePro = null;
 	private static Properties detailPro = null;
@@ -58,27 +54,27 @@ public class SkillManager {
 	private static void init() {
 		String xinfaNames = namePro.getProperty("xinfa");
 		Map<String, SkillDetail> xinfaMap = makeSkill(xinfaNames, true);
-		skillMap.put(SKILL_TYPE_XINFA, xinfaMap);
+		skillMap.put(Constant.SKILL_TYPE_XINFA, xinfaMap);
 
 		String quanzhangNames = namePro.getProperty("quanzhang");
 		Map<String, SkillDetail> quanzhangMap = makeSkill(quanzhangNames, false);
-		skillMap.put(SKILL_TYPE_QUANZHANG, quanzhangMap);
+		skillMap.put(Constant.SKILL_TYPE_QUANZHANG, quanzhangMap);
 
 		String zhifaNames = namePro.getProperty("zhifa");
 		Map<String, SkillDetail> zhifaMap = makeSkill(zhifaNames, false);
-		skillMap.put(SKILL_TYPE_ZHIFA, zhifaMap);
+		skillMap.put(Constant.SKILL_TYPE_ZHIFA, zhifaMap);
 
 		String jianfaNames = namePro.getProperty("jianfa");
 		Map<String, SkillDetail> jianfaMap = makeSkill(jianfaNames, false);
-		skillMap.put(SKILL_TYPE_JIANFA, jianfaMap);
+		skillMap.put(Constant.SKILL_TYPE_JIANFA, jianfaMap);
 
 		String daofaNames = namePro.getProperty("daofa");
 		Map<String, SkillDetail> daofaMap = makeSkill(daofaNames, false);
-		skillMap.put(SKILL_TYPE_DAOFA, daofaMap);
+		skillMap.put(Constant.SKILL_TYPE_DAOFA, daofaMap);
 
 		String tuifaNames = namePro.getProperty("tuifa");
 		Map<String, SkillDetail> tuifaMap = makeSkill(tuifaNames, false);
-		skillMap.put(SKILL_TYPE_TUIFA, tuifaMap);
+		skillMap.put(Constant.SKILL_TYPE_TUIFA, tuifaMap);
 	}
 	
 	private static Map<String, SkillDetail> makeSkill(String skillName, boolean isXinfa) {
@@ -115,12 +111,7 @@ public class SkillManager {
 		return xinfaMap;
 	}
 
-	public static Map<Integer, Map<String, SkillDetail>> getMap() {
-		return skillMap;
-	}
-	
-	public static void main(String[] args) {
-		Map<Integer, Map<String, SkillDetail>> m = SkillManager.getMap();
-		System.out.println(m);
+	public static Map<String, SkillDetail> getGongFaMap(int skillType) {
+		return skillMap.get(skillType);
 	}
 }

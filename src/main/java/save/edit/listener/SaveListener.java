@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import save.edit.Global;
+import save.edit.constant.Constant;
 import save.edit.data.PropertyValueEnum;
 import save.edit.listener.util.savegf.AbstractSaveGongFaCheckBox;
 import save.edit.model.SaveModel;
@@ -94,27 +94,27 @@ public class SaveListener implements ActionListener {
 		List<PlayerNeigongNode> neigongNodeList = new ArrayList<PlayerNeigongNode>();// 内功列表
 		List<MartialID> martialIDList = save.getM_MartialIDList();// 技艺书列表
 		
-		AbstractSaveGongFaCheckBox saveDaofaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.daofaType);
+		AbstractSaveGongFaCheckBox saveDaofaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_DAOFA);
 		saveDaofaCB.saveGongFa(routineNodeList);
 		saveDaofaCB.saveMartialID(martialIDList);
 		
-		AbstractSaveGongFaCheckBox saveJianfaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.jianfaType);
+		AbstractSaveGongFaCheckBox saveJianfaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_JIANFA);
 		saveJianfaCB.saveGongFa(routineNodeList);
 		saveJianfaCB.saveMartialID(martialIDList);
 		
-		AbstractSaveGongFaCheckBox saveTuifaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.tuifaType);
+		AbstractSaveGongFaCheckBox saveTuifaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_TUIFA);
 		saveTuifaCB.saveGongFa(routineNodeList);
 		saveTuifaCB.saveMartialID(martialIDList);
 		
-		AbstractSaveGongFaCheckBox saveQuanzhangCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.quanzhangType);
+		AbstractSaveGongFaCheckBox saveQuanzhangCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_QUANZHANG);
 		saveQuanzhangCB.saveGongFa(routineNodeList);
 		saveQuanzhangCB.saveMartialID(martialIDList);
 		
-		AbstractSaveGongFaCheckBox saveZhifaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.zhifaType);
+		AbstractSaveGongFaCheckBox saveZhifaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_ZHIFA);
 		saveZhifaCB.saveGongFa(routineNodeList);
 		saveZhifaCB.saveMartialID(martialIDList);
 		
-		AbstractSaveGongFaCheckBox saveXinfaCB = AbstractSaveGongFaCheckBox.procuce(AbstractSaveGongFaCheckBox.neigongType);
+		AbstractSaveGongFaCheckBox saveXinfaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_XINFA);
 		saveXinfaCB.saveNeiGong(neigongNodeList);
 		saveXinfaCB.saveMartialID(martialIDList);
 

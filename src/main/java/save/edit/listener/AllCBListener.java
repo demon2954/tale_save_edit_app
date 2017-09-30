@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JCheckBox;
 
+import save.edit.constant.Constant;
 import save.edit.ui.CheckBoxManager;
 
 public class AllCBListener implements ActionListener {
@@ -12,22 +13,22 @@ public class AllCBListener implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JCheckBox[] cbs = null;
 		switch (CheckBoxManager.getCB_TYPE()) {
-		case CheckBoxManager.CB_DAOFA:
+		case Constant.SKILL_TYPE_DAOFA:
 			cbs = CheckBoxManager.getDaoFaCheckBoxs();
 			break;
-		case CheckBoxManager.CB_JIANFA:
+		case Constant.SKILL_TYPE_JIANFA:
 			cbs = CheckBoxManager.getJianFaCheckBoxs();
 			break;
-		case CheckBoxManager.CB_QUANZHANG:
+		case Constant.SKILL_TYPE_QUANZHANG:
 			cbs = CheckBoxManager.getQuanZhangCheckBoxs();
 			break;
-		case CheckBoxManager.CB_TUIFA:
+		case Constant.SKILL_TYPE_TUIFA:
 			cbs = CheckBoxManager.getTuiFaCheckBoxs();
 			break;
-		case CheckBoxManager.CB_XINFA:
+		case Constant.SKILL_TYPE_XINFA:
 			cbs = CheckBoxManager.getXinFaCheckBoxs();
 			break;
-		case CheckBoxManager.CB_ZHIFA:
+		case Constant.SKILL_TYPE_ZHIFA:
 			cbs = CheckBoxManager.getZhiFaCheckBoxs();
 			break;
 		default:
