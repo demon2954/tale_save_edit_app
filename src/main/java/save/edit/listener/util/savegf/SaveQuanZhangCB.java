@@ -79,7 +79,7 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 				m_BookNodeList.add(bookNode);
 			}
 		}
-		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+		if (m_BookNodeList != null) {
 			quanzhangMartialID.setM_BookNodeList(m_BookNodeList);
 			int quanzhangType = quanzhangMartialID.getM_iType();
 

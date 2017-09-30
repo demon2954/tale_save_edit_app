@@ -79,7 +79,7 @@ public class SaveTuiFaCB extends AbstractSaveGongFaCheckBox {
 				m_BookNodeList.add(bookNode);
 			}
 		}
-		if (m_BookNodeList != null && m_BookNodeList.size() > 0) {
+		if (m_BookNodeList != null) {
 			tuifaMartialID.setM_BookNodeList(m_BookNodeList);
 			int tuifaType = tuifaMartialID.getM_iType();
 

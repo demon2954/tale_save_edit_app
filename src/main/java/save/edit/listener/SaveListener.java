@@ -118,12 +118,8 @@ public class SaveListener implements ActionListener {
 		saveXinfaCB.saveNeiGong(neigongNodeList);
 		saveXinfaCB.saveMartialID(martialIDList);
 
-		if (routineNodeList.size() > 0) {
-			save.setM_PlayerRoutineNodeList(routineNodeList);
-		}
-		if (neigongNodeList.size() > 0) {
-			save.setM_PlayerNeigongNodeList(neigongNodeList);
-		}
+		save.setM_PlayerRoutineNodeList(routineNodeList);
+		save.setM_PlayerNeigongNodeList(neigongNodeList);
 		
 		save.setM_strPlayerName(mingText.getText());
 		save.setM_strPlayerLastName(xingText.getText());
