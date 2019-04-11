@@ -288,19 +288,21 @@ public class EditPanel extends JPanel {
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField,
 				moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
 		this.add(saveBtn);
-
+		duanbingBtn.setBounds(LocationConstant.DUANBING_BTN_X, LocationConstant.DUANBING_BTN_Y,
+				LocationConstant.DUANBING_BTN_W, LocationConstant.DUANBING_BTN_H);
+		duanbingBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_DUANBING));
+		this.add(duanbingBtn);
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W,
 				LocationConstant.GUNFA_BTN_H);
-		gunfaBtn.setEnabled(false);
+		gunfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_GUNFA));
 		this.add(gunfaBtn);
+		
+		
 		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W,
 				LocationConstant.ANQI_BTN_H);
 		anqiBtn.setEnabled(false);
 		this.add(anqiBtn);
-		duanbingBtn.setBounds(LocationConstant.DUANBING_BTN_X, LocationConstant.DUANBING_BTN_Y,
-				LocationConstant.DUANBING_BTN_W, LocationConstant.DUANBING_BTN_H);
-		duanbingBtn.setEnabled(false);
-		this.add(duanbingBtn);
+		
 		qingongBtn.setBounds(LocationConstant.QINGONG_BTN_X, LocationConstant.QINGONG_BTN_Y,
 				LocationConstant.QINGONG_BTN_W, LocationConstant.QINGONG_BTN_H);
 		qingongBtn.setEnabled(false);

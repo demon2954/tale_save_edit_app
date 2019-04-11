@@ -1,14 +1,8 @@
-package save.edit.model.backpack;
+package save.edit.model;
 
-/**
- * npc喜欢的东西
- * @author zone
- *
- */
-public class StrNpcLike {
+public class M_strNpcLike {
 	private int m_iNpcID;
 	private int m_iValue;
-	
 	public int getM_iNpcID() {
 		return m_iNpcID;
 	}

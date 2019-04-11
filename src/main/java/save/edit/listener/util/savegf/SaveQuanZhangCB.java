@@ -9,17 +9,17 @@ import javax.swing.JCheckBox;
 import save.edit.constant.Constant;
 import save.edit.data.SkillDetail;
 import save.edit.data.SkillManager;
-import save.edit.model.martial.BookNode;
-import save.edit.model.martial.ID;
-import save.edit.model.martial.MartialID;
-import save.edit.model.routine.PlayerNeigongNode;
-import save.edit.model.routine.PlayerRoutineNode;
+import save.edit.model.M_BookNodeList;
+//import save.edit.model.ID;
+import save.edit.model.M_MartialIDList;
+import save.edit.model.M_PlayerNeigongNodeList;
+import save.edit.model.M_PlayerRoutineNodeList;
 import save.edit.ui.CheckBoxManager;
 
 public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
-	public void saveGongFa(List<PlayerRoutineNode> routineNodeList) {
+	public void saveGongFa(List<M_PlayerRoutineNodeList> routineNodeList) {
 		JCheckBox[] quanZhangCheckBoxs = CheckBoxManager.getQuanZhangCheckBoxs();
 		
 		for (int i = 0; i < quanZhangCheckBoxs.length; i++) {
@@ -27,7 +27,7 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 			if (one.isSelected()) {
 				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_QUANZHANG);
 				SkillDetail skillDetail = skillMap.get(one.getText());
-				PlayerRoutineNode routineNode = new PlayerRoutineNode();
+				M_PlayerRoutineNodeList routineNode = new M_PlayerRoutineNodeList();
 				routineNode.setM_iAccumulationExp(100000);
 				routineNode.setM_iLV(10);
 				routineNode.setM_iRoutineID(skillDetail.getM_iRoutineID());
@@ -39,26 +39,26 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 	}
 
 	@Override
-	public void saveNeiGong(List<PlayerNeigongNode> neigongNodeList) {
+	public void saveNeiGong(List<M_PlayerNeigongNodeList> neigongNodeList) {
 	}
 
 	@Override
-	public void saveMartialID(List<MartialID> martialIDList) {
-		MartialID quanzhangMartialID = null;
+	public void saveM_MartialIDList(List<M_MartialIDList> martialIDList) {
+		M_MartialIDList quanzhangM_MartialIDList = null;
 		if (null != martialIDList && martialIDList.size() > 0) {
-			for (MartialID one : martialIDList) {
+			for (M_MartialIDList one : martialIDList) {
 				if (one.getM_iType() == Constant.SKILL_TYPE_QUANZHANG) {
-					quanzhangMartialID = one;
+					quanzhangM_MartialIDList = one;
 					break;
 				}
 			}
 		}
-		List<BookNode> m_BookNodeList = new ArrayList<BookNode>();
-		if (quanzhangMartialID == null) {
-			quanzhangMartialID = new MartialID();
-			quanzhangMartialID.setM_IDList(new ArrayList<ID>());
-			quanzhangMartialID.setM_iType(Constant.SKILL_TYPE_QUANZHANG);
-			quanzhangMartialID.setM_BookNodeList(m_BookNodeList);
+		List<M_BookNodeList> m_M_BookNodeListList = new ArrayList<M_BookNodeList>();
+		if (quanzhangM_MartialIDList == null) {
+			quanzhangM_MartialIDList = new M_MartialIDList();
+			quanzhangM_MartialIDList.setM_IDList(new ArrayList<String>());
+			quanzhangM_MartialIDList.setM_iType(Constant.SKILL_TYPE_QUANZHANG);
+			quanzhangM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
 		}
 
 		JCheckBox[] quanZhangCheckBoxs = CheckBoxManager.getQuanZhangCheckBoxs();
@@ -68,7 +68,7 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 			if (one.isSelected()) {
 				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_QUANZHANG);
 				SkillDetail skillDetail = skillMap.get(one.getText());
-				BookNode bookNode = new BookNode();
+				M_BookNodeList bookNode = new M_BookNodeList();
 				bookNode.setM_iAbilityType(skillDetail.getM_iAbilityType());
 				bookNode.setM_iID(skillDetail.getM_iID());
 				bookNode.setM_iSkillful(0);
@@ -76,21 +76,21 @@ public class SaveQuanZhangCB extends AbstractSaveGongFaCheckBox {
 				bookNode.setM_strBookImage(skillDetail.getM_strBookImage());
 				bookNode.setM_strBookMsg(skillDetail.getM_strBookMsg());
 				bookNode.setM_sValueLink(skillDetail.getM_sValueLink());
-				m_BookNodeList.add(bookNode);
+				m_M_BookNodeListList.add(bookNode);
 			}
 		}
-		if (m_BookNodeList != null) {
-			quanzhangMartialID.setM_BookNodeList(m_BookNodeList);
-			int quanzhangType = quanzhangMartialID.getM_iType();
+		if (m_M_BookNodeListList != null) {
+			quanzhangM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
+			int quanzhangType = quanzhangM_MartialIDList.getM_iType();
 
 			for (int i = 0; i < martialIDList.size(); i++) {
-				MartialID one = martialIDList.get(i);
+				M_MartialIDList one = martialIDList.get(i);
 				if (one.getM_iType() == quanzhangType) {
 					martialIDList.remove(i);
 				}
 			}
 
-			martialIDList.add(quanzhangMartialID);
+			martialIDList.add(quanzhangM_MartialIDList);
 		}
 	}
 }

@@ -30,6 +30,8 @@ public class GongFaPanel extends JPanel {
 		JCheckBox[] tuiFaCB = CheckBoxManager.getTuiFaCheckBoxs();
 		JCheckBox[] xinFaCB = CheckBoxManager.getXinFaCheckBoxs();
 		JCheckBox[] zhiFaCB = CheckBoxManager.getZhiFaCheckBoxs();
+		JCheckBox[] duanBingCB = CheckBoxManager.getDuanBingCheckBoxs();
+		JCheckBox[] gunFaCB = CheckBoxManager.getGunFaCheckBoxs();
 
 		int rowIdx = 1;
 		int colIdx = 0;
@@ -120,6 +122,40 @@ public class GongFaPanel extends JPanel {
 		colIdx = 0;
 		for (int i = 0; i < zhiFaCB.length; i++) {
 			JCheckBox one = zhiFaCB[i];
+			if (i % 5 == 0) {
+				rowIdx++;
+				colIdx = 1;
+			}
+			int x = (colIdx - 1) * LocationConstant.CHECK_BOX_W;
+			int y = (rowIdx - 1) * LocationConstant.CHECK_BOX_H;
+			one.setBounds(x, y, LocationConstant.CHECK_BOX_W, LocationConstant.CHECK_BOX_H);
+			one.setBackground(Color.BLACK);
+			one.setForeground(Color.WHITE);
+			this.add(one);
+			colIdx++;
+		}
+		
+		rowIdx = 1;
+		colIdx = 0;
+		for (int i = 0; i < duanBingCB.length; i++) {
+			JCheckBox one = duanBingCB[i];
+			if (i % 5 == 0) {
+				rowIdx++;
+				colIdx = 1;
+			}
+			int x = (colIdx - 1) * LocationConstant.CHECK_BOX_W;
+			int y = (rowIdx - 1) * LocationConstant.CHECK_BOX_H;
+			one.setBounds(x, y, LocationConstant.CHECK_BOX_W, LocationConstant.CHECK_BOX_H);
+			one.setBackground(Color.BLACK);
+			one.setForeground(Color.WHITE);
+			this.add(one);
+			colIdx++;
+		}
+		
+		rowIdx = 1;
+		colIdx = 0;
+		for (int i = 0; i < gunFaCB.length; i++) {
+			JCheckBox one = gunFaCB[i];
 			if (i % 5 == 0) {
 				rowIdx++;
 				colIdx = 1;

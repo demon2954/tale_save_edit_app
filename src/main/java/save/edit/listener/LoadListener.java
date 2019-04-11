@@ -12,7 +12,7 @@ import save.edit.data.PropertyValueEnum;
 import save.edit.listener.util.loadgf.LoadGongFaCheckBox;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
-import save.edit.model.martial.MartialID;
+import save.edit.model.M_MartialIDList;
 import save.edit.read.LoadSaveData;
 import save.edit.util.UnicodeUtils;
 
@@ -62,7 +62,7 @@ public class LoadListener implements ActionListener {
 	}
 	
 	private void loadGongFaCheckBox(SaveModel save) {
-		List<MartialID> martialIdList = save.getM_MartialIDList();
+		List<M_MartialIDList> martialIdList = save.getM_MartialIDList();
 		LoadGongFaCheckBox loadGongFaCheckBox = new LoadGongFaCheckBox();
 		loadGongFaCheckBox.dealMartialIds(martialIdList);
 
