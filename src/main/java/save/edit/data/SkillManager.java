@@ -83,6 +83,10 @@ public class SkillManager {
 		String gunfaNames = namePro.getProperty("gunfa");
 		Map<String, SkillDetail> gunfaMap = makeSkill(gunfaNames, false);
 		skillMap.put(Constant.SKILL_TYPE_GUNFA, gunfaMap);
+
+		String qingongNames = namePro.getProperty("qingong");
+		Map<String, SkillDetail> qingongMap = makeSkill(qingongNames, false);
+		skillMap.put(Constant.SKILL_TYPE_QINGONG, qingongMap);
 	}
 	
 	private static Map<String, SkillDetail> makeSkill(String skillName, boolean isXinfa) {

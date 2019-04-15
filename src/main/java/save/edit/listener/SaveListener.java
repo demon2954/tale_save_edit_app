@@ -117,6 +117,18 @@ public class SaveListener implements ActionListener {
 		AbstractSaveGongFaCheckBox saveXinfaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_XINFA);
 		saveXinfaCB.saveNeiGong(neigongNodeList);
 		saveXinfaCB.saveM_MartialIDList(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveDuanbingCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_DUANBING);
+		saveDuanbingCB.saveGongFa(routineNodeList);
+		saveDuanbingCB.saveM_MartialIDList(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveGunfaCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_GUNFA);
+		saveGunfaCB.saveGongFa(routineNodeList);
+		saveGunfaCB.saveM_MartialIDList(martialIDList);
+		
+		AbstractSaveGongFaCheckBox saveQinGongCB = AbstractSaveGongFaCheckBox.procuce(Constant.SKILL_TYPE_QINGONG);
+		saveQinGongCB.saveGongFa(routineNodeList);
+		saveQinGongCB.saveM_MartialIDList(martialIDList);
 
 		save.setM_PlayerRoutineNodeList(routineNodeList);
 		save.setM_PlayerNeigongNodeList(neigongNodeList);

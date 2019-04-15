@@ -26,6 +26,7 @@ public class CheckBoxManager {
 	private static JCheckBox[] tuiFaCheckBoxs = null;
 	private static JCheckBox[] duanBingCheckBoxs = null;
 	private static JCheckBox[] gunFaCheckBoxs = null;
+	private static JCheckBox[] qinGongCheckBoxs = null;
 
 	public static JCheckBox[] getJianFaCheckBoxs() {
 		if (null == jianFaCheckBoxs) {
@@ -131,6 +132,19 @@ public class CheckBoxManager {
 		return gunFaCheckBoxs;
 	}
 	
+	public static JCheckBox[] getQinGongCheckBoxs() {
+		if (null == qinGongCheckBoxs) {
+			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_QINGONG);
+			qinGongCheckBoxs = new JCheckBox[skillMap.size()];
+			Set<String> keySet = skillMap.keySet();
+			List<String> nameList = new ArrayList<String>(keySet);
+			for (int i = 0; i < nameList.size(); i++) {
+				qinGongCheckBoxs[i] = new JCheckBox(nameList.get(i));
+			}
+		}
+		return qinGongCheckBoxs;
+	}
+	
 	public static void setAllUnVisible() {
 		for (JCheckBox one : jianFaCheckBoxs) {
 			one.setVisible(false);
@@ -154,6 +168,9 @@ public class CheckBoxManager {
 			one.setVisible(false);
 		}
 		for (JCheckBox one : gunFaCheckBoxs) {
+			one.setVisible(false);
+		}
+		for (JCheckBox one : qinGongCheckBoxs) {
 			one.setVisible(false);
 		}
 	}
@@ -203,6 +220,11 @@ public class CheckBoxManager {
 				one.setVisible(true);
 			}
 			break;
+		case Constant.SKILL_TYPE_QINGONG:
+			for (JCheckBox one : qinGongCheckBoxs) {
+				one.setVisible(true);
+			}
+			break;
 		default:
 			break;
 		}
@@ -232,6 +254,7 @@ public class CheckBoxManager {
 		addAllCheckBoxMap(getTuiFaCheckBoxs(), Constant.SKILL_TYPE_TUIFA);
 		addAllCheckBoxMap(getDuanBingCheckBoxs(), Constant.SKILL_TYPE_DUANBING);
 		addAllCheckBoxMap(getGunFaCheckBoxs(), Constant.SKILL_TYPE_GUNFA);
+		addAllCheckBoxMap(getQinGongCheckBoxs(), Constant.SKILL_TYPE_QINGONG);
 	}
 	
 	private static void addAllCheckBoxMap(JCheckBox[] boxs, int type) {

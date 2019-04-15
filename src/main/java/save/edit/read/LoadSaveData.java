@@ -14,6 +14,7 @@ public class LoadSaveData {
 	public SaveModel loadDate(String fileName) throws IOException {
 		String speCode = "\\uFEFF";
 		String jsonData = FileUtils.readFileToString(new File(fileName), "UTF-8");
+//		System.out.println(jsonData);
 		Gson gson = new Gson();
 		SaveModel save = gson.fromJson(jsonData, SaveModel.class);
 		String newSaveData = UnicodeUtils.toUnicode(jsonData);

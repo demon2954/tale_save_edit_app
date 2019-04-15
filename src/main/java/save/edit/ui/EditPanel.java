@@ -297,15 +297,15 @@ public class EditPanel extends JPanel {
 		gunfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_GUNFA));
 		this.add(gunfaBtn);
 		
+		qingongBtn.setBounds(LocationConstant.QINGONG_BTN_X, LocationConstant.QINGONG_BTN_Y,
+				LocationConstant.QINGONG_BTN_W, LocationConstant.QINGONG_BTN_H);
+		qingongBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_QINGONG));
+		this.add(qingongBtn);
+		
 		
 		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W,
 				LocationConstant.ANQI_BTN_H);
 		anqiBtn.setEnabled(false);
 		this.add(anqiBtn);
-		
-		qingongBtn.setBounds(LocationConstant.QINGONG_BTN_X, LocationConstant.QINGONG_BTN_Y,
-				LocationConstant.QINGONG_BTN_W, LocationConstant.QINGONG_BTN_H);
-		qingongBtn.setEnabled(false);
-		this.add(qingongBtn);
 	}
 }

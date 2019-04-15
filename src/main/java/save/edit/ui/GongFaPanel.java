@@ -4,7 +4,6 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import save.edit.constant.LocationConstant;
@@ -32,6 +31,7 @@ public class GongFaPanel extends JPanel {
 		JCheckBox[] zhiFaCB = CheckBoxManager.getZhiFaCheckBoxs();
 		JCheckBox[] duanBingCB = CheckBoxManager.getDuanBingCheckBoxs();
 		JCheckBox[] gunFaCB = CheckBoxManager.getGunFaCheckBoxs();
+		JCheckBox[] qinGongCB = CheckBoxManager.getQinGongCheckBoxs();
 
 		int rowIdx = 1;
 		int colIdx = 0;
@@ -156,6 +156,23 @@ public class GongFaPanel extends JPanel {
 		colIdx = 0;
 		for (int i = 0; i < gunFaCB.length; i++) {
 			JCheckBox one = gunFaCB[i];
+			if (i % 5 == 0) {
+				rowIdx++;
+				colIdx = 1;
+			}
+			int x = (colIdx - 1) * LocationConstant.CHECK_BOX_W;
+			int y = (rowIdx - 1) * LocationConstant.CHECK_BOX_H;
+			one.setBounds(x, y, LocationConstant.CHECK_BOX_W, LocationConstant.CHECK_BOX_H);
+			one.setBackground(Color.BLACK);
+			one.setForeground(Color.WHITE);
+			this.add(one);
+			colIdx++;
+		}
+		
+		rowIdx = 1;
+		colIdx = 0;
+		for (int i = 0; i < qinGongCB.length; i++) {
+			JCheckBox one = qinGongCB[i];
 			if (i % 5 == 0) {
 				rowIdx++;
 				colIdx = 1;
