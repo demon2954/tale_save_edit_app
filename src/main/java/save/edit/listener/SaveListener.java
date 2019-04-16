@@ -6,14 +6,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 import save.edit.Global;
 import save.edit.constant.Constant;
 import save.edit.data.PropertyValueEnum;
+import save.edit.data.talent.TalentDetail;
+import save.edit.data.talent.TalentManager;
 import save.edit.listener.util.savegf.AbstractSaveGongFaCheckBox;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
+import save.edit.ui.TalentComboBoxManager;
 import save.edit.model.M_MartialIDList;
 import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.M_PlayerRoutineNodeList;
@@ -79,6 +83,7 @@ public class SaveListener implements ActionListener {
 		}
 
 		saveGongFa(save);
+		saveTalent(save);
 		
 		WriteSaveData write = new WriteSaveData();
 		try {
@@ -87,6 +92,24 @@ public class SaveListener implements ActionListener {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	private void saveTalent(SaveModel save) {
+		JComboBox<TalentDetail> talent1ComBox = TalentComboBoxManager.getTalentComBoxByType(1);
+		JComboBox<TalentDetail> talent2ComBox = TalentComboBoxManager.getTalentComBoxByType(2);
+		JComboBox<TalentDetail> talent3ComBox = TalentComboBoxManager.getTalentComBoxByType(3);
+
+		int talent1Idx = talent1ComBox.getSelectedIndex();
+		int talent2Idx = talent2ComBox.getSelectedIndex();
+		int talent3Idx = talent3ComBox.getSelectedIndex();
+
+		TalentDetail talent1 = TalentManager.getTalentByIdx(1, talent1Idx);
+		TalentDetail talent2 = TalentManager.getTalentByIdx(2, talent2Idx);
+		TalentDetail talent3 = TalentManager.getTalentByIdx(3, talent3Idx);
+
+		save.setM_iTalent1ID(talent1.getTalenID());
+		save.setM_iTalent2ID(talent2.getTalenID());
+		save.setM_iTalent3ID(talent3.getTalenID());
 	}
 
 	private void saveGongFa(SaveModel save) {

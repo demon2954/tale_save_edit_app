@@ -9,11 +9,13 @@ import javax.swing.JTextField;
 
 import save.edit.Global;
 import save.edit.data.PropertyValueEnum;
+import save.edit.data.talent.TalentManager;
 import save.edit.listener.util.loadgf.LoadGongFaCheckBox;
+import save.edit.model.M_MartialIDList;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
-import save.edit.model.M_MartialIDList;
 import save.edit.read.LoadSaveData;
+import save.edit.ui.TalentComboBoxManager;
 import save.edit.util.UnicodeUtils;
 
 public class LoadListener implements ActionListener {
@@ -50,17 +52,32 @@ public class LoadListener implements ActionListener {
 				int propertyIdx = one.getPropertyIndex();
 				int iType = one.getM_iType();
 				int iIdx = one.getM_iIndex();
-				
+
 				String value = save.getM_PropertyGroupsNodeList().get(iType).getM_GroupsNodwList().get(iIdx).getM_iValue() + "";
 				propertyTextFields[propertyIdx].setText(value);
 			}
-			
+
 			loadGongFaCheckBox(save);
+			loadTalent(save);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
+	private void loadTalent(SaveModel save) {
+		int m_iTalent1ID = save.getM_iTalent1ID();
+		int m_iTalent2ID = save.getM_iTalent2ID();
+		int m_iTalent3ID = save.getM_iTalent3ID();
+
+		int talent1Idx = TalentManager.getTalentIdx(1, m_iTalent1ID);
+		int talent2Idx = TalentManager.getTalentIdx(2, m_iTalent2ID);
+		int talent3Idx = TalentManager.getTalentIdx(3, m_iTalent3ID);
+		
+		TalentComboBoxManager.getTalentComBoxByType(1).setSelectedIndex(talent1Idx);
+		TalentComboBoxManager.getTalentComBoxByType(2).setSelectedIndex(talent2Idx);
+		TalentComboBoxManager.getTalentComBoxByType(3).setSelectedIndex(talent3Idx);
+	}
+
 	private void loadGongFaCheckBox(SaveModel save) {
 		List<M_MartialIDList> martialIdList = save.getM_MartialIDList();
 		LoadGongFaCheckBox loadGongFaCheckBox = new LoadGongFaCheckBox();
@@ -78,8 +95,7 @@ public class LoadListener implements ActionListener {
 		}
 	}
 
-	public LoadListener(JTextField fileChooserBar, JTextField hpTextField, JTextField mpTextField,
-			JTextField attackTextField, JTextField defendTextField, JTextField moneyTextField,
+	public LoadListener(JTextField fileChooserBar, JTextField hpTextField, JTextField mpTextField, JTextField attackTextField, JTextField defendTextField, JTextField moneyTextField,
 			JTextField[] propertyTextFields, JTextField xingText, JTextField mingText) {
 		super();
 		this.fileChooserBar = fileChooserBar;

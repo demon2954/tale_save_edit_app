@@ -44,21 +44,21 @@ public class SaveDuanBingCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveM_MartialIDList(List<M_MartialIDList> martialIDList) {
-		M_MartialIDList daofaM_MartialIDList = null;
+		M_MartialIDList duanbingM_MartialIDList = null;
 		if (null != martialIDList && martialIDList.size() > 0) {
 			for (M_MartialIDList one : martialIDList) {
 				if (one.getM_iType() == Constant.SKILL_TYPE_DUANBING) {
-					daofaM_MartialIDList = one;
+					duanbingM_MartialIDList = one;
 					break;
 				}
 			}
 		}
 		List<M_BookNodeList> m_M_BookNodeListList = new ArrayList<M_BookNodeList>();
-		if (daofaM_MartialIDList == null) {
-			daofaM_MartialIDList = new M_MartialIDList();
-			daofaM_MartialIDList.setM_IDList(new ArrayList<String>());
-			daofaM_MartialIDList.setM_iType(Constant.SKILL_TYPE_DUANBING);
-			daofaM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
+		if (duanbingM_MartialIDList == null) {
+			duanbingM_MartialIDList = new M_MartialIDList();
+			duanbingM_MartialIDList.setM_IDList(new ArrayList<String>());
+			duanbingM_MartialIDList.setM_iType(Constant.SKILL_TYPE_DUANBING);
+			duanbingM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
 		}
 
 		JCheckBox[] duanBingCheckBoxs = CheckBoxManager.getDuanBingCheckBoxs();
@@ -79,17 +79,17 @@ public class SaveDuanBingCB extends AbstractSaveGongFaCheckBox {
 			}
 		}
 		if (m_M_BookNodeListList != null) {
-			daofaM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
-			int daofaType = daofaM_MartialIDList.getM_iType();
+			duanbingM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
+			int duanbingType = duanbingM_MartialIDList.getM_iType();
 
 			for (int i = 0; i < martialIDList.size(); i++) {
 				M_MartialIDList one = martialIDList.get(i);
-				if (one.getM_iType() == daofaType) {
+				if (one.getM_iType() == duanbingType) {
 					martialIDList.remove(i);
 				}
 			}
 
-			martialIDList.add(daofaM_MartialIDList);
+			martialIDList.add(duanbingM_MartialIDList);
 		}
 	}
 }

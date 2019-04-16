@@ -16,7 +16,13 @@ public class EditFrame extends JFrame {
 		setThisFrame();
 		setEditPanel();
 		setGongFaPanel();
+		setTalentPanel();
 		this.setResizable(false);
+	}
+
+	private void setTalentPanel() {
+		TalentPanel talentPanel = PanelManager.getTalentPanel();
+		this.add(talentPanel);
 	}
 
 	private void setGongFaPanel() {

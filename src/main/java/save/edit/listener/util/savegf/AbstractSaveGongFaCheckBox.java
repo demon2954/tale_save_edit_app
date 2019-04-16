@@ -29,6 +29,8 @@ public abstract class AbstractSaveGongFaCheckBox {
 			return new SaveDuanBingCB();
 		case Constant.SKILL_TYPE_QINGONG:
 			return new SaveQinGongCB();
+		case Constant.SKILL_TYPE_ANQI:
+			return new SaveAnQiCB();
 		default:
 			break;
 		}

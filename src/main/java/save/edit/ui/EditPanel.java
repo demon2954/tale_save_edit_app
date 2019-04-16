@@ -2,19 +2,24 @@ package save.edit.ui;
 
 import java.awt.Color;
 
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
+import save.edit.data.talent.TalentDetail;
+import save.edit.data.talent.TalentManager;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.FriendFullListener;
 import save.edit.listener.LoadListener;
 import save.edit.listener.MaxListener;
 import save.edit.listener.MoneyListener;
 import save.edit.listener.SaveListener;
+import save.edit.listener.TalentViewListener;
 import save.edit.listener.ToGongFaListener;
 
 public class EditPanel extends JPanel {
@@ -54,13 +59,21 @@ public class EditPanel extends JPanel {
 	private JButton duanbingBtn = new JButton("短柄");// 短柄
 	private JButton qingongBtn = new JButton("琴功");// 琴功
 
-	private JLabel signLable = new JLabel();// 签名
+	private JLabel signLabel = new JLabel();// 签名
 
-	private JLabel xingLibel = new JLabel("姓");
+	private JLabel xingLabel = new JLabel("姓");
 	private JTextField xingText= new JTextField();
-	private JLabel mingLibel = new JLabel("名");
+	private JLabel mingLabel = new JLabel("名");
 	private JTextField mingText= new JTextField();
 
+	private JComboBox<TalentDetail> talent1ComBox = null;
+	private JComboBox<TalentDetail> talent2ComBox = null;
+	private JComboBox<TalentDetail> talent3ComBox = null;
+	
+	private JButton talent1Btn = new JButton("预览");
+	private JButton talent2Btn = new JButton("预览");
+	private JButton talent3Btn = new JButton("预览");
+	
 	public EditPanel() {
 		setThisPanel();// 设置这个面板
 		setFileChooserBar();// 设置文件路径文本框
@@ -81,34 +94,65 @@ public class EditPanel extends JPanel {
 		setProperties();// 设置属性列表
 		setEditButton();// 设置按钮
 		setName();
+		setTalent();
 		setSignLable();// 设置签名
 
 		// setFileChoose();
 	}
 
+	private void setTalent() {
+		TalentDetail[] talent1Names = TalentManager.getTalentByType(1);
+		TalentDetail[] talent2Names = TalentManager.getTalentByType(2);
+		TalentDetail[] talent3Names = TalentManager.getTalentByType(3);
+		
+		talent1ComBox = TalentComboBoxManager.getTalentComBoxByType(1);
+		talent1ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent1Names));
+		talent1ComBox.setBounds(LocationConstant.TALENT_COMBOX_1_X, LocationConstant.TALENT_COMBOX_1_Y, LocationConstant.TALENT_COMBOX_1_W, LocationConstant.TALENT_COMBOX_1_H);
+		this.add(talent1ComBox);
+		
+		talent2ComBox = TalentComboBoxManager.getTalentComBoxByType(2);
+		talent2ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent2Names));
+		talent2ComBox.setBounds(LocationConstant.TALENT_COMBOX_2_X, LocationConstant.TALENT_COMBOX_2_Y, LocationConstant.TALENT_COMBOX_2_W, LocationConstant.TALENT_COMBOX_2_H);
+		this.add(talent2ComBox);
+		
+		talent3ComBox = TalentComboBoxManager.getTalentComBoxByType(3);
+		talent3ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent3Names));
+		talent3ComBox.setBounds(LocationConstant.TALENT_COMBOX_3_X, LocationConstant.TALENT_COMBOX_3_Y, LocationConstant.TALENT_COMBOX_3_W, LocationConstant.TALENT_COMBOX_3_H);
+		this.add(talent3ComBox);
+		
+		talent1Btn.setBounds(LocationConstant.TALENT_BTN_1_X, LocationConstant.TALENT_BTN_1_Y, LocationConstant.TALENT_BTN_1_W, LocationConstant.TALENT_BTN_1_H);
+		talent1Btn.addActionListener(new TalentViewListener(1));
+		this.add(talent1Btn);
+		
+		talent2Btn.setBounds(LocationConstant.TALENT_BTN_2_X, LocationConstant.TALENT_BTN_2_Y, LocationConstant.TALENT_BTN_2_W, LocationConstant.TALENT_BTN_2_H);
+		talent2Btn.addActionListener(new TalentViewListener(2));
+		this.add(talent2Btn);
+		
+		talent3Btn.setBounds(LocationConstant.TALENT_BTN_3_X, LocationConstant.TALENT_BTN_3_Y, LocationConstant.TALENT_BTN_3_W, LocationConstant.TALENT_BTN_3_H);
+		talent3Btn.addActionListener(new TalentViewListener(3));
+		this.add(talent3Btn);
+	}
+
 	private void setName() {
-		xingLibel.setForeground(Color.WHITE);
-		xingLibel.setBounds(LocationConstant.XING_LABEL_X, LocationConstant.XING_LABEL_Y, LocationConstant.XING_LABEL_W,
-				LocationConstant.XING_LABEL_H);
-		xingText.setBounds(LocationConstant.XING_TEXT_X, LocationConstant.XING_TEXT_Y, LocationConstant.XING_TEXT_W,
-				LocationConstant.XING_TEXT_H);
-		mingLibel.setForeground(Color.WHITE);
-		mingLibel.setBounds(LocationConstant.MING_LABEL_X, LocationConstant.MING_LABEL_Y, LocationConstant.MING_LABEL_W,
-				LocationConstant.MING_LABEL_H);
-		mingText.setBounds(LocationConstant.MING_TEXT_X, LocationConstant.MING_TEXT_Y, LocationConstant.MING_TEXT_W,
-				LocationConstant.MING_TEXT_H);
-		this.add(xingLibel);
+		xingLabel.setForeground(Color.WHITE);
+		xingLabel.setBounds(LocationConstant.XING_LABEL_X, LocationConstant.XING_LABEL_Y, LocationConstant.XING_LABEL_W, LocationConstant.XING_LABEL_H);
+		xingText.setBounds(LocationConstant.XING_TEXT_X, LocationConstant.XING_TEXT_Y, LocationConstant.XING_TEXT_W, LocationConstant.XING_TEXT_H);
+		mingLabel.setForeground(Color.WHITE);
+		mingLabel.setBounds(LocationConstant.MING_LABEL_X, LocationConstant.MING_LABEL_Y, LocationConstant.MING_LABEL_W, LocationConstant.MING_LABEL_H);
+		mingText.setBounds(LocationConstant.MING_TEXT_X, LocationConstant.MING_TEXT_Y, LocationConstant.MING_TEXT_W, LocationConstant.MING_TEXT_H);
+
+		this.add(xingLabel);
 		this.add(xingText);
-		this.add(mingLibel);
+		this.add(mingLabel);
 		this.add(mingText);
 	}
 
 	private void setSignLable() {
-		signLable.setForeground(Color.red);
-		signLable.setText("Create by Zone. Version 1.0.1");
-		signLable.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W,
+		signLabel.setForeground(Color.red);
+		signLabel.setText("Create by Zone. Version 1.1.1");
+		signLabel.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W,
 				LocationConstant.SIGN_LABEL_H);
-		this.add(signLable);
+		this.add(signLabel);
 	}
 
 	private void setHpMpAttDefMaxBtn() {
@@ -305,7 +349,7 @@ public class EditPanel extends JPanel {
 		
 		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W,
 				LocationConstant.ANQI_BTN_H);
-		anqiBtn.setEnabled(false);
+		anqiBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_ANQI));
 		this.add(anqiBtn);
 	}
 }

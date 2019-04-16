@@ -220,7 +220,7 @@ public class LocationConstant {
 	public final static int FRIEND_BTN_H = 30;
 
 	public final static int SAVE_BTN_X = 475;
-	public final static int SAVE_BTN_Y = 227;
+	public final static int SAVE_BTN_Y = 427;
 	public final static int SAVE_BTN_W = 156;
 	public final static int SAVE_BTN_H = 30;
 	
@@ -243,6 +243,36 @@ public class LocationConstant {
 	public final static int MING_TEXT_Y = 260;
 	public final static int MING_TEXT_W = 53;
 	public final static int MING_TEXT_H = 30;
+
+	public final static int TALENT_COMBOX_1_X = 315;
+	public final static int TALENT_COMBOX_1_Y = 293;
+	public final static int TALENT_COMBOX_1_W = 80;
+	public final static int TALENT_COMBOX_1_H = 30;
+
+	public final static int TALENT_COMBOX_2_X = 315;
+	public final static int TALENT_COMBOX_2_Y = 326;
+	public final static int TALENT_COMBOX_2_W = 80;
+	public final static int TALENT_COMBOX_2_H = 30;
+
+	public final static int TALENT_COMBOX_3_X = 315;
+	public final static int TALENT_COMBOX_3_Y = 359;
+	public final static int TALENT_COMBOX_3_W = 80;
+	public final static int TALENT_COMBOX_3_H = 30;
+	
+	public final static int TALENT_BTN_1_X = 412;
+	public final static int TALENT_BTN_1_Y = 293;
+	public final static int TALENT_BTN_1_W = 60;
+	public final static int TALENT_BTN_1_H = 30;
+	
+	public final static int TALENT_BTN_2_X = 412;
+	public final static int TALENT_BTN_2_Y = 326;
+	public final static int TALENT_BTN_2_W = 60;
+	public final static int TALENT_BTN_2_H = 30;
+	
+	public final static int TALENT_BTN_3_X = 412;
+	public final static int TALENT_BTN_3_Y = 359;
+	public final static int TALENT_BTN_3_W = 60;
+	public final static int TALENT_BTN_3_H = 30;
 	//-----------------------------------
 	
 	public final static int SIGN_LABEL_X = 455;

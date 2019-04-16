@@ -40,6 +40,9 @@ public class AllCBListener implements ActionListener {
 		case Constant.SKILL_TYPE_GUNFA:
 			cbs = CheckBoxManager.getGunFaCheckBoxs();
 			break;
+		case Constant.SKILL_TYPE_ANQI:
+			cbs = CheckBoxManager.getAnQiCheckBoxs();
+			break;
 		default:
 			break;
 		}

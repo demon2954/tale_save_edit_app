@@ -32,6 +32,7 @@ public class GongFaPanel extends JPanel {
 		JCheckBox[] duanBingCB = CheckBoxManager.getDuanBingCheckBoxs();
 		JCheckBox[] gunFaCB = CheckBoxManager.getGunFaCheckBoxs();
 		JCheckBox[] qinGongCB = CheckBoxManager.getQinGongCheckBoxs();
+		JCheckBox[] anQiCB = CheckBoxManager.getAnQiCheckBoxs();
 
 		int rowIdx = 1;
 		int colIdx = 0;
@@ -173,6 +174,23 @@ public class GongFaPanel extends JPanel {
 		colIdx = 0;
 		for (int i = 0; i < qinGongCB.length; i++) {
 			JCheckBox one = qinGongCB[i];
+			if (i % 5 == 0) {
+				rowIdx++;
+				colIdx = 1;
+			}
+			int x = (colIdx - 1) * LocationConstant.CHECK_BOX_W;
+			int y = (rowIdx - 1) * LocationConstant.CHECK_BOX_H;
+			one.setBounds(x, y, LocationConstant.CHECK_BOX_W, LocationConstant.CHECK_BOX_H);
+			one.setBackground(Color.BLACK);
+			one.setForeground(Color.WHITE);
+			this.add(one);
+			colIdx++;
+		}
+		
+		rowIdx = 1;
+		colIdx = 0;
+		for (int i = 0; i < anQiCB.length; i++) {
+			JCheckBox one = anQiCB[i];
 			if (i % 5 == 0) {
 				rowIdx++;
 				colIdx = 1;

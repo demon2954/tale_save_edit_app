@@ -16,16 +16,16 @@ import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.M_PlayerRoutineNodeList;
 import save.edit.ui.CheckBoxManager;
 
-public class SaveGunFaCB extends AbstractSaveGongFaCheckBox {
+public class SaveAnQiCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveGongFa(List<M_PlayerRoutineNodeList> routineNodeList) {
-		JCheckBox[] gunFaCheckBoxs = CheckBoxManager.getGunFaCheckBoxs();
+		JCheckBox[] anQiCheckBoxs = CheckBoxManager.getAnQiCheckBoxs();
 		
-		for (int i = 0; i < gunFaCheckBoxs.length; i++) {
-			JCheckBox one = gunFaCheckBoxs[i];
+		for (int i = 0; i < anQiCheckBoxs.length; i++) {
+			JCheckBox one = anQiCheckBoxs[i];
 			if (one.isSelected()) {
-				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_GUNFA);
+				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_ANQI);
 				SkillDetail skillDetail = skillMap.get(one.getText());
 				M_PlayerRoutineNodeList routineNode = new M_PlayerRoutineNodeList();
 				routineNode.setM_iAccumulationExp(100000);
@@ -44,28 +44,28 @@ public class SaveGunFaCB extends AbstractSaveGongFaCheckBox {
 
 	@Override
 	public void saveM_MartialIDList(List<M_MartialIDList> martialIDList) {
-		M_MartialIDList gunfaM_MartialIDList = null;
+		M_MartialIDList anqiM_MartialIDList = null;
 		if (null != martialIDList && martialIDList.size() > 0) {
 			for (M_MartialIDList one : martialIDList) {
-				if (one.getM_iType() == Constant.SKILL_TYPE_GUNFA) {
-					gunfaM_MartialIDList = one;
+				if (one.getM_iType() == Constant.SKILL_TYPE_ANQI) {
+					anqiM_MartialIDList = one;
 					break;
 				}
 			}
 		}
 		List<M_BookNodeList> m_M_BookNodeListList = new ArrayList<M_BookNodeList>();
-		if (gunfaM_MartialIDList == null) {
-			gunfaM_MartialIDList = new M_MartialIDList();
-			gunfaM_MartialIDList.setM_IDList(new ArrayList<String>());
-			gunfaM_MartialIDList.setM_iType(Constant.SKILL_TYPE_GUNFA);
-			gunfaM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
+		if (anqiM_MartialIDList == null) {
+			anqiM_MartialIDList = new M_MartialIDList();
+			anqiM_MartialIDList.setM_IDList(new ArrayList<String>());
+			anqiM_MartialIDList.setM_iType(Constant.SKILL_TYPE_ANQI);
+			anqiM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
 		}
 
-		JCheckBox[] gunFaCheckBoxs = CheckBoxManager.getGunFaCheckBoxs();
-		for (int i = 0; i < gunFaCheckBoxs.length; i++) {
-			JCheckBox one = gunFaCheckBoxs[i];
+		JCheckBox[] anQiCheckBoxs = CheckBoxManager.getAnQiCheckBoxs();
+		for (int i = 0; i < anQiCheckBoxs.length; i++) {
+			JCheckBox one = anQiCheckBoxs[i];
 			if (one.isSelected()) {
-				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_GUNFA);
+				Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_ANQI);
 				SkillDetail skillDetail = skillMap.get(one.getText());
 				M_BookNodeList bookNode = new M_BookNodeList();
 				bookNode.setM_iAbilityType(skillDetail.getM_iAbilityType());
@@ -79,17 +79,17 @@ public class SaveGunFaCB extends AbstractSaveGongFaCheckBox {
 			}
 		}
 		if (m_M_BookNodeListList != null) {
-			gunfaM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
-			int gunfaType = gunfaM_MartialIDList.getM_iType();
+			anqiM_MartialIDList.setM_BookNodeList(m_M_BookNodeListList);
+			int anqiType = anqiM_MartialIDList.getM_iType();
 
 			for (int i = 0; i < martialIDList.size(); i++) {
 				M_MartialIDList one = martialIDList.get(i);
-				if (one.getM_iType() == gunfaType) {
+				if (one.getM_iType() == anqiType) {
 					martialIDList.remove(i);
 				}
 			}
 
-			martialIDList.add(gunfaM_MartialIDList);
+			martialIDList.add(anqiM_MartialIDList);
 		}
 	}
 }
