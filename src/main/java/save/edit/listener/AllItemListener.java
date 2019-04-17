@@ -35,10 +35,8 @@ public class AllItemListener implements ActionListener {
 		for (M_BackpackItem existedItem : m_BackpackList) {
 			if (!packIdSet.contains(existedItem.get_ItemDataNode().getM_iItemID())) {
 				_ItemDataNode item = existedItem.get_ItemDataNode();
-
-				if (item.getM_iItemStack() + item.getM_iMixStack() > 10) {
-					existedItem.setM_iAmount(999);
-				}
+				int amount = ItemManager.getAmount(item);
+				existedItem.setM_iAmount(amount);
 				trueBackPackList.add(existedItem);
 			}
 		}

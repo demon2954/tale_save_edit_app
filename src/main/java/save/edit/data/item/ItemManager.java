@@ -5,9 +5,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.Set;
 
 import save.edit.model.M_BackpackItem;
 import save.edit.model.M_ItmeEffectNodeList;
@@ -18,6 +21,8 @@ import save.edit.model._ItemDataNode;
 public class ItemManager {
 	private static Properties itemPro = null;
 	private static List<M_BackpackItem> m_BackpackList = new ArrayList<M_BackpackItem>();
+	
+	private static Set<Long> _999ItemIdSet = new HashSet<Long>(Arrays.asList(100187L));
 
 	static {
 		loadProperty();
@@ -169,16 +174,85 @@ public class ItemManager {
 
 				M_BackpackItem item = new M_BackpackItem();
 				item.set_ItemDataNode(itemData);
-				
-				int m_iAmount = 1;
-				if (iItemStack + iMixStack > 10) {
-					m_iAmount = 999;
-				}
+
+				int m_iAmount = getAmount(itemData);
+
 				item.setM_iAmount(m_iAmount);
 				
 				m_BackpackList.add(item);
 			}
 		}
+	}
+
+	/**
+	 * 根据物品类型获取数量
+	 * @param iItemStack
+	 * @param iMixStack
+	 * @param itemData
+	 * @return
+	 */
+	public static int getAmount(_ItemDataNode itemData) {
+		int iItemStack = itemData.getM_iItemStack();
+		int iMixStack = itemData.getM_iMixStack();
+		
+		int m_iAmount = 1;
+		if (iItemStack + iMixStack > 100) {
+			m_iAmount = 999;
+		}
+
+		if (itemData.getM_iItemKind() == 5) {
+			m_iAmount = 999;
+		}
+
+		if (itemData.getM_iItemKind() == 4) {
+			m_iAmount = 1;
+		}
+		
+		if (itemData.getM_iAmsType() > 0 && itemData.getM_iAmsType() != 8) {// 暗器以外的武器
+			m_iAmount = 1;
+		}
+		if (itemData.getM_iAmsType() == 8) {// 暗器
+			m_iAmount = 999;
+		}
+
+		if (itemData.getM_iItemType() == 4) {// 武器图
+			m_iAmount = 1;
+		}
+
+		if (itemData.getM_iItemType() == 3) {// 佩戴装备
+			m_iAmount = 1;
+		}
+
+		if (itemData.getM_iItemType() == 2) {// 防具
+			m_iAmount = 1;
+		}
+
+		if (itemData.getM_iItemType() == 5) {// 打猎用具
+			if (itemData.getM_iItemID().longValue() != 100051L) {// 箭支以外
+				m_iAmount = 1;
+			}else {
+				m_iAmount = 999;
+			}
+		}
+		if (itemData.getM_iItemType() == 7) {// 钓具
+			if (itemData.getM_iItemID().longValue() == 100102L // 100102 木制钓竿组
+					|| itemData.getM_iItemID().longValue() == 100103L // 100103 竹制钓竿组
+					|| itemData.getM_iItemID().longValue() == 100104L) {// 100104 芦竹钓竿组
+				m_iAmount = 1;
+			} else {
+				m_iAmount = 999;
+			}
+		}
+
+		if (iItemStack + iMixStack == 0 && itemData.getM_iItemKind() == 2) {// 茶叶和丹药
+			m_iAmount = 999;
+		}
+		
+		if (_999ItemIdSet.contains(itemData.getM_iItemID())) {
+			m_iAmount = 999;
+		}
+		
+		return m_iAmount;
 	}
 
 	public static List<M_BackpackItem> getPackList() {

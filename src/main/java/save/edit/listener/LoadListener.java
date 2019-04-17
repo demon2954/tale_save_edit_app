@@ -7,6 +7,8 @@ import java.util.List;
 
 import javax.swing.JTextField;
 
+import com.google.gson.Gson;
+
 import save.edit.Global;
 import save.edit.data.PropertyValueEnum;
 import save.edit.data.talent.TalentManager;
@@ -59,6 +61,7 @@ public class LoadListener implements ActionListener {
 
 			loadGongFaCheckBox(save);
 			loadTalent(save);
+			System.out.println(new Gson().toJson(save.getM_BackpackList()));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
