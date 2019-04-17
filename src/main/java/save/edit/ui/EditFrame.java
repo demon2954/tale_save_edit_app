@@ -3,8 +3,11 @@ package save.edit.ui;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import save.edit.constant.LocationConstant;
 
@@ -54,7 +57,17 @@ public class EditFrame extends JFrame {
 		int y = ((int) height - LocationConstant.FRAME_SIZE_WIDTH) / 2;
 		this.setBounds(x, y, LocationConstant.FRAME_SIZE_WIDTH, LocationConstant.FRAME_SIZE_HEIGHT);
 		this.setVisible(true);
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				int flag = JOptionPane.showConfirmDialog(PanelManager.getEditPanel(), "确认要关闭吗?", "关闭", JOptionPane.OK_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE);
+				if (JOptionPane.YES_OPTION == flag) {
+					System.exit(0);
+				} else {
+					return;
+				}
+			}
+		});
 		this.setLayout(null);
 	}
 }
