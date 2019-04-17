@@ -151,7 +151,7 @@ public class EditPanel extends JPanel {
 
 	private void setSignLable() {
 		signLabel.setForeground(Color.red);
-		signLabel.setText("Create by Zone. Version 1.1.1");
+		signLabel.setText("Create by Zone. Version 1.4.0");
 		signLabel.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W, LocationConstant.SIGN_LABEL_H);
 		this.add(signLabel);
 	}
