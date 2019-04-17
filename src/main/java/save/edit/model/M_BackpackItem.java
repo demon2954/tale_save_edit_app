@@ -9,7 +9,7 @@ package save.edit.model;
  * @author bejson.com (i@bejson.com)
  * @website http://www.bejson.com/java2pojo/
  */
-public class M_BackpackList {
+public class M_BackpackItem {
 
     private int m_iAmount;
     private _ItemDataNode _ItemDataNode;

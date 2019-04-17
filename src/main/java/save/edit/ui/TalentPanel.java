@@ -11,6 +11,8 @@ import save.edit.constant.LocationConstant;
 import save.edit.listener.BackListener;
 
 public class TalentPanel extends JPanel {
+	private static final long serialVersionUID = 5862367358783078053L;
+	
 	JButton backBtn = new JButton("返回");
 	private static JTextArea jta = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane(jta);

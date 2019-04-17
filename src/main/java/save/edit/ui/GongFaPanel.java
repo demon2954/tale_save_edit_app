@@ -11,6 +11,8 @@ import save.edit.listener.AllCBListener;
 import save.edit.listener.BackListener;
 
 public class GongFaPanel extends JPanel {
+	private static final long serialVersionUID = 6513008850485069132L;
+	
 	public static int gongfaType = 0;
 	JButton backBtn = new JButton("返回");
 	JButton allBtn = new JButton("全选");

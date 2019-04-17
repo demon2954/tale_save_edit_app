@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class _ItemDataNode {
 
-    private long m_iItemID;
+    private Long m_iItemID;
     private String m_strItemName;
     private int m_iItemKind;
     private int m_iItemType;
@@ -33,10 +33,10 @@ public class _ItemDataNode {
     private List<M_ItmeEffectNodeList> m_ItmeEffectNodeList;
     private String m_strStatusTip;
     private int m_iLock;
-    public void setM_iItemID(long m_iItemID) {
+    public void setM_iItemID(Long m_iItemID) {
          this.m_iItemID = m_iItemID;
      }
-     public long getM_iItemID() {
+     public Long getM_iItemID() {
          return m_iItemID;
      }
 

@@ -218,6 +218,11 @@ public class LocationConstant {
 	public final static int FRIEND_BTN_Y = 227;
 	public final static int FRIEND_BTN_W = 156;
 	public final static int FRIEND_BTN_H = 30;
+	
+	public final static int ITEM_BTN_X = 475;
+	public final static int ITEM_BTN_Y = 227;
+	public final static int ITEM_BTN_W = 156;
+	public final static int ITEM_BTN_H = 30;
 
 	public final static int SAVE_BTN_X = 475;
 	public final static int SAVE_BTN_Y = 427;

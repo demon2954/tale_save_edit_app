@@ -63,7 +63,7 @@ public class SaveModel {
     private int m_iEquipDefendConter;
     private int m_iEquipAddBuff;
     private List<M_PropertyGroupsNodeList> m_PropertyGroupsNodeList;
-    private List<M_BackpackList> m_BackpackList;
+    private List<M_BackpackItem> m_BackpackList;
     private List<String> m_CollectionList;
     private List<String> m_QuestList;
     private List<Long> m_EventList;
@@ -455,10 +455,10 @@ public class SaveModel {
          return m_PropertyGroupsNodeList;
      }
 
-    public void setM_BackpackList(List<M_BackpackList> m_BackpackList) {
+    public void setM_BackpackList(List<M_BackpackItem> m_BackpackList) {
          this.m_BackpackList = m_BackpackList;
      }
-     public List<M_BackpackList> getM_BackpackList() {
+     public List<M_BackpackItem> getM_BackpackList() {
          return m_BackpackList;
      }
 

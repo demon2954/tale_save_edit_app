@@ -72,7 +72,7 @@ public class LoadListener implements ActionListener {
 		int talent1Idx = TalentManager.getTalentIdx(1, m_iTalent1ID);
 		int talent2Idx = TalentManager.getTalentIdx(2, m_iTalent2ID);
 		int talent3Idx = TalentManager.getTalentIdx(3, m_iTalent3ID);
-		
+
 		TalentComboBoxManager.getTalentComBoxByType(1).setSelectedIndex(talent1Idx);
 		TalentComboBoxManager.getTalentComBoxByType(2).setSelectedIndex(talent2Idx);
 		TalentComboBoxManager.getTalentComBoxByType(3).setSelectedIndex(talent3Idx);

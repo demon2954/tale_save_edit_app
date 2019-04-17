@@ -17,10 +17,6 @@ public class LoadGongFaCheckBox {
 							CheckBoxManager.getBookNodeIdCheckBox().get(node.getM_iID()).setSelected(true);
 						} catch (Exception e) {
 							e.printStackTrace();
-							
-//							Gson gson = new Gson();
-//							System.out.println(gson.toJson(node));
-//							System.out.println(node.getM_strBookMsg());
 						}
 					}
 				}

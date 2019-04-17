@@ -2,7 +2,6 @@
   * Copyright 2019 bejson.com 
   */
 package save.edit.model;
-import java.util.Date;
 
 /**
  * Auto-generated: 2019-04-11 12:51:32
