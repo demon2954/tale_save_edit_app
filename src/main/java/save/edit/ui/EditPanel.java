@@ -13,6 +13,7 @@ import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.data.talent.TalentDetail;
 import save.edit.data.talent.TalentManager;
+import save.edit.listener.AbilityListener;
 import save.edit.listener.AllItemListener;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.FriendFullListener;
@@ -54,6 +55,7 @@ public class EditPanel extends JPanel {
 	private JButton xinfaBtn = new JButton("心法");// 心法
 	private JButton friendBtn = new JButton("魅力四射");// 友好度
 	private JButton allItemBtn = new JButton("全物品");// 全物品
+	private JButton abilityBtn = new JButton("十四天书");// 十四天书
 	private JButton saveBtn = new JButton("保存");// 保存
 
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
@@ -302,6 +304,9 @@ public class EditPanel extends JPanel {
 		allItemBtn.setBounds(LocationConstant.ITEM_BTN_X, LocationConstant.ITEM_BTN_Y, LocationConstant.ITEM_BTN_W, LocationConstant.ITEM_BTN_H);
 		allItemBtn.addActionListener(new AllItemListener());
 		this.add(allItemBtn);
+		abilityBtn.setBounds(LocationConstant.ABILITY_BTN_X, LocationConstant.ABILITY_BTN_Y, LocationConstant.ABILITY_BTN_W, LocationConstant.ABILITY_BTN_H);
+		abilityBtn.addActionListener(new AbilityListener());
+		this.add(abilityBtn);
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W, LocationConstant.SAVE_BTN_H);
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField, moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
 		this.add(saveBtn);

@@ -72,6 +72,9 @@ public class SaveAnQiCB extends AbstractSaveGongFaCheckBox {
 				bookNode.setM_iID(skillDetail.getM_iID());
 				bookNode.setM_iSkillful(0);
 				bookNode.setM_strAbilityID(skillDetail.getM_strAbilityID());
+				if (skillDetail.getM_iID() == 20802) {
+					bookNode.setM_strAbilityID("霹雳雷火弹");
+				}
 				bookNode.setM_strBookImage(skillDetail.getM_strBookImage());
 				bookNode.setM_strBookMsg(skillDetail.getM_strBookMsg());
 				bookNode.setM_sValueLink(skillDetail.getM_sValueLink());

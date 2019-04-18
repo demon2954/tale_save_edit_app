@@ -61,7 +61,7 @@ public class LoadListener implements ActionListener {
 
 			loadGongFaCheckBox(save);
 			loadTalent(save);
-			System.out.println(new Gson().toJson(save.getM_BackpackList()));
+			System.out.println(new Gson().toJson(save.getM_AbilityIDList()));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
