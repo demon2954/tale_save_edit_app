@@ -57,7 +57,7 @@ public class EditPanel extends JPanel {
 	private JButton friendBtn = new JButton("魅力四射");// 友好度
 	private JButton allItemBtn = new JButton("全物品");// 全物品
 	private JButton abilityBtn = new JButton("十四天书");// 十四天书
-	private JButton otherNpcBtn = new JButton("他人技能");// 十四天书
+	private JButton otherNpcBtn = new JButton("其他心法");// 其他心法
 	private JButton saveBtn = new JButton("保存");// 保存
 
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
