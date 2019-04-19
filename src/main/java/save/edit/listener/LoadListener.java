@@ -2,10 +2,16 @@ package save.edit.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+
+import org.apache.commons.io.FileUtils;
 
 import com.google.gson.Gson;
 
@@ -14,9 +20,11 @@ import save.edit.data.PropertyValueEnum;
 import save.edit.data.talent.TalentManager;
 import save.edit.listener.util.loadgf.LoadGongFaCheckBox;
 import save.edit.model.M_MartialIDList;
+import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.read.LoadSaveData;
+import save.edit.ui.NpcXinFaCheckBoxManager;
 import save.edit.ui.TalentComboBoxManager;
 import save.edit.util.UnicodeUtils;
 
@@ -61,9 +69,29 @@ public class LoadListener implements ActionListener {
 
 			loadGongFaCheckBox(save);
 			loadTalent(save);
-			System.out.println(new Gson().toJson(save.getM_AbilityIDList()));
+			loadOtherXinFa(save);
+			FileUtils.write(new File("d://save.json"), new Gson().toJson(save), "UTF-8");
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void loadOtherXinFa(SaveModel save) {
+		List<M_PlayerNeigongNodeList> otherXinFa = new ArrayList<M_PlayerNeigongNodeList>();
+		List<M_PlayerNeigongNodeList> m_PlayerNeigongNodeList = save.getM_PlayerNeigongNodeList();
+		for (M_PlayerNeigongNodeList one : m_PlayerNeigongNodeList) {
+			if (one.getM_iNeigongID() < 60000) {
+				otherXinFa.add(one);
+			}
+		}
+		Set<JCheckBox> set = NpcXinFaCheckBoxManager.get();
+		for (JCheckBox one : set) {
+			for (M_PlayerNeigongNodeList node : otherXinFa) {
+				if (node.getM_strNeigongName().equals(one.getText())) {
+					one.setSelected(true);
+					break;
+				}
+			}
 		}
 	}
 

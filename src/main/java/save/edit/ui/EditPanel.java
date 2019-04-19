@@ -20,6 +20,7 @@ import save.edit.listener.FriendFullListener;
 import save.edit.listener.LoadListener;
 import save.edit.listener.MaxListener;
 import save.edit.listener.MoneyListener;
+import save.edit.listener.OtherNpcListener;
 import save.edit.listener.SaveListener;
 import save.edit.listener.TalentViewListener;
 import save.edit.listener.ToGongFaListener;
@@ -56,6 +57,7 @@ public class EditPanel extends JPanel {
 	private JButton friendBtn = new JButton("魅力四射");// 友好度
 	private JButton allItemBtn = new JButton("全物品");// 全物品
 	private JButton abilityBtn = new JButton("十四天书");// 十四天书
+	private JButton otherNpcBtn = new JButton("他人技能");// 十四天书
 	private JButton saveBtn = new JButton("保存");// 保存
 
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
@@ -307,6 +309,9 @@ public class EditPanel extends JPanel {
 		abilityBtn.setBounds(LocationConstant.ABILITY_BTN_X, LocationConstant.ABILITY_BTN_Y, LocationConstant.ABILITY_BTN_W, LocationConstant.ABILITY_BTN_H);
 		abilityBtn.addActionListener(new AbilityListener());
 		this.add(abilityBtn);
+		otherNpcBtn.setBounds(LocationConstant.OTHER_NPC_BTN_X, LocationConstant.OTHER_NPC_BTN_Y, LocationConstant.OTHER_NPC_BTN_W, LocationConstant.OTHER_NPC_BTN_H);
+		otherNpcBtn.addActionListener(new OtherNpcListener());
+		this.add(otherNpcBtn);
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W, LocationConstant.SAVE_BTN_H);
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField, moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
 		this.add(saveBtn);

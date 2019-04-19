@@ -228,6 +228,11 @@ public class LocationConstant {
 	public final static int ABILITY_BTN_Y = 260;
 	public final static int ABILITY_BTN_W = 156;
 	public final static int ABILITY_BTN_H = 30;
+	
+	public final static int OTHER_NPC_BTN_X = 475;
+	public final static int OTHER_NPC_BTN_Y = 293;
+	public final static int OTHER_NPC_BTN_W = 156;
+	public final static int OTHER_NPC_BTN_H = 30;
 
 	public final static int SAVE_BTN_X = 475;
 	public final static int SAVE_BTN_Y = 427;

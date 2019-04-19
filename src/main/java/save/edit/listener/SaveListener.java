@@ -5,7 +5,9 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
+import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -15,12 +17,14 @@ import save.edit.constant.Constant;
 import save.edit.data.PropertyValueEnum;
 import save.edit.data.talent.TalentDetail;
 import save.edit.data.talent.TalentManager;
+import save.edit.data.xinfa.OtherXinFaManager;
 import save.edit.listener.util.savegf.AbstractSaveGongFaCheckBox;
 import save.edit.model.M_MartialIDList;
 import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.M_PlayerRoutineNodeList;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
+import save.edit.ui.NpcXinFaCheckBoxManager;
 import save.edit.ui.PanelManager;
 import save.edit.ui.TalentComboBoxManager;
 import save.edit.write.WriteSaveData;
@@ -86,7 +90,7 @@ public class SaveListener implements ActionListener {
 
 		saveGongFa(save);
 		saveTalent(save);
-
+		saveOtherXinFa(save);
 		WriteSaveData write = new WriteSaveData();
 		try {
 			String sourceFilePath = fileChooserBar.getText();
@@ -96,6 +100,46 @@ public class SaveListener implements ActionListener {
 		}
 
 		JOptionPane.showMessageDialog(PanelManager.getEditPanel(), "保存成功!");
+	}
+
+	private void saveOtherXinFa(SaveModel save) {
+		boolean toUpdate = false;
+		Set<JCheckBox> set = NpcXinFaCheckBoxManager.get();
+
+		List<M_PlayerNeigongNodeList> chosenList = new ArrayList<M_PlayerNeigongNodeList>();
+		for (JCheckBox one : set) {
+			if (one.isSelected()) {
+				M_PlayerNeigongNodeList neiGongNodeExt = OtherXinFaManager.getOtherXinFaNameMap().get(one.getText());
+				chosenList.add(neiGongNodeExt);
+				if (!toUpdate) {
+					toUpdate = true;
+				}
+			}
+		}
+		if (!toUpdate) {
+			return;
+		}
+		List<M_PlayerNeigongNodeList> m_PlayerNeigongNodeList = save.getM_PlayerNeigongNodeList();
+		List<M_PlayerNeigongNodeList> newNeigongList = new ArrayList<M_PlayerNeigongNodeList>();
+		for (M_PlayerNeigongNodeList one : m_PlayerNeigongNodeList) {
+			if (one.getM_iNeigongID() >= 60000) {
+				newNeigongList.add(one);
+			}
+		}
+
+		for (M_PlayerNeigongNodeList one : chosenList) {
+//			String neigongName = one.getM_strNeigongName();
+//			if (neigongName.contains("1"))
+//				neigongName = neigongName.replaceAll("1", "");
+//			if (neigongName.contains("2"))
+//				neigongName = neigongName.replaceAll("2", "");
+//			if (neigongName.contains("3"))
+//				neigongName = neigongName.replaceAll("3", "");
+//			one.setM_strNeigongName(neigongName);
+			newNeigongList.add(one);
+		}
+		save.setM_iNeigongID(newNeigongList.get(0).getM_iNeigongID());
+		save.setM_PlayerNeigongNodeList(newNeigongList);
 	}
 
 	private void saveTalent(SaveModel save) {

@@ -8,6 +8,7 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 
 import save.edit.constant.LocationConstant;
 
@@ -20,7 +21,13 @@ public class EditFrame extends JFrame {
 		setEditPanel();
 		setGongFaPanel();
 		setTalentPanel();
+		setOtherNpcPanel();
 		this.setResizable(false);
+	}
+
+	private void setOtherNpcPanel() {
+		JScrollPane otherNpcPanel = PanelManager.getOtherNpcPanel();
+		this.add(otherNpcPanel);
 	}
 
 	private void setTalentPanel() {
