@@ -25,6 +25,9 @@ public class SkillDetail {
 	private String m_strStatusImage;
 	private String m_strSelectImage;
 	
+	// 是否他人功法
+	private boolean other = false;
+	
 	public int getM_iType() {
 		return m_iType;
 	}
@@ -108,5 +111,11 @@ public class SkillDetail {
 	}
 	public void setM_strSelectImage(String m_strSelectImage) {
 		this.m_strSelectImage = m_strSelectImage;
+	}
+	public boolean isOther() {
+		return other;
+	}
+	public void setOther(boolean other) {
+		this.other = other;
 	}
 }

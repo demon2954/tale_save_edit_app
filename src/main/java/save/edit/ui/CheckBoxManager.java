@@ -14,7 +14,7 @@ import save.edit.data.SkillManager;
 
 public class CheckBoxManager {
 	public static int CB_TYPE = 0;
-	
+
 	// 所有技能id对应的checkbox
 	private static Map<Integer, JCheckBox> bookNodeIdCheckBoxMap = null;
 
@@ -29,15 +29,29 @@ public class CheckBoxManager {
 	private static JCheckBox[] qinGongCheckBoxs = null;
 	private static JCheckBox[] anQiCheckBoxs = null;
 
+	private static JCheckBox[] initCheckBox(JCheckBox[] gongFaCheckBoxs, Map<String, SkillDetail> skillMap) {
+		gongFaCheckBoxs = new JCheckBox[skillMap.size()];
+		Set<String> keySet = skillMap.keySet();
+		int idx = 0;
+		for (String name : keySet) {
+			SkillDetail skillDetail = skillMap.get(name);
+			if (!skillDetail.isOther()) {
+				gongFaCheckBoxs[idx++] = new JCheckBox(name);
+			}
+		}
+		for (String name : keySet) {
+			SkillDetail skillDetail = skillMap.get(name);
+			if (skillDetail.isOther()) {
+				gongFaCheckBoxs[idx++] = new JCheckBox(name);
+			}
+		}
+		return gongFaCheckBoxs;
+	}
+
 	public static JCheckBox[] getJianFaCheckBoxs() {
 		if (null == jianFaCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_JIANFA);
-			jianFaCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				jianFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			jianFaCheckBoxs = initCheckBox(jianFaCheckBoxs, skillMap);
 		}
 		return jianFaCheckBoxs;
 	}
@@ -45,12 +59,7 @@ public class CheckBoxManager {
 	public static JCheckBox[] getDaoFaCheckBoxs() {
 		if (null == daoFaCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_DAOFA);
-			daoFaCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				daoFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			daoFaCheckBoxs = initCheckBox(daoFaCheckBoxs, skillMap);
 		}
 		return daoFaCheckBoxs;
 	}
@@ -71,12 +80,7 @@ public class CheckBoxManager {
 	public static JCheckBox[] getQuanZhangCheckBoxs() {
 		if (null == quanZhangCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_QUANZHANG);
-			quanZhangCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				quanZhangCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			quanZhangCheckBoxs = initCheckBox(quanZhangCheckBoxs, skillMap);
 		}
 		return quanZhangCheckBoxs;
 	}
@@ -84,12 +88,7 @@ public class CheckBoxManager {
 	public static JCheckBox[] getZhiFaCheckBoxs() {
 		if (null == zhiFaCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_ZHIFA);
-			zhiFaCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				zhiFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			zhiFaCheckBoxs = initCheckBox(zhiFaCheckBoxs, skillMap);
 		}
 		return zhiFaCheckBoxs;
 	}
@@ -97,68 +96,43 @@ public class CheckBoxManager {
 	public static JCheckBox[] getTuiFaCheckBoxs() {
 		if (null == tuiFaCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_TUIFA);
-			tuiFaCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				tuiFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			tuiFaCheckBoxs = initCheckBox(tuiFaCheckBoxs, skillMap);
 		}
-		return tuiFaCheckBoxs;	
+		return tuiFaCheckBoxs;
 	}
-	
+
 	public static JCheckBox[] getDuanBingCheckBoxs() {
 		if (null == duanBingCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_DUANBING);
-			duanBingCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				duanBingCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			duanBingCheckBoxs = initCheckBox(duanBingCheckBoxs, skillMap);
 		}
 		return duanBingCheckBoxs;
 	}
-	
+
 	public static JCheckBox[] getGunFaCheckBoxs() {
 		if (null == gunFaCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_GUNFA);
-			gunFaCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				gunFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			gunFaCheckBoxs = initCheckBox(gunFaCheckBoxs, skillMap);
 		}
 		return gunFaCheckBoxs;
 	}
-	
+
 	public static JCheckBox[] getQinGongCheckBoxs() {
 		if (null == qinGongCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_QINGONG);
-			qinGongCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				qinGongCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			qinGongCheckBoxs = initCheckBox(qinGongCheckBoxs, skillMap);
 		}
 		return qinGongCheckBoxs;
 	}
-	
+
 	public static JCheckBox[] getAnQiCheckBoxs() {
 		if (null == anQiCheckBoxs) {
 			Map<String, SkillDetail> skillMap = SkillManager.getGongFaMap(Constant.SKILL_TYPE_ANQI);
-			anQiCheckBoxs = new JCheckBox[skillMap.size()];
-			Set<String> keySet = skillMap.keySet();
-			List<String> nameList = new ArrayList<String>(keySet);
-			for (int i = 0; i < nameList.size(); i++) {
-				anQiCheckBoxs[i] = new JCheckBox(nameList.get(i));
-			}
+			anQiCheckBoxs = initCheckBox(anQiCheckBoxs, skillMap);
 		}
 		return anQiCheckBoxs;
 	}
-	
+
 	public static void setAllUnVisible() {
 		for (JCheckBox one : jianFaCheckBoxs) {
 			one.setVisible(false);
@@ -191,7 +165,7 @@ public class CheckBoxManager {
 			one.setVisible(false);
 		}
 	}
-	
+
 	/**
 	 * @param type
 	 */
@@ -255,10 +229,11 @@ public class CheckBoxManager {
 	public static int getCB_TYPE() {
 		return CB_TYPE;
 	}
+
 	public static void setCB_TYPE(int cB_TYPE) {
 		CB_TYPE = cB_TYPE;
 	}
-	
+
 	public static Map<Integer, JCheckBox> getBookNodeIdCheckBox() {
 		if (bookNodeIdCheckBoxMap == null) {
 			bookNodeIdCheckBoxMap = new HashMap<Integer, JCheckBox>();
@@ -266,7 +241,7 @@ public class CheckBoxManager {
 		}
 		return bookNodeIdCheckBoxMap;
 	}
-	
+
 	private static void initAllCheckBoxMap() {
 		addAllCheckBoxMap(getJianFaCheckBoxs(), Constant.SKILL_TYPE_JIANFA);
 		addAllCheckBoxMap(getDaoFaCheckBoxs(), Constant.SKILL_TYPE_DAOFA);
@@ -279,7 +254,7 @@ public class CheckBoxManager {
 		addAllCheckBoxMap(getQinGongCheckBoxs(), Constant.SKILL_TYPE_QINGONG);
 		addAllCheckBoxMap(getAnQiCheckBoxs(), Constant.SKILL_TYPE_ANQI);
 	}
-	
+
 	private static void addAllCheckBoxMap(JCheckBox[] boxs, int type) {
 		Map<String, SkillDetail> gongFaMap = SkillManager.getGongFaMap(type);
 		for (JCheckBox box : boxs) {
@@ -288,5 +263,31 @@ public class CheckBoxManager {
 			bookNodeIdCheckBoxMap.put(skillDetail.getM_iID(), box);
 		}
 	}
-	
+
+	public static JCheckBox[] getGongFaCheckBoxs(int SKILL_TYPE) {
+		switch (SKILL_TYPE) {
+		case Constant.SKILL_TYPE_XINFA:
+			return getXinFaCheckBoxs();
+		case Constant.SKILL_TYPE_QUANZHANG:
+			return getQuanZhangCheckBoxs();
+		case Constant.SKILL_TYPE_ZHIFA:
+			return getZhiFaCheckBoxs();
+		case Constant.SKILL_TYPE_TUIFA:
+			return getTuiFaCheckBoxs();
+		case Constant.SKILL_TYPE_JIANFA:
+			return getJianFaCheckBoxs();
+		case Constant.SKILL_TYPE_DAOFA:
+			return getDaoFaCheckBoxs();
+		case Constant.SKILL_TYPE_GUNFA:
+			return getGunFaCheckBoxs();
+		case Constant.SKILL_TYPE_DUANBING:
+			return getDuanBingCheckBoxs();
+		case Constant.SKILL_TYPE_ANQI:
+			return getAnQiCheckBoxs();
+		case Constant.SKILL_TYPE_QINGONG:
+			return getQinGongCheckBoxs();
+		}
+		return null;
+	}
+
 }

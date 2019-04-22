@@ -13,6 +13,8 @@ import save.edit.constant.LocationConstant;
 import save.edit.listener.BackListener;
 
 public class HeadImagePanel extends JPanel {
+	private static final long serialVersionUID = -4153160000685803686L;
+
 	JButton backBtn = new JButton("返回");
 
 	private JRadioButton one = new JRadioButton();

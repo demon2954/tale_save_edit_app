@@ -123,6 +123,7 @@ public class SkillManager {
 			skillDetail.setM_sValueLink(books[6]);
 			if (books.length == 8) {
 				skillDetail.setM_iID(M_iID++);
+				skillDetail.setOther(true);
 			}
 			xinfaMap.put(sill, skillDetail);
 		}

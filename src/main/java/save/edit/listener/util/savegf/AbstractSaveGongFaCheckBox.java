@@ -13,28 +13,9 @@ public abstract class AbstractSaveGongFaCheckBox {
 		switch (type) {
 		case Constant.SKILL_TYPE_XINFA:
 			return new SaveXinFaCB();
-		case Constant.SKILL_TYPE_QUANZHANG:
-			return new SaveQuanZhangCB();
-		case Constant.SKILL_TYPE_ZHIFA:
-			return new SaveZhiFaCB();
-		case Constant.SKILL_TYPE_TUIFA:
-			return new SaveTuiFaCB();
-		case Constant.SKILL_TYPE_JIANFA:
-			return new SaveJianFaCB();
-		case Constant.SKILL_TYPE_DAOFA:
-			return new SaveDaoFaCB();
-		case Constant.SKILL_TYPE_GUNFA:
-			return new SaveGunFaCB();
-		case Constant.SKILL_TYPE_DUANBING:
-			return new SaveDuanBingCB();
-		case Constant.SKILL_TYPE_QINGONG:
-			return new SaveQinGongCB();
-		case Constant.SKILL_TYPE_ANQI:
-			return new SaveAnQiCB();
 		default:
-			break;
+			return new SaveNoXinFaCB(type);
 		}
-		return null;
 	}
 	
 	

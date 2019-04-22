@@ -291,7 +291,7 @@ public class LocationConstant {
 	public final static int TALENT_BTN_2_H = 30;
 	
 	public final static int TALENT_BTN_3_X = 412;
-	public final static int TALENT_BTN_3_Y = 359;
+	public final static int TALENT_BTN_3_Y = 392;
 	public final static int TALENT_BTN_3_W = 60;
 	public final static int TALENT_BTN_3_H = 30;
 	//-----------------------------------
