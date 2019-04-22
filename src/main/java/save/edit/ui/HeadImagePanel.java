@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.listener.BackListener;
 
@@ -33,6 +34,7 @@ public class HeadImagePanel extends JPanel {
 	private void setBackBtn() {
 		backBtn.setBounds(LocationConstant.BACK_BTN_X, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W, LocationConstant.BACK_BTN_H);
 		backBtn.addActionListener(new BackListener());
+		backBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(backBtn);
 	}
 

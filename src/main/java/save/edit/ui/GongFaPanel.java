@@ -6,6 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
+import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.listener.AllCBListener;
 import save.edit.listener.BackListener;
@@ -210,12 +211,14 @@ public class GongFaPanel extends JPanel {
 	private void setBackBtn() {
 		backBtn.setBounds(LocationConstant.BACK_BTN_X, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W, LocationConstant.BACK_BTN_H);
 		backBtn.addActionListener(new BackListener());
+		backBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(backBtn);
 	}
 
 	private void setAllBtn() {
 		allBtn.setBounds(LocationConstant.ALL_BTN_X, LocationConstant.ALL_BTN_Y, LocationConstant.ALL_BTN_W, LocationConstant.ALL_BTN_H);
 		allBtn.addActionListener(new AllCBListener());
+		allBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(allBtn);
 	}
 

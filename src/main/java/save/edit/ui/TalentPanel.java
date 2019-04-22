@@ -7,12 +7,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.listener.BackListener;
 
 public class TalentPanel extends JPanel {
 	private static final long serialVersionUID = 5862367358783078053L;
-	
+
 	JButton backBtn = new JButton("返回");
 	private static JTextArea jta = new JTextArea();
 	JScrollPane scrollPane = new JScrollPane(jta);
@@ -33,6 +34,7 @@ public class TalentPanel extends JPanel {
 	private void setBackBtn() {
 		backBtn.setBounds(LocationConstant.BACK_BTN_X, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W, LocationConstant.BACK_BTN_H);
 		backBtn.addActionListener(new BackListener());
+		backBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(backBtn);
 	}
 
@@ -42,6 +44,9 @@ public class TalentPanel extends JPanel {
 		scrollPane.setBounds(1, LocationConstant.BACK_BTN_H, LocationConstant.FRAME_SIZE_WIDTH - LocationConstant.BACK_BTN_W, LocationConstant.FRAME_SIZE_HEIGHT - LocationConstant.BACK_BTN_H - 50);
 		scrollPane.setBackground(Color.BLACK);
 		scrollPane.setForeground(Color.WHITE);
+		jta.setBackground(Color.BLACK);
+		jta.setForeground(Color.WHITE);
+		jta.setFont(Constant.GLOBAL_FONT);
 		this.add(scrollPane);
 	}
 

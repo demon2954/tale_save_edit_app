@@ -9,6 +9,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.data.xinfa.OtherXinFaManager;
 import save.edit.listener.BackListener;
@@ -51,6 +52,7 @@ public class OtherNpcPanel {
 	private void setBackBtn() {
 		backBtn.setBounds(LocationConstant.BACK_BTN_X - 15, LocationConstant.BACK_BTN_Y, LocationConstant.BACK_BTN_W, LocationConstant.BACK_BTN_H);
 		backBtn.addActionListener(new BackListener());
+		backBtn.setFont(Constant.GLOBAL_FONT);
 		panel.add(backBtn);
 	}
 
@@ -69,12 +71,13 @@ public class OtherNpcPanel {
 			xinFaCB.setBounds(ix, iy, lw, h);
 			xinFaCB.setBackground(Color.BLACK);
 			xinFaCB.setForeground(Color.WHITE);
+			xinFaCB.setFont(Constant.GLOBAL_FONT);
 			panel.add(xinFaCB);
 			NpcXinFaCheckBoxManager.add(xinFaCB);
 
 			JButton browserBtn = new JButton("查看");
 			browserBtn.setBounds(ix + lw, iy, bw, h);
-
+			browserBtn.setFont(Constant.GLOBAL_FONT);
 			browserBtn.addActionListener(new CheckXinFaListener(m_iNeigongID));
 			panel.add(browserBtn);
 

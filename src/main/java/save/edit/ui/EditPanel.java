@@ -72,7 +72,7 @@ public class EditPanel extends JPanel {
 	private JTextField xingText = new JTextField();
 	private JLabel mingLabel = new JLabel("名");
 	private JTextField mingText = new JTextField();
-	
+
 	private JButton headImageBtn = new JButton("头像");
 
 	private JComboBox<TalentDetail> talent1ComBox = null;
@@ -115,30 +115,36 @@ public class EditPanel extends JPanel {
 		TalentDetail[] talent3Names = TalentManager.getTalentByType(3);
 
 		talent1ComBox = TalentComboBoxManager.getTalentComBoxByType(1);
+		talent1ComBox.setFont(Constant.GLOBAL_FONT);
 		talent1ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent1Names));
 		talent1ComBox.setBounds(LocationConstant.TALENT_COMBOX_1_X, LocationConstant.TALENT_COMBOX_1_Y, LocationConstant.TALENT_COMBOX_1_W, LocationConstant.TALENT_COMBOX_1_H);
 		this.add(talent1ComBox);
 
 		talent2ComBox = TalentComboBoxManager.getTalentComBoxByType(2);
+		talent2ComBox.setFont(Constant.GLOBAL_FONT);
 		talent2ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent2Names));
 		talent2ComBox.setBounds(LocationConstant.TALENT_COMBOX_2_X, LocationConstant.TALENT_COMBOX_2_Y, LocationConstant.TALENT_COMBOX_2_W, LocationConstant.TALENT_COMBOX_2_H);
 		this.add(talent2ComBox);
 
 		talent3ComBox = TalentComboBoxManager.getTalentComBoxByType(3);
+		talent3ComBox.setFont(Constant.GLOBAL_FONT);
 		talent3ComBox.setModel(new DefaultComboBoxModel<TalentDetail>(talent3Names));
 		talent3ComBox.setBounds(LocationConstant.TALENT_COMBOX_3_X, LocationConstant.TALENT_COMBOX_3_Y, LocationConstant.TALENT_COMBOX_3_W, LocationConstant.TALENT_COMBOX_3_H);
 		this.add(talent3ComBox);
 
 		talent1Btn.setBounds(LocationConstant.TALENT_BTN_1_X, LocationConstant.TALENT_BTN_1_Y, LocationConstant.TALENT_BTN_1_W, LocationConstant.TALENT_BTN_1_H);
 		talent1Btn.addActionListener(new TalentViewListener(1));
+		talent1Btn.setFont(Constant.GLOBAL_FONT);
 		this.add(talent1Btn);
 
 		talent2Btn.setBounds(LocationConstant.TALENT_BTN_2_X, LocationConstant.TALENT_BTN_2_Y, LocationConstant.TALENT_BTN_2_W, LocationConstant.TALENT_BTN_2_H);
 		talent2Btn.addActionListener(new TalentViewListener(2));
+		talent2Btn.setFont(Constant.GLOBAL_FONT);
 		this.add(talent2Btn);
 
 		talent3Btn.setBounds(LocationConstant.TALENT_BTN_3_X, LocationConstant.TALENT_BTN_3_Y, LocationConstant.TALENT_BTN_3_W, LocationConstant.TALENT_BTN_3_H);
 		talent3Btn.addActionListener(new TalentViewListener(3));
+		talent3Btn.setFont(Constant.GLOBAL_FONT);
 		this.add(talent3Btn);
 	}
 
@@ -146,9 +152,14 @@ public class EditPanel extends JPanel {
 		xingLabel.setForeground(Color.WHITE);
 		xingLabel.setBounds(LocationConstant.XING_LABEL_X, LocationConstant.XING_LABEL_Y, LocationConstant.XING_LABEL_W, LocationConstant.XING_LABEL_H);
 		xingText.setBounds(LocationConstant.XING_TEXT_X, LocationConstant.XING_TEXT_Y, LocationConstant.XING_TEXT_W, LocationConstant.XING_TEXT_H);
+		xingLabel.setFont(Constant.GLOBAL_FONT);
+		xingText.setFont(Constant.GLOBAL_FONT);
+
 		mingLabel.setForeground(Color.WHITE);
 		mingLabel.setBounds(LocationConstant.MING_LABEL_X, LocationConstant.MING_LABEL_Y, LocationConstant.MING_LABEL_W, LocationConstant.MING_LABEL_H);
 		mingText.setBounds(LocationConstant.MING_TEXT_X, LocationConstant.MING_TEXT_Y, LocationConstant.MING_TEXT_W, LocationConstant.MING_TEXT_H);
+		mingLabel.setFont(Constant.GLOBAL_FONT);
+		mingText.setFont(Constant.GLOBAL_FONT);
 
 		this.add(xingLabel);
 		this.add(xingText);
@@ -158,8 +169,9 @@ public class EditPanel extends JPanel {
 
 	private void setSignLable() {
 		signLabel.setForeground(Color.red);
-		signLabel.setText("Create by Zone. Version 1.4.0");
+		signLabel.setText("Create by Zone. Version 1.4.1");
 		signLabel.setBounds(LocationConstant.SIGN_LABEL_X, LocationConstant.SIGN_LABEL_Y, LocationConstant.SIGN_LABEL_W, LocationConstant.SIGN_LABEL_H);
+		signLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(signLabel);
 	}
 
@@ -167,85 +179,100 @@ public class EditPanel extends JPanel {
 		maxBtn.setBounds(LocationConstant.HP_MP_ATT_DEF_MAX_BTN_X, LocationConstant.HP_MP_ATT_DEF_MAX_BTN_Y, LocationConstant.HP_MP_ATT_DEF_MAX_BTN_WIDTH,
 				LocationConstant.HP_MP_ATT_DEF_MAX_BTN_HEIGHT);
 		maxBtn.addActionListener(new MaxListener(propertyTextFields, hpTextField, mpTextField, attackTextField, defendTextField));
+		maxBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(maxBtn);
 	}
 
 	private void setMoneyMaxBtn() {
 		moneyMaxBtn.setBounds(LocationConstant.MONEY_MAX_BTN_X, LocationConstant.MONEY_MAX_BTN_Y, LocationConstant.MONEY_MAX_BTN_WIDTH, LocationConstant.MONEY_MAX_BTN_HEIGHT);
 		moneyMaxBtn.addActionListener(new MoneyListener(moneyTextField));
+		moneyMaxBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(moneyMaxBtn);
 	}
 
 	private void setMoneyTextField() {
 		moneyTextField.setBounds(LocationConstant.MONEY_TEXT_X, LocationConstant.MONEY_TEXT_Y, LocationConstant.MONEY_TEXT_WIDTH, LocationConstant.MONEY_TEXT_HEIGHT);
+		moneyTextField.setFont(Constant.GLOBAL_FONT);
 		this.add(moneyTextField);
 	}
 
 	private void setMoneyLabel() {
 		moneyLabel.setForeground(Color.WHITE);
 		moneyLabel.setBounds(LocationConstant.MONEY_LABEL_X, LocationConstant.MONEY_LABEL_Y, LocationConstant.MONEY_LABEL_WIDTH, LocationConstant.MONEY_LABEL_HEIGHT);
+		moneyLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(moneyLabel);
 	}
 
 	private void setDefendTextField() {
 		defendTextField.setBounds(LocationConstant.DEFEND_TEXT_X, LocationConstant.DEFEND_TEXT_Y, LocationConstant.DEFEND_TEXT_WIDTH, LocationConstant.DEFEND_TEXT_HEIGHT);
+		defendTextField.setFont(Constant.GLOBAL_FONT);
 		this.add(defendTextField);
 	}
 
 	private void setDefendLabel() {
 		defendLabel.setForeground(Color.WHITE);
 		defendLabel.setBounds(LocationConstant.DEFEND_LABEL_X, LocationConstant.DEFEND_LABEL_Y, LocationConstant.DEFEND_LABEL_WIDTH, LocationConstant.DEFEND_LABEL_HEIGHT);
+		defendLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(defendLabel);
 	}
 
 	private void setAttackTextField() {
 		attackTextField.setBounds(LocationConstant.ATTACK_TEXT_X, LocationConstant.ATTACK_TEXT_Y, LocationConstant.ATTACK_TEXT_WIDTH, LocationConstant.ATTACK_TEXT_HEIGHT);
+		attackTextField.setFont(Constant.GLOBAL_FONT);
 		this.add(attackTextField);
 	}
 
 	private void setAttackLabel() {
 		attackLabel.setForeground(Color.WHITE);
 		attackLabel.setBounds(LocationConstant.ATTACK_LABEL_X, LocationConstant.ATTACK_LABEL_Y, LocationConstant.ATTACK_LABEL_WIDTH, LocationConstant.ATTACK_LABEL_HEIGHT);
+		attackLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(attackLabel);
 	}
 
 	private void setMpTextField() {
 		mpTextField.setBounds(LocationConstant.MP_TEXT_X, LocationConstant.MP_TEXT_Y, LocationConstant.MP_TEXT_WIDTH, LocationConstant.MP_TEXT_HEIGHT);
+		mpTextField.setFont(Constant.GLOBAL_FONT);
 		this.add(mpTextField);
 	}
 
 	private void setMpLabel() {
 		mpLabel.setForeground(Color.WHITE);
 		mpLabel.setBounds(LocationConstant.MP_LABEL_X, LocationConstant.MP_LABEL_Y, LocationConstant.MP_LABEL_WIDTH, LocationConstant.MP_LABEL_HEIGHT);
+		mpLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(mpLabel);
 	}
 
 	private void setHpTextField() {
 		hpTextField.setBounds(LocationConstant.HP_TEXT_X, LocationConstant.HP_TEXT_Y, LocationConstant.HP_TEXT_WIDTH, LocationConstant.HP_TEXT_HEIGHT);
+		hpTextField.setFont(Constant.GLOBAL_FONT);
 		this.add(hpTextField);
 	}
 
 	private void setHpLabel() {
 		hpLabel.setForeground(Color.WHITE);
 		hpLabel.setBounds(LocationConstant.HP_LABEL_X, LocationConstant.HP_LABEL_Y, LocationConstant.HP_LABEL_WIDTH, LocationConstant.HP_LABEL_HEIGHT);
+		hpLabel.setFont(Constant.GLOBAL_FONT);
 		this.add(hpLabel);
 	}
 
 	private void setFileLoadBtn() {
 		fileLoadBtn.setBounds(LocationConstant.FILE_LOAD_BTN_X, LocationConstant.FILE_LOAD_BTN_Y, LocationConstant.FILE_LOAD_BTN_SIZE_WIDTH, LocationConstant.FILE_LOAD_BTN_SIZE_HEIGHT);
 		fileLoadBtn.addActionListener(new LoadListener(fileChooserBar, hpTextField, mpTextField, attackTextField, defendTextField, moneyTextField, propertyTextFields, xingText, mingText));
+		fileLoadBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(fileLoadBtn);
 	}
 
 	private void setFileChooseBtn() {
 		fileChooseBtn.setBounds(LocationConstant.FILE_CHOOSER_BTN_X, LocationConstant.FILE_CHOOSER_BTN_Y, LocationConstant.FILE_CHOOSER_BTN_SIZE_WIDTH, LocationConstant.FILE_CHOOSER_BTN_SIZE_HEIGHT);
 		fileChooseBtn.addActionListener(new ChooseFileListener(fileChooserBar));
+		fileChooseBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(fileChooseBtn);
 	}
 
 	private void setFileChooserBar() {
 		fileChooserBar.setEditable(false);
 		fileChooserBar.setBounds(LocationConstant.FILE_CHOOSER_BAR_X, LocationConstant.FILE_CHOOSER_BAR_Y, LocationConstant.FILE_CHOOSER_BAR_SIZE_WIDTH, LocationConstant.FILE_CHOOSER_BAR_SIZE_HEIGHT);
+		fileChooserBar.setFont(Constant.GLOBAL_FONT);
 		this.add(fileChooserBar);
 	}
 
@@ -270,6 +297,7 @@ public class EditPanel extends JPanel {
 				propertyLabels[propertyIdx] = new JLabel(LocationConstant.PROPERTIES_NAME[propertyIdx]);
 				propertyLabels[propertyIdx].setForeground(Color.WHITE);
 				propertyLabels[propertyIdx].setBounds(x, y, w, h);
+				propertyLabels[propertyIdx].setFont(Constant.GLOBAL_FONT);
 				this.add(propertyLabels[propertyIdx]);
 
 				x = i * (LocationConstant.PROPERTIES_LABEL_W + LocationConstant.PROPERTIES_TEXT_W + 5) + LocationConstant.PROPERTIES_LABEL_W;
@@ -278,6 +306,7 @@ public class EditPanel extends JPanel {
 				h = LocationConstant.PROPERTIES_TEXT_H;
 				propertyTextFields[propertyIdx] = new JTextField();
 				propertyTextFields[propertyIdx].setBounds(x, y, w, h);
+				propertyTextFields[propertyIdx].setFont(Constant.GLOBAL_FONT);
 				this.add(propertyTextFields[propertyIdx]);
 				propertyIdx++;
 			}
@@ -287,54 +316,70 @@ public class EditPanel extends JPanel {
 	private void setEditButton() {
 		jianfaBtn.setBounds(LocationConstant.JIANFA_BTN_X, LocationConstant.JIANFA_BTN_Y, LocationConstant.JIANFA_BTN_W, LocationConstant.JIANFA_BTN_H);
 		jianfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_JIANFA));
+		jianfaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(jianfaBtn);
 		daofaBtn.setBounds(LocationConstant.DAOFA_BTN_X, LocationConstant.DAOFA_BTN_Y, LocationConstant.DAOFA_BTN_W, LocationConstant.DAOFA_BTN_H);
 		daofaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_DAOFA));
+		daofaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(daofaBtn);
 		quanzhangBtn.setBounds(LocationConstant.QUANZHANG_BTN_X, LocationConstant.QUANZHANG_BTN_Y, LocationConstant.QUANZHANG_BTN_W, LocationConstant.QUANZHANG_BTN_H);
 		quanzhangBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_QUANZHANG));
+		quanzhangBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(quanzhangBtn);
 		zhifaBtn.setBounds(LocationConstant.ZHIFA_BTN_X, LocationConstant.ZHIFA_BTN_Y, LocationConstant.ZHIFA_BTN_W, LocationConstant.ZHIFA_BTN_H);
 		zhifaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_ZHIFA));
+		zhifaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(zhifaBtn);
 		tuifaBtn.setBounds(LocationConstant.TUIFA_BTN_X, LocationConstant.TUIFA_BTN_Y, LocationConstant.TUIFA_BTN_W, LocationConstant.TUIFA_BTN_H);
 		tuifaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_TUIFA));
+		tuifaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(tuifaBtn);
 		xinfaBtn.setBounds(LocationConstant.XINFA_BTN_X, LocationConstant.XINFA_BTN_Y, LocationConstant.XINFA_BTN_W, LocationConstant.XINFA_BTN_H);
 		xinfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_XINFA));
+		xinfaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(xinfaBtn);
 		friendBtn.setBounds(LocationConstant.FRIEND_BTN_X, LocationConstant.FRIEND_BTN_Y, LocationConstant.FRIEND_BTN_W, LocationConstant.FRIEND_BTN_H);
 		friendBtn.addActionListener(new FriendFullListener());
+		friendBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(friendBtn);
 		allItemBtn.setBounds(LocationConstant.ITEM_BTN_X, LocationConstant.ITEM_BTN_Y, LocationConstant.ITEM_BTN_W, LocationConstant.ITEM_BTN_H);
 		allItemBtn.addActionListener(new AllItemListener());
+		allItemBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(allItemBtn);
 		abilityBtn.setBounds(LocationConstant.ABILITY_BTN_X, LocationConstant.ABILITY_BTN_Y, LocationConstant.ABILITY_BTN_W, LocationConstant.ABILITY_BTN_H);
 		abilityBtn.addActionListener(new AbilityListener());
+		abilityBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(abilityBtn);
 		otherNpcBtn.setBounds(LocationConstant.OTHER_NPC_BTN_X, LocationConstant.OTHER_NPC_BTN_Y, LocationConstant.OTHER_NPC_BTN_W, LocationConstant.OTHER_NPC_BTN_H);
 		otherNpcBtn.addActionListener(new OtherNpcListener());
+		otherNpcBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(otherNpcBtn);
 		saveBtn.setBounds(LocationConstant.SAVE_BTN_X, LocationConstant.SAVE_BTN_Y, LocationConstant.SAVE_BTN_W, LocationConstant.SAVE_BTN_H);
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField, moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
+		saveBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(saveBtn);
 		duanbingBtn.setBounds(LocationConstant.DUANBING_BTN_X, LocationConstant.DUANBING_BTN_Y, LocationConstant.DUANBING_BTN_W, LocationConstant.DUANBING_BTN_H);
 		duanbingBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_DUANBING));
+		duanbingBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(duanbingBtn);
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W, LocationConstant.GUNFA_BTN_H);
 		gunfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_GUNFA));
+		gunfaBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(gunfaBtn);
 
 		qingongBtn.setBounds(LocationConstant.QINGONG_BTN_X, LocationConstant.QINGONG_BTN_Y, LocationConstant.QINGONG_BTN_W, LocationConstant.QINGONG_BTN_H);
 		qingongBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_QINGONG));
+		qingongBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(qingongBtn);
 
 		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W, LocationConstant.ANQI_BTN_H);
 		anqiBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_ANQI));
+		anqiBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(anqiBtn);
-		
+
 		headImageBtn.setBounds(LocationConstant.HEAD_IMAGE_BTN_X, LocationConstant.HEAD_IMAGE_BTN_Y, LocationConstant.HEAD_IMAGE_BTN_W, LocationConstant.HEAD_IMAGE_BTN_H);
 		headImageBtn.addActionListener(new ToHeadImageListener());
+		headImageBtn.setFont(Constant.GLOBAL_FONT);
 		this.add(headImageBtn);
 	}
 }

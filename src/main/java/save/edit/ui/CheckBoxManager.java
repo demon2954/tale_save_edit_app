@@ -36,13 +36,15 @@ public class CheckBoxManager {
 		for (String name : keySet) {
 			SkillDetail skillDetail = skillMap.get(name);
 			if (!skillDetail.isOther()) {
-				gongFaCheckBoxs[idx++] = new JCheckBox(name);
+				gongFaCheckBoxs[idx] = new JCheckBox(name);
+				gongFaCheckBoxs[idx++].setFont(Constant.GLOBAL_FONT);
 			}
 		}
 		for (String name : keySet) {
 			SkillDetail skillDetail = skillMap.get(name);
 			if (skillDetail.isOther()) {
-				gongFaCheckBoxs[idx++] = new JCheckBox(name);
+				gongFaCheckBoxs[idx] = new JCheckBox(name);
+				gongFaCheckBoxs[idx++].setFont(Constant.GLOBAL_FONT);
 			}
 		}
 		return gongFaCheckBoxs;
@@ -72,6 +74,7 @@ public class CheckBoxManager {
 			List<String> nameList = new ArrayList<String>(keySet);
 			for (int i = 0; i < nameList.size(); i++) {
 				xinFaCheckBoxs[i] = new JCheckBox(nameList.get(i));
+				xinFaCheckBoxs[i].setFont(Constant.GLOBAL_FONT);
 			}
 		}
 		return xinFaCheckBoxs;

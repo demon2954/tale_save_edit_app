@@ -1,5 +1,7 @@
 package save.edit.constant;
 
+import java.awt.Font;
+
 /**
  * @auth zone
  * @date 2017-09-30
@@ -13,6 +15,8 @@ public class Constant {
 	public static final int SKILL_TYPE_DAOFA = 23;
 	public static final int SKILL_TYPE_GUNFA = 24;
 	public static final int SKILL_TYPE_DUANBING = 25;
-	public static final int SKILL_TYPE_ANQI= 26;
+	public static final int SKILL_TYPE_ANQI = 26;
 	public static final int SKILL_TYPE_QINGONG = 27;
+
+	public static final Font GLOBAL_FONT = new Font("宋体", Font.PLAIN, 13);
 }
