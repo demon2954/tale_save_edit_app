@@ -2,18 +2,16 @@ package save.edit.listener;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
-
-import org.apache.commons.io.FileUtils;
-
-import com.google.gson.Gson;
 
 import save.edit.Global;
 import save.edit.data.PropertyValueEnum;
@@ -24,6 +22,7 @@ import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
 import save.edit.read.LoadSaveData;
+import save.edit.ui.HeadImageBtnGroup;
 import save.edit.ui.NpcXinFaCheckBoxManager;
 import save.edit.ui.TalentComboBoxManager;
 import save.edit.util.UnicodeUtils;
@@ -70,9 +69,26 @@ public class LoadListener implements ActionListener {
 			loadGongFaCheckBox(save);
 			loadTalent(save);
 			loadOtherXinFa(save);
-			FileUtils.write(new File("d://save.json"), new Gson().toJson(save), "UTF-8");
+			loadHeadImage(save);
+//			FileUtils.write(new File("d://save.json"), new Gson().toJson(save), "UTF-8");
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	private void loadHeadImage(SaveModel save) {
+		String m_PlayerIconID = save.getM_PlayerIconID();
+		int iconId = Integer.parseInt(m_PlayerIconID);
+		ButtonGroup group = HeadImageBtnGroup.getGroup();
+		iconId = iconId - 900001;
+		Enumeration<AbstractButton> elements = group.getElements();
+		int idx = 0;
+		while (elements.hasMoreElements()) {
+			AbstractButton nextElement = elements.nextElement();
+			if (iconId == idx++) {
+				nextElement.setSelected(true);
+				break;
+			}
 		}
 	}
 

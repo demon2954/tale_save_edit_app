@@ -24,6 +24,7 @@ import save.edit.listener.OtherNpcListener;
 import save.edit.listener.SaveListener;
 import save.edit.listener.TalentViewListener;
 import save.edit.listener.ToGongFaListener;
+import save.edit.listener.ToHeadImageListener;
 
 public class EditPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -71,6 +72,8 @@ public class EditPanel extends JPanel {
 	private JTextField xingText = new JTextField();
 	private JLabel mingLabel = new JLabel("名");
 	private JTextField mingText = new JTextField();
+	
+	private JButton headImageBtn = new JButton("头像");
 
 	private JComboBox<TalentDetail> talent1ComBox = null;
 	private JComboBox<TalentDetail> talent2ComBox = null;
@@ -329,5 +332,9 @@ public class EditPanel extends JPanel {
 		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W, LocationConstant.ANQI_BTN_H);
 		anqiBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_ANQI));
 		this.add(anqiBtn);
+		
+		headImageBtn.setBounds(LocationConstant.HEAD_IMAGE_BTN_X, LocationConstant.HEAD_IMAGE_BTN_Y, LocationConstant.HEAD_IMAGE_BTN_W, LocationConstant.HEAD_IMAGE_BTN_H);
+		headImageBtn.addActionListener(new ToHeadImageListener());
+		this.add(headImageBtn);
 	}
 }

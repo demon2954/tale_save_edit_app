@@ -22,7 +22,13 @@ public class EditFrame extends JFrame {
 		setGongFaPanel();
 		setTalentPanel();
 		setOtherNpcPanel();
+		setHeadImagePanel();
 		this.setResizable(false);
+	}
+
+	private void setHeadImagePanel() {
+		HeadImagePanel headImagePanel = PanelManager.getHeadImagePanel();
+		this.add(headImagePanel);
 	}
 
 	private void setOtherNpcPanel() {
@@ -49,8 +55,6 @@ public class EditFrame extends JFrame {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		double height = screenSize.getHeight();
 		double width = screenSize.getWidth();
-		
-		getClass().getResource("/resources/img/logo/icon.jpg");
 		
 		Image iconImage = null;
 		try {

@@ -15,7 +15,7 @@ import save.edit.constant.Constant;
  * @date 2017-09-29
  */
 public class SkillManager {
-	
+	private static int M_iID = 10011;
 	private static Properties namePro = null;
 	private static Properties detailPro = null;
 	private static Properties bookPro = null;
@@ -121,6 +121,9 @@ public class SkillManager {
 			skillDetail.setM_strBookMsg(books[4]);
 			skillDetail.setM_strBookImage(books[5]);
 			skillDetail.setM_sValueLink(books[6]);
+			if (books.length == 8) {
+				skillDetail.setM_iID(M_iID++);
+			}
 			xinfaMap.put(sill, skillDetail);
 		}
 

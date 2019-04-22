@@ -4,9 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 
+import javax.swing.AbstractButton;
+import javax.swing.ButtonGroup;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
@@ -24,6 +27,7 @@ import save.edit.model.M_PlayerNeigongNodeList;
 import save.edit.model.M_PlayerRoutineNodeList;
 import save.edit.model.SaveModel;
 import save.edit.model.constant.GroupsNodeEnum;
+import save.edit.ui.HeadImageBtnGroup;
 import save.edit.ui.NpcXinFaCheckBoxManager;
 import save.edit.ui.PanelManager;
 import save.edit.ui.TalentComboBoxManager;
@@ -91,6 +95,7 @@ public class SaveListener implements ActionListener {
 		saveGongFa(save);
 		saveTalent(save);
 		saveOtherXinFa(save);
+		saveHeadImage(save);
 		WriteSaveData write = new WriteSaveData();
 		try {
 			String sourceFilePath = fileChooserBar.getText();
@@ -100,6 +105,23 @@ public class SaveListener implements ActionListener {
 		}
 
 		JOptionPane.showMessageDialog(PanelManager.getEditPanel(), "保存成功!");
+	}
+
+	private void saveHeadImage(SaveModel save) {
+		ButtonGroup group = HeadImageBtnGroup.getGroup();
+		Enumeration<AbstractButton> elements = group.getElements();
+
+		int iconId = 900001;
+		int idx = 0;
+		while (elements.hasMoreElements()) {
+			AbstractButton nextElement = elements.nextElement();
+			if (nextElement.isSelected()) {
+				iconId = iconId + idx;
+				break;
+			}
+			idx++;
+		}
+		save.setM_PlayerIconID(iconId + "");
 	}
 
 	private void saveOtherXinFa(SaveModel save) {

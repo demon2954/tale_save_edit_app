@@ -111,7 +111,7 @@ public class LocationConstant {
 	// --------------------------------------------------
 	public final static String[] PROPERTIES_NAME = { "武学", "实战", "悟性", "道德", "名声", "轻功", "硬功", "软功", "耳功", "眼功", "拳掌",
 			"心法", "刀法", "指法", "棍法", "琴法", "剑法", "腿法", "短柄", "暗器", "炼丹", "采药", "茶道", "厨艺", "鉴定", "乐理", "书法", "毒术", "挖矿",
-			"花卉", "医术", "打铁", "绘画", "钓鱼", "打猎", "酒艺", "棋艺" };
+			"花卉", "医术", "打铁", "绘画", "钓鱼", "打猎", "酒艺", "棋艺", "内功" };
 	
 	public final static int PROPERTIES_COUNT = PROPERTIES_NAME.length;
 	public final static int PROPERTIES_LABEL_START_X = 3;//
@@ -160,6 +160,7 @@ public class LocationConstant {
 	public final static int PROPERTIES_INDEX_DALIE = 34;
 	public final static int PROPERTIES_INDEX_JIUYI = 35;
 	public final static int PROPERTIES_INDEX_QIYI = 36;
+	public final static int PROPERTIES_INDEX_NEIGONG = 37;
 
 	
 	// --------------------------------------------------
@@ -259,28 +260,33 @@ public class LocationConstant {
 	public final static int MING_TEXT_W = 53;
 	public final static int MING_TEXT_H = 30;
 
+	public static final int HEAD_IMAGE_BTN_X = 315;
+	public static final int HEAD_IMAGE_BTN_Y = 293;
+	public static final int HEAD_IMAGE_BTN_W = 156;
+	public static final int HEAD_IMAGE_BTN_H = 30;
+
 	public final static int TALENT_COMBOX_1_X = 315;
-	public final static int TALENT_COMBOX_1_Y = 293;
+	public final static int TALENT_COMBOX_1_Y = 326;
 	public final static int TALENT_COMBOX_1_W = 80;
 	public final static int TALENT_COMBOX_1_H = 30;
 
 	public final static int TALENT_COMBOX_2_X = 315;
-	public final static int TALENT_COMBOX_2_Y = 326;
+	public final static int TALENT_COMBOX_2_Y = 359;
 	public final static int TALENT_COMBOX_2_W = 80;
 	public final static int TALENT_COMBOX_2_H = 30;
 
 	public final static int TALENT_COMBOX_3_X = 315;
-	public final static int TALENT_COMBOX_3_Y = 359;
+	public final static int TALENT_COMBOX_3_Y = 392;
 	public final static int TALENT_COMBOX_3_W = 80;
 	public final static int TALENT_COMBOX_3_H = 30;
 	
 	public final static int TALENT_BTN_1_X = 412;
-	public final static int TALENT_BTN_1_Y = 293;
+	public final static int TALENT_BTN_1_Y = 326;
 	public final static int TALENT_BTN_1_W = 60;
 	public final static int TALENT_BTN_1_H = 30;
 	
 	public final static int TALENT_BTN_2_X = 412;
-	public final static int TALENT_BTN_2_Y = 326;
+	public final static int TALENT_BTN_2_Y = 359;
 	public final static int TALENT_BTN_2_W = 60;
 	public final static int TALENT_BTN_2_H = 30;
 	

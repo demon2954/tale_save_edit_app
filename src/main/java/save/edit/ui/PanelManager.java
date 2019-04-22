@@ -8,6 +8,7 @@ public class PanelManager {
 	private static GongFaPanel gongFaPanel = null;
 	private static TalentPanel talentPanel = null;
 	private static JScrollPane otherNpcPanel = null;
+	private static HeadImagePanel headImagePanel = null;
 
 	public static EditPanel getEditPanel() {
 		if (editPanel == null) {
@@ -29,11 +30,18 @@ public class PanelManager {
 		}
 		return talentPanel;
 	}
-	
+
 	public static JScrollPane getOtherNpcPanel() {
 		if (otherNpcPanel == null) {
 			otherNpcPanel = new OtherNpcPanel().getScrollPane();
 		}
 		return otherNpcPanel;
+	}
+
+	public static HeadImagePanel getHeadImagePanel() {
+		if (headImagePanel == null) {
+			headImagePanel = new HeadImagePanel();
+		}
+		return headImagePanel;
 	}
 }
