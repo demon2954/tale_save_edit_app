@@ -11,6 +11,7 @@ import save.edit.constant.Constant;
 import save.edit.constant.LocationConstant;
 import save.edit.listener.ChooseFileListener;
 import save.edit.listener.FriendFullListener;
+import save.edit.listener.ItemListener;
 import save.edit.listener.LoadListener;
 import save.edit.listener.MaxListener;
 import save.edit.listener.MoneyListener;
@@ -48,8 +49,9 @@ public class EditPanel extends JPanel {
 	private JButton xinfaBtn = new JButton("心法");// 心法
 	private JButton friendBtn = new JButton("魅力四射");// 友好度
 	private JButton saveBtn = new JButton("保存");// 保存
-
 	private JButton gunfaBtn = new JButton("棍法");// 棍法
+	private JButton itemBtn = new JButton("物品");// 物品
+
 	private JButton anqiBtn = new JButton("暗器");// 暗器
 	private JButton duanbingBtn = new JButton("短柄");// 短柄
 	private JButton qingongBtn = new JButton("琴功");// 琴功
@@ -288,22 +290,26 @@ public class EditPanel extends JPanel {
 		saveBtn.addActionListener(new SaveListener(hpTextField, mpTextField, attackTextField, defendTextField,
 				moneyTextField, propertyTextFields, xingText, mingText, fileChooserBar));
 		this.add(saveBtn);
-
+		itemBtn.setBounds(LocationConstant.ITEM_BTN_X, LocationConstant.ITEM_BTN_Y, LocationConstant.ITEM_BTN_W,
+				LocationConstant.ITEM_BTN_H);
+		itemBtn.addActionListener(new ItemListener());
+		this.add(itemBtn);
 		gunfaBtn.setBounds(LocationConstant.GUNFA_BTN_X, LocationConstant.GUNFA_BTN_Y, LocationConstant.GUNFA_BTN_W,
 				LocationConstant.GUNFA_BTN_H);
-		gunfaBtn.setEnabled(false);
+		gunfaBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_GUNFA));
 		this.add(gunfaBtn);
-		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W,
-				LocationConstant.ANQI_BTN_H);
-		anqiBtn.setEnabled(false);
-		this.add(anqiBtn);
 		duanbingBtn.setBounds(LocationConstant.DUANBING_BTN_X, LocationConstant.DUANBING_BTN_Y,
 				LocationConstant.DUANBING_BTN_W, LocationConstant.DUANBING_BTN_H);
-		duanbingBtn.setEnabled(false);
+		duanbingBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_DUANBING));
 		this.add(duanbingBtn);
+		anqiBtn.setBounds(LocationConstant.ANQI_BTN_X, LocationConstant.ANQI_BTN_Y, LocationConstant.ANQI_BTN_W,
+				LocationConstant.ANQI_BTN_H);
+		anqiBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_ANQI));
+		this.add(anqiBtn);
+		
 		qingongBtn.setBounds(LocationConstant.QINGONG_BTN_X, LocationConstant.QINGONG_BTN_Y,
 				LocationConstant.QINGONG_BTN_W, LocationConstant.QINGONG_BTN_H);
-		qingongBtn.setEnabled(false);
+		qingongBtn.addActionListener(new ToGongFaListener(Constant.SKILL_TYPE_QINGONG));
 		this.add(qingongBtn);
 	}
 }

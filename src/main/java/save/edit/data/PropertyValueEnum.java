@@ -13,6 +13,7 @@ public enum PropertyValueEnum {
 	RUANGONG(1, 2, LocationConstant.PROPERTIES_INDEX_RUANGONG, 100), //
 	ERGONG(1, 1, LocationConstant.PROPERTIES_INDEX_ERGONG, 100), //
 	YANGONG(1, 0, LocationConstant.PROPERTIES_INDEX_YANGONG, 100), //
+	NEIGONG(1, 5, LocationConstant.PROPERTIES_INDEX_NEIGONG, 100), //
 	QUANZHANG(2, 0, LocationConstant.PROPERTIES_INDEX_QUANZHANG, 100), //
 	XINFA(3, 7, LocationConstant.PROPERTIES_INDEX_XINFA, 100), // ??
 	DAOFA(2, 4, LocationConstant.PROPERTIES_INDEX_DAOFA, 100), //

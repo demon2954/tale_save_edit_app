@@ -23,6 +23,14 @@ public abstract class AbstractSaveGongFaCheckBox {
 			return new SaveJianFaCB();
 		case Constant.SKILL_TYPE_DAOFA:
 			return new SaveDaoFaCB();
+		case Constant.SKILL_TYPE_GUNFA:
+			return new SaveGunFaCB();
+		case Constant.SKILL_TYPE_DUANBING:
+			return new SaveDuanBingCB();
+		case Constant.SKILL_TYPE_ANQI:
+			return new SaveAnQiCB();
+		case Constant.SKILL_TYPE_QINGONG:
+			return new SaveQinGongCB();
 		default:
 			break;
 		}

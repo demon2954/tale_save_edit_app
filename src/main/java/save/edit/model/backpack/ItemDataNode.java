@@ -26,7 +26,7 @@ public class ItemDataNode {
 	private List<ItmeEffectNode> m_ItmeEffectNodeList;
 	private String m_strStatusTip;
 	private int m_iLock;
-	private int m_iQuality;
+//	private int m_iQuality;
 	private String m_strModelName;
 	
 	public int getM_iMixStack() {
@@ -155,12 +155,12 @@ public class ItemDataNode {
 	public void setM_iLock(int m_iLock) {
 		this.m_iLock = m_iLock;
 	}
-	public int getM_iQuality() {
-		return m_iQuality;
-	}
-	public void setM_iQuality(int m_iQuality) {
-		this.m_iQuality = m_iQuality;
-	}
+//	public int getM_iQuality() {
+//		return m_iQuality;
+//	}
+//	public void setM_iQuality(int m_iQuality) {
+//		this.m_iQuality = m_iQuality;
+//	}
 	public String getM_strModelName() {
 		return m_strModelName;
 	}

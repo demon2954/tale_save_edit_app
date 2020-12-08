@@ -75,6 +75,22 @@ public class SkillManager {
 		String tuifaNames = namePro.getProperty("tuifa");
 		Map<String, SkillDetail> tuifaMap = makeSkill(tuifaNames, false);
 		skillMap.put(Constant.SKILL_TYPE_TUIFA, tuifaMap);
+
+		String gunfaNames = namePro.getProperty("gunfa");
+		Map<String, SkillDetail> gunfaMap = makeSkill(gunfaNames, false);
+		skillMap.put(Constant.SKILL_TYPE_GUNFA, gunfaMap);
+
+		String duanbingNames = namePro.getProperty("duanbing");
+		Map<String, SkillDetail> duanbingMap = makeSkill(duanbingNames, false);
+		skillMap.put(Constant.SKILL_TYPE_DUANBING, duanbingMap);
+
+		String anqiNames = namePro.getProperty("anqi");
+		Map<String, SkillDetail> anqiMap = makeSkill(anqiNames, false);
+		skillMap.put(Constant.SKILL_TYPE_ANQI, anqiMap);
+		
+		String qingongNames = namePro.getProperty("qingong");
+		Map<String, SkillDetail> qingongMap = makeSkill(qingongNames, false);
+		skillMap.put(Constant.SKILL_TYPE_QINGONG, qingongMap);
 	}
 	
 	private static Map<String, SkillDetail> makeSkill(String skillName, boolean isXinfa) {

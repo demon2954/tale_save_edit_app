@@ -4,6 +4,7 @@ public class PanelManager {
 
 	private static EditPanel editPanel = null;
 	private static GongFaPanel gongFaPanel = null;
+	private static ItemPanel itemPanel = null;
 
 	public static EditPanel getEditPanel() {
 		if (editPanel == null) {
@@ -17,5 +18,12 @@ public class PanelManager {
 			gongFaPanel = new GongFaPanel();
 		}
 		return gongFaPanel;
+	}
+
+	public static ItemPanel getItemPanel() {
+		if (itemPanel == null) {
+			itemPanel = new ItemPanel();
+		}
+		return itemPanel;
 	}
 }

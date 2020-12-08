@@ -31,6 +31,18 @@ public class AllCBListener implements ActionListener {
 		case Constant.SKILL_TYPE_ZHIFA:
 			cbs = CheckBoxManager.getZhiFaCheckBoxs();
 			break;
+		case Constant.SKILL_TYPE_GUNFA:
+			cbs = CheckBoxManager.getGunFaCheckBoxs();
+			break;
+		case Constant.SKILL_TYPE_DUANBING:
+			cbs = CheckBoxManager.getDuanBingCheckBoxs();
+			break;
+		case Constant.SKILL_TYPE_ANQI:
+			cbs = CheckBoxManager.getAnQiCheckBoxs();
+			break;
+		case Constant.SKILL_TYPE_QINGONG:
+			cbs = CheckBoxManager.getQinGongCheckBoxs();
+			break;
 		default:
 			break;
 		}

@@ -16,6 +16,7 @@ public class EditFrame extends JFrame {
 		setThisFrame();
 		setEditPanel();
 		setGongFaPanel();
+		setItemPanel();
 		this.setResizable(false);
 	}
 
@@ -27,6 +28,11 @@ public class EditFrame extends JFrame {
 	private void setEditPanel() {
 		EditPanel editPanel = PanelManager.getEditPanel();
 		this.add(editPanel);
+	}
+	
+	private void setItemPanel() {
+		ItemPanel itemPanel = PanelManager.getItemPanel();
+		this.add(itemPanel);
 	}
 
 	private void setThisFrame() {

@@ -109,7 +109,7 @@ public class LocationConstant {
 	public final static int MONEY_MAX_BTN_HEIGHT = 29;
 
 	// --------------------------------------------------
-	public final static String[] PROPERTIES_NAME = { "武学", "实战", "悟性", "道德", "名声", "轻功", "硬功", "软功", "耳功", "眼功", "拳掌",
+	public final static String[] PROPERTIES_NAME = { "武学", "实战", "悟性", "道德", "名声", "轻功", "硬功", "软功", "耳功", "眼功", "内功",  "拳掌",
 			"心法", "刀法", "指法", "棍法", "琴法", "剑法", "腿法", "短柄", "暗器", "炼丹", "采药", "茶道", "厨艺", "鉴定", "乐理", "书法", "毒术", "挖矿",
 			"花卉", "医术", "打铁", "绘画", "钓鱼", "打猎", "酒艺", "棋艺" };
 	
@@ -133,33 +133,34 @@ public class LocationConstant {
 	public final static int PROPERTIES_INDEX_RUANGONG = 7;
 	public final static int PROPERTIES_INDEX_ERGONG = 8;
 	public final static int PROPERTIES_INDEX_YANGONG = 9;
-	public final static int PROPERTIES_INDEX_QUANZHANG = 10;
-	public final static int PROPERTIES_INDEX_XINFA = 11;
-	public final static int PROPERTIES_INDEX_DAOFA = 12;
-	public final static int PROPERTIES_INDEX_ZHIFA = 13;
-	public final static int PROPERTIES_INDEX_GUNFA = 14;
-	public final static int PROPERTIES_INDEX_QINFA = 15;
-	public final static int PROPERTIES_INDEX_JIANFA = 16;
-	public final static int PROPERTIES_INDEX_TUIFA = 17;
-	public final static int PROPERTIES_INDEX_DUANBING = 18;
-	public final static int PROPERTIES_INDEX_ANQI = 19;
-	public final static int PROPERTIES_INDEX_LIANDAN = 20;
-	public final static int PROPERTIES_INDEX_CAIYAO = 21;
-	public final static int PROPERTIES_INDEX_CHADAO = 22;
-	public final static int PROPERTIES_INDEX_CHUYI = 23;
-	public final static int PROPERTIES_INDEX_JIANDING = 24;
-	public final static int PROPERTIES_INDEX_YUELI = 25;
-	public final static int PROPERTIES_INDEX_SHUFA = 26;
-	public final static int PROPERTIES_INDEX_DUSHU = 27;
-	public final static int PROPERTIES_INDEX_WAKUANG = 28;
-	public final static int PROPERTIES_INDEX_HUAHUI = 29;
-	public final static int PROPERTIES_INDEX_YISHU = 30;
-	public final static int PROPERTIES_INDEX_DATIE = 31;
-	public final static int PROPERTIES_INDEX_HUIHUA = 32;
-	public final static int PROPERTIES_INDEX_DIAOYU = 33;
-	public final static int PROPERTIES_INDEX_DALIE = 34;
-	public final static int PROPERTIES_INDEX_JIUYI = 35;
-	public final static int PROPERTIES_INDEX_QIYI = 36;
+	public final static int PROPERTIES_INDEX_NEIGONG = 10;
+	public final static int PROPERTIES_INDEX_QUANZHANG = 11;
+	public final static int PROPERTIES_INDEX_XINFA = 12;
+	public final static int PROPERTIES_INDEX_DAOFA = 13;
+	public final static int PROPERTIES_INDEX_ZHIFA = 14;
+	public final static int PROPERTIES_INDEX_GUNFA = 15;
+	public final static int PROPERTIES_INDEX_QINFA = 16;
+	public final static int PROPERTIES_INDEX_JIANFA = 17;
+	public final static int PROPERTIES_INDEX_TUIFA = 18;
+	public final static int PROPERTIES_INDEX_DUANBING = 19;
+	public final static int PROPERTIES_INDEX_ANQI = 20;
+	public final static int PROPERTIES_INDEX_LIANDAN = 21;
+	public final static int PROPERTIES_INDEX_CAIYAO = 22;
+	public final static int PROPERTIES_INDEX_CHADAO = 23;
+	public final static int PROPERTIES_INDEX_CHUYI = 24;
+	public final static int PROPERTIES_INDEX_JIANDING = 25;
+	public final static int PROPERTIES_INDEX_YUELI = 26;
+	public final static int PROPERTIES_INDEX_SHUFA = 27;
+	public final static int PROPERTIES_INDEX_DUSHU = 28;
+	public final static int PROPERTIES_INDEX_WAKUANG = 29;
+	public final static int PROPERTIES_INDEX_HUAHUI = 30;
+	public final static int PROPERTIES_INDEX_YISHU = 31;
+	public final static int PROPERTIES_INDEX_DATIE = 32;
+	public final static int PROPERTIES_INDEX_HUIHUA = 33;
+	public final static int PROPERTIES_INDEX_DIAOYU = 34;
+	public final static int PROPERTIES_INDEX_DALIE = 35;
+	public final static int PROPERTIES_INDEX_JIUYI = 36;
+	public final static int PROPERTIES_INDEX_QIYI = 37;
 
 	
 	// --------------------------------------------------
@@ -219,8 +220,13 @@ public class LocationConstant {
 	public final static int FRIEND_BTN_W = 156;
 	public final static int FRIEND_BTN_H = 30;
 
+	public final static int ITEM_BTN_X = 475;
+	public final static int ITEM_BTN_Y = 227;
+	public final static int ITEM_BTN_W = 156;
+	public final static int ITEM_BTN_H = 30;
+
 	public final static int SAVE_BTN_X = 475;
-	public final static int SAVE_BTN_Y = 227;
+	public final static int SAVE_BTN_Y = 260;
 	public final static int SAVE_BTN_W = 156;
 	public final static int SAVE_BTN_H = 30;
 	
